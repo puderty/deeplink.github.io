@@ -6,6 +6,8 @@
 <h3><a href="okex://metaX/nft/featured">NFT首页</a></h3>
 <h3><a href="okex://metaX/nft/primary">NFT Primary</a></h3>
 <h3><a href="okex://metaX/nft/primary/details?activityId=987&chainId=1">NFT一级详情页</a></h3>
+  <h3><a href="okex://metaX/nft/collection?projectId=241&projectName=cryptopunks">NFT合集页</a></h3>
+<h3><a href="okex://metaX/nft/market/details?contractAddress=0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb&tokenId=1617">NFT详情页</a></h3>
 <h2>Others</h2>
 <h3><a href="okex://main">首页</a></h3>
 <h3><a href="okex://invite_friends">邀请好友</a></h3> 
