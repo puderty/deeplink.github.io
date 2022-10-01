@@ -2,7 +2,7 @@
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <body>
 <h2>NFT</h2>
-<h3><a href="okex://metaX/dapp/details?dappUrl=https://www.baidu.com">Dapp打开Opensea</a></h3>
+<h3><a href="okex://metaX/dapp/details?dappUrl=https://opensea.io">Dapp打开Opensea</a></h3>
 <h3><a href="okex://metaX/nft/featured">NFT首页</a></h3>
 <h3><a href="okex://metaX/nft/primary">NFT Primary</a></h3>
 <h3><a href="okex://metaX/nft/primary/details?activityId=987&chainId=1">NFT一级详情页</a></h3>
