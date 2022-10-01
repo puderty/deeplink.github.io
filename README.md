@@ -23,5 +23,6 @@
 <h3><a href="okex://web?url=https://www.okx.com/academy/en">学院(英文)</a></h3>
 <h3><a href="okex://security_bind_email">绑定邮箱</a></h3>
 <h3><a href="okex://assets/overview_analysis?account_type=0">资产分析</a></h3>
+<h3><a href="/test">测试</a></h3>
 </body>
 </html>
