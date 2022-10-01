@@ -1,13 +1,14 @@
 <html>
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <body>
-
-<h3><a href="okex://main">首页</a></h3>
+<h2>NFT</h2>
 <h3><a href="okex://metaX/dapp/details?dappUrl=https://www.baidu.com">Dapp</a></h3>
-<h3><a href="okex://invite_friends">邀请好友</a></h3> 
 <h3><a href="okex://metaX/nft/featured">NFT首页</a></h3>
 <h3><a href="okex://metaX/nft/primary">NFT Primary</a></h3>
 <h3><a href="okex://metaX/nft/primary/details?activityId=987&chainId=1">NFT一级详情页</a></h3>
+<h2>Others</h2>
+<h3><a href="okex://main">首页</a></h3>
+<h3><a href="okex://invite_friends">邀请好友</a></h3> 
 <h3><a href="okex://regist">注册页面</a></h3>
 <h3><a href="okex://pool_home">Android矿池首页</a></h3>
 <h3><a href="okex://pool">iOS矿池首页</a></h3>
