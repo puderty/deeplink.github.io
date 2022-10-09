@@ -3,8 +3,10 @@
 <body>
 <h2>NFT</h2>
 <h3><a href="okex://metaX/dapp/details?dappUrl=https://opensea.io">Dapp打开Opensea</a></h3>
+<h3><a href="okex://metaX/nft/featured?jumpType=worldcup">NFT世界杯</a></h3>
 <h3><a href="okex://metaX/nft/featured">NFT首页</a></h3>
 <h3><a href="okex://metaX/nft/market">NFT市场</a></h3>
+<h3><a href="okex://metaX/nft/market?chainId=66">NFT市场筛选1</a></h3>
 <h3><a href="okex://metaX/nft/primary">NFT Primary</a></h3>
 <h3><a href="okex://metaX/nft/primary/details?activityId=987&chainId=1">NFT一级详情页</a></h3>
 <h3><a href="okex://metaX/nft/collection?projectId=241&projectName=cryptopunks">NFT合集页</a></h3>
