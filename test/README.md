@@ -1,5 +1,5 @@
 aaa
-<script language="javascript">
+<script>
   location.replace("okex://metaX/dex/swap")
 </script>
 
