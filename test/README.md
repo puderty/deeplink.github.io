@@ -1,4 +1,4 @@
-<script language="javascript">
+<script type="text/javascript">
   alert("test")
 if (window.webkit) {
                 window.webkit.messageHandlers.JShandle.postMessage('okex://metaX/dapp/details?dappUrl=https://opensea.io');
