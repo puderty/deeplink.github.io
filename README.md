@@ -6,6 +6,7 @@
 <h3><a href="okex://metaX/nft/featured?jumpType=worldcup">NFT世界杯</a></h3>
 <h3><a href="okex://metaX/nft/featured">NFT首页</a></h3>
 <h3><a href="okex://metaX/nft/creation">NFT创作欢迎页</a></h3>
+<h3><a href="okex://metaX/nft/featured?jumpType=aptos_trade">aptos交易活动</a></h3>
 <h3><a href="okex://metaX/nft/market">NFT市场</a></h3>
 <h3><a href="okex://metaX/nft/market?chainId=66">NFT市场筛选链66</a></h3>
 <h3><a href="okex://metaX/nft/primary">NFT Primary</a></h3>
