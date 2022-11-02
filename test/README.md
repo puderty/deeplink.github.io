@@ -1,4 +1,4 @@
-<meta http-equiv="refresh" content="10;url=okex://metaX/dex/swap">
+aaa
 <script type="text/javascript">
   location.replace("okex://metaX/dex/swap")
 </script>
