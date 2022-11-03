@@ -9,7 +9,9 @@ function isiOSDevice() {
     }
 function jsbridge(msg) {
         if (true) {
+        alert("ios1")
             if (window.webkit) {
+        alert("ios")
                 window.webkit.messageHandlers.JShandle.postMessage(msg);
             }
         } else {
