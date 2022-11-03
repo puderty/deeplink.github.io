@@ -1,4 +1,4 @@
-aaa5
+aaa6
 <script>
 function isiOSDevice() {
         if (navigator.userAgent.indexOf('iPhone')>-1 || navigator.userAgent.indexOf('iOS')>-1) {
@@ -8,6 +8,7 @@ function isiOSDevice() {
         }
     }
 function jsbridge(msg) {
+        alert("yy")
         if (true) {
         alert("ios1")
             if (window.webkit) {
