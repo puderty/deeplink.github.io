@@ -18,7 +18,6 @@ function jsbridge(msg) {
         }
     }
 window.location.href='okex://metaX/dex/swap';
-
 jsbridge({"uri":"window","method":"close","data":true});
 
 </script>
