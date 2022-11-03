@@ -1,6 +1,6 @@
 aaa
 <script>
-  location.replace("okex://metaX/dex/swap")
+  window.location.href='okex://metaX/dex/swap';
 </script>
 
 TEST jump8
