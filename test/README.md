@@ -1,4 +1,4 @@
-aaa
+aaa2
 <script>
   window.location.href='okex://metaX/dex/swap';
   if (window.webkit) {
