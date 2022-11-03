@@ -1,8 +1,12 @@
 aaa2
 <script>
-  window.location.href='okex://metaX/dex/swap';
+  //window.location.href='okex://metaX/dex/swap';
+  
   if (window.webkit) {
-      window.webkit.messageHandlers.JShandle.postMessage("{ "uri": "window", "method": "close", "data": true }");
+      var url = { "uri": "window", "method": "nav", "data": "main/spot/buy", "success": "success", "fail": "fail" };
+      window.webkit.messageHandlers.JShandle.postMessage(url);
+      var close = { "uri": "window", "method": "close", "data": true }
+      window.webkit.messageHandlers.JShandle.postMessage(close);
   }
 </script>
 
