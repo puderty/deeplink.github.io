@@ -8,7 +8,7 @@ function isiOSDevice() {
         }
     }
 function jsbridge(msg) {
-        if (isiOSDevice()) {
+        if (true) {
             if (window.webkit) {
                 window.webkit.messageHandlers.JShandle.postMessage(msg);
             }
