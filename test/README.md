@@ -1,7 +1,7 @@
 aaa4
 <script>
 function isiOSDevice() {
-        if (navigator.userAgent.indexOf('iPhone') > -1 || navigator.userAgent.indexOf('iOS') > -1) {
+        if (navigator.userAgent.indexOf('iPhone')>-1 || navigator.userAgent.indexOf('iOS')>-1) {
             return true;
         } else {
             return false;
