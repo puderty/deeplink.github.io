@@ -13,6 +13,18 @@
 <h3><a href="okex://metaX/nft/primary/details?activityId=987&chainId=1">NFT一级详情页</a></h3>
 <h3><a href="okex://metaX/nft/collection?projectId=241&projectName=cryptopunks">NFT合集页</a></h3>
 <h3><a href="okex://metaX/nft/market/details?contractAddress=0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb&tokenId=1617">NFT详情页</a></h3>
+  <h2>NFT新</h2>
+<h3><a href="okex://wallet/dapp/details?dappUrl=https://opensea.io">Dapp打开Opensea</a></h3>
+<h3><a href="okex://wallet/nft/featured?jumpType=worldcup">NFT世界杯</a></h3>
+<h3><a href="okex://wallet/nft/featured">NFT首页</a></h3>
+<h3><a href="okex://wallet/nft/creation">NFT创作欢迎页</a></h3>
+<h3><a href="okex://wallet/nft/featured?jumpType=aptos_trade">aptos交易活动</a></h3>
+<h3><a href="okex://wallet/nft/market">NFT市场</a></h3>
+<h3><a href="okex://wallet/nft/market?chainId=66">NFT市场筛选链66</a></h3>
+<h3><a href="okex://wallet/nft/primary">NFT Primary</a></h3>
+<h3><a href="okex://wallet/nft/primary/details?activityId=987&chainId=1">NFT一级详情页</a></h3>
+<h3><a href="okex://wallet/nft/collection?projectId=241&projectName=cryptopunks">NFT合集页</a></h3>
+<h3><a href="okex://wallet/nft/market/details?contractAddress=0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb&tokenId=1617">NFT详情页</a></h3>
 <h2>Others</h2>
 <h3><a href="okex://main">首页</a></h3>
 <h3><a href="metaX/dex/swap">Dex首页</a></h3>
