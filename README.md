@@ -1,7 +1,7 @@
 <html>
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <body>
-<h2>NFT</h2>
+<h2>NFT(okex://metaX/)</h2>
 <h3><a href="okex://metaX/dapp/details?dappUrl=https://opensea.io">Dapp打开Opensea</a></h3>
 <h3><a href="okex://metaX/nft/featured?jumpType=worldcup">NFT世界杯</a></h3>
 <h3><a href="okex://metaX/nft/featured">NFT首页</a></h3>
@@ -13,7 +13,7 @@
 <h3><a href="okex://metaX/nft/primary/details?activityId=987&chainId=1">NFT一级详情页</a></h3>
 <h3><a href="okex://metaX/nft/collection?projectId=241&projectName=cryptopunks">NFT合集页</a></h3>
 <h3><a href="okex://metaX/nft/market/details?contractAddress=0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb&tokenId=1617">NFT详情页</a></h3>
-  <h2>NFT新</h2>
+  <h2>NFT新(okx://wallet/)</h2>
 <h3><a href="okx://wallet/dapp/details?dappUrl=https://opensea.io">Dapp打开Opensea</a></h3>
 <h3><a href="okx://wallet/nft/featured?jumpType=worldcup">NFT世界杯</a></h3>
 <h3><a href="okx://wallet/nft/featured">NFT首页</a></h3>
