@@ -4,6 +4,7 @@
 <h2>NFT(okex://metaX/)</h2>
 <h3><a href="okex://metaX/dapp/details?dappUrl=https://opensea.io">Dapp打开Opensea</a></h3>
 <h3><a href="okex://metaX/nft/featured?jumpType=worldcup">NFT世界杯</a></h3>
+<h3><a href="okex://metaX/nft/featured?jumpType=christmas_create">NFT圣诞节活动</a></h3>
 <h3><a href="okex://metaX/nft/featured">NFT首页</a></h3>
 <h3><a href="okex://metaX/nft/creation">NFT创作欢迎页</a></h3>
 <h3><a href="okex://metaX/nft/featured?jumpType=aptos_trade">aptos交易活动</a></h3>
