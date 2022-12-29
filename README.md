@@ -6,7 +6,7 @@
 <h3><a href="okx://wallet/dapp/url?dappUrl=https%3A%2F%2Fwww.okx.com%2Fokc%2Fliquid-staking%2Fstake">Stake活动</a></h3>
 <h3><a href="okx://wallet/invest/home?jumpType=2&openUrl=https%3A%2F%2Fwww.okx.com%2Fweb3%2Fyield%2Fcampaign%2FIRI5KH">yield活动</a></h3>
 <h3><a href="okex://metaX/nft/featured?jumpType=worldcup">NFT世界杯</a></h3>
-<h3><a href="okex://web?url=http://oklink.com/report/year2022?hmsr=web3banner&hmpl=&hmcu=&hmkw=&hmci=">OKLink年终总结</a></h3>
+<h3><a href="okex://web?url=https://oklink.com/report/year2022?hmsr=web3banner&hmpl=&hmcu=&hmkw=&hmci=">OKLink年终总结</a></h3>
 <h3><a href="okex://metaX/nft/featured?jumpType=christmas_create">NFT圣诞节活动</a></h3>
 <h3><a href="okex://metaX/nft/featured">NFT首页</a></h3>
 <h3><a href="okex://metaX/nft/creation">NFT创作欢迎页</a></h3>
