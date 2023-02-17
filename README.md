@@ -18,6 +18,8 @@
 <h3><a href="okex://metaX/nft/primary/details?activityId=987&chainId=1">NFT一级详情页</a></h3>
 <h3><a href="okex://metaX/nft/collection?projectId=241&projectName=cryptopunks">NFT合集页</a></h3>
 <h3><a href="https://www.okx.com/download?deeplink=okex%3A%2F%2FmetaX%2Fnft%2Fmarket%2Fdetails%3FcontractAddress%3D0xadc466855ebe8d1402c5f7e6706fccc3aedb44a0%26tokenId%3D4080932">NFT详情页https</a></h3>
+  <h3><a href="[https://www.okx.com/download?deeplink=okex%3A%2F%2FmetaX%2Fnft%2Fmarket%2Fdetails%3FcontractAddress%3D0xadc466855ebe8d1402c5f7e6706fccc3aedb44a0%26tokenId%3D4080932](https://www.okx.com/web3/nft/markets/eth/0x06f29e6f3f937280e6278864c83072e49deb6ca7/241?deeplink=okex%3A%2F%2FmetaX%2Fnft%2Fmarket%2Fdetails%3FcontractAddress%3D0x06f29e6f3f937280e6278864c83072e49deb6ca7%26tokenId%3D241)">NFT详情页https2</a></h3>
+  
 <h3><a href="okex://metaX/nft/market/details?contractAddress=0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb&tokenId=1617">NFT详情页</a></h3>
   <h2>NFT新(okx://wallet/)</h2>
 <h3><a href="okx://wallet/dapp/details?dappUrl=https://opensea.io">Dapp打开Opensea</a></h3>
