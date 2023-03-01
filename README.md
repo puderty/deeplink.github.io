@@ -2,6 +2,8 @@
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <body>
 <h2>NFT(okex://metaX/)</h2>
+
+ <h3><a href="okex://metaX/nft/featured?jumpType=rebates&inviteCode=186de8c">返佣活动</a></h3>
 <h3><a href="okex://metaX/dapp/details?dappUrl=https://opensea.io">Dapp打开Opensea</a></h3>
 <h3><a href="okx://wallet/dapp/url?dappUrl=https%3A%2F%2Fwww.okx.com%2Fokc%2Fliquid-staking%2Fstake">Stake活动</a></h3>
 <h3><a href="okex://web?url=https://www.okx.com/okc/liquid-staking/stake">Stake活动webview</a></h3>
