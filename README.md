@@ -14,8 +14,8 @@
 <h3><a href="okex://web?url=https://www.oklink.com/report/year2022?hmsr=web3banner&hmpl=&hmcu=&hmkw=&hmci=">OKLink年终总结</a></h3>
 <h3><a href="okex://metaX/nft/featured?jumpType=christmas_create">NFT圣诞节活动</a></h3>
 <h3><a href="okex://metaX/nft/featured">NFT首页</a></h3>
- <h3><a href="okex://metaX/nft/featured?jumpType=direct&page=christmas_create">chrimstmas</a></h3>
-  <h3><a href="okex://metaX/nft/featured?jumpType=direct&page=rebates">rebate</a></h3>
+ <h3><a href="okex://metaX/nft/featured?jumpType=jump&page=christmas_create">chrimstmas</a></h3>
+  <h3><a href="okex://metaX/nft/featured?jumpType=jump&page=rebates">rebate</a></h3>
 <h3><a href="okex://metaX/nft/creation">NFT创作欢迎页</a></h3>
 <h3><a href="okex://metaX/nft/featured?jumpType=aptos_trade">aptos交易活动</a></h3>
 <h3><a href="okex://metaX/nft/market">NFT市场</a></h3>
