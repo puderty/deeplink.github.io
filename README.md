@@ -21,6 +21,8 @@
 <h3><a href="okex://metaX/nft/market">NFT市场</a></h3>
 <h3><a href="okex://metaX/nft/market?chainId=66">NFT市场筛选链66</a></h3>
 <h3><a href="okex://metaX/nft/primary">NFT Primary</a></h3>
+ <h3><a href="okex://metaX/nft/featured?jumpType=jump&page=brc20_collections&brc20Id=stxo">stxo</a></h3>
+ 
 <h3><a href="okex://metaX/nft/primary/details?activityId=987&chainId=1">NFT一级详情页</a></h3>
 <h3><a href="okex://metaX/nft/collection?projectId=241&projectName=cryptopunks">NFT合集页</a></h3>
 <h3><a href="https://www.okx.com/download?deeplink=okex%3A%2F%2FmetaX%2Fnft%2Fmarket%2Fdetails%3FcontractAddress%3D0xadc466855ebe8d1402c5f7e6706fccc3aedb44a0%26tokenId%3D4080932">NFT详情页https</a></h3>
