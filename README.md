@@ -30,7 +30,7 @@
 <h3><a href="https://www.okx.com/download?deeplink=okex%3A%2F%2FmetaX%2Fnft%2Fmarket%2Fdetails%3FcontractAddress%3D0xadc466855ebe8d1402c5f7e6706fccc3aedb44a0%26tokenId%3D4080932">NFT详情页https</a></h3>
  <h3><a href="https://www.okx.com/download?deeplink=okex%3A%2F%2FmetaX%2Fnft%2Ffeatured%3FjumpType%3Drebates%26inviteCode%3Dxxx">NFT测试https</a></h3>
   <h3><a href="https://www.okx.com/download?deeplink=okex%3A%2F%2FmetaX%2Fnft%2Ffeatured%3FjumpType%3Dordinals">ordinals https</a></h3>
-<h3><a href="https://www.okx.com/download?deeplink=okex%3A%2F%2FmetaX%2Fnft%2Ffeatured%3FjumpType%3Ddirect%26page%3Dcryptopedia%26bgColor%3D%23121212">cryptopedia https</a></h3>
+<h3><a href="https://www.okx.com/download?deeplink=okex%3A%2F%2FmetaX%2Fnft%2Ffeatured%3FjumpType%3Djump%26page%3Dcryptopedia%26bgColor%3D%23121212">cryptopedia https</a></h3>
  <h3><a href="https://www.ouyicn.blue/download?deeplink=okex%3A%2F%2FmetaX%2Fnft%2Ffeatured%3FjumpType%3Drebates%26inviteCode%3Dxxx">rebate活动https2</a></h3>
   <h3><a href="https://www.okx.com/web3/nft/markets/eth/0x06f29e6f3f937280e6278864c83072e49deb6ca7/241?deeplink=okex%3A%2F%2FmetaX%2Fnft%2Fmarket%2Fdetails%3FcontractAddress%3D0x06f29e6f3f937280e6278864c83072e49deb6ca7%26tokenId%3D241">NFT详情页https2</a></h3>
   
