@@ -13,6 +13,7 @@
 <h3><a href="okex://metaX/nft/featured?jumpType=worldcup">NFT世界杯</a></h3>
 <h3><a href="okex://web?url=https://www.oklink.com/report/year2022?hmsr=web3banner&hmpl=&hmcu=&hmkw=&hmci=">OKLink年终总结</a></h3>
 <h3><a href="okex://metaX/nft/featured?jumpType=christmas_create">NFT圣诞节活动</a></h3>
+ <h3><a href="okex://metaX/nft/featured?jumpType=jump&page=ticket&id=31&contractAddress=0x5da64df7d73b9bab8f3d02daa8a13158fe6344c1&chain=1">NFT ticket</a></h3>
 <h3><a href="okex://metaX/nft/featured">NFT首页</a></h3>
  <h3><a href="okex://metaX/nft/featured?jumpType=jump&page=christmas_create">chrimstmas</a></h3>
   <h3><a href="okex://metaX/nft/featured?jumpType=jump&page=rebates">rebate</a></h3>
