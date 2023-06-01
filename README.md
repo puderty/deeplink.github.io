@@ -26,7 +26,7 @@
 <h3><a href="okex://metaX/nft/primary">NFT Primary</a></h3>
   <h3><a href="okex://metaX/nft/featured?jumpType=jump&page=cryptopedia&bgColor=#121212">cryptopedia</a></h3>
  <h3><a href="okex://metaX/nft/featured?jumpType=jump&page=cryptopediaDetail&chainId=324&cryptopediaId=1&bgColor=#121212">cryptodetail</a></h3>
- <h3><a href="okex://metaX/nft/featured?jumpType=jump&page=brc20_collections&brc20Id=stxo">stxo</a></h3>
+ <h3><a href="okex://metaX/nft/featured?jumpType=jump&page=brc20_collections&brc20Id=stxo">brc20 stxo详情页</a></h3>
  
 <h3><a href="okex://metaX/nft/primary/details?activityId=987&chainId=1">NFT一级详情页</a></h3>
 <h3><a href="okex://metaX/nft/collection?projectId=241&projectName=cryptopunks">NFT合集页</a></h3>
