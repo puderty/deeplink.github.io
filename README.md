@@ -31,6 +31,7 @@
  <h3><a href="okex://metaX/nft/featured?jumpType=jump&page=brc20_collections&brc20Id=stxo">brc20 stxo详情页</a></h3>
  
 <h3><a href="okex://metaX/nft/primary/details?activityId=10435&chainId=66">NFT一级详情页</a></h3>
+<h3><a href="okex://metaX/nft/featured?jumpType=direct&page=cryptopediaDetail&chainId=324&cryptopediaId=2">cryptopedia earn</a></h3>
 <h3><a href="okex://metaX/nft/collection?projectId=241&projectName=cryptopunks">NFT合集页</a></h3>
 <h3><a href="https://www.okx.com/download?deeplink=okex%3A%2F%2FmetaX%2Fnft%2Fmarket%2Fdetails%3FcontractAddress%3D0xadc466855ebe8d1402c5f7e6706fccc3aedb44a0%26tokenId%3D4080932">NFT详情页https</a></h3>
  <h3><a href="https://www.okx.com/download?deeplink=okex%3A%2F%2FmetaX%2Fnft%2Ffeatured%3FjumpType%3Drebates%26inviteCode%3Dxxx">NFT测试https</a></h3>
