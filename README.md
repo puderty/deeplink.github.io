@@ -76,7 +76,7 @@
          window.open("https://www.okx.com/download?deeplink=okx%3A%2F%2Fwallet%2Fdapp%2Furl%3FdappUrl%3Dhttps%253A%252F%252Fdappradar.com")
         }
  function onButtonClick2() {
-         window.location.href="https://www.okx.com/download?deeplink=okx%3A%2F%2Fwallet%2Fdapp%2Furl%3FdappUrl%3Dhttps%253A%252F%252Fdappradar.com"
+         window.location.href="https://www.okx.com/download?deeplink=okx%3A%2F%2Fwallet%2Fdapp%2Furl%3FdappUrl%3Dhttps%3A%2F%2Fclaim.omtch.com%2F"
         }
     </script>
 <button onclick="onButtonClick()">test https open</button>
