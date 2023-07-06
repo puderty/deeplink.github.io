@@ -78,10 +78,12 @@
          window.open("https://www.okx.com/download?deeplink=okx%3A%2F%2Fwallet%2Fdapp%2Furl%3FdappUrl%3Dhttps%253A%252F%252Fdappradar.com", "_self")
         }
  function onButtonClick2() {
-         window.location.href="https://www.okx.com/download?deeplink=okx%3A%2F%2Fwallet%2Fdapp%2Furl%3FdappUrl%3Dhttps%3A%2F%2Fclaim.omtch.com%2F/"
+         var result = confirm("Are you sure?");
+         alert("confirm result" + result);
         }
     </script>
 <button onclick="onButtonClick()">test https open</button>
 <button onclick="onButtonClick2()">test https href</button>
+<button onclick="onButtonClick3()">test confirm</button>
 </body>
 </html>
