@@ -81,8 +81,11 @@
        window.location.href="https://www.okx.com/download?deeplink=okx%3A%2F%2Fwallet%2Fdapp%2Furl%3FdappUrl%3Dhttps%3A%2F%2Fclaim.omtch.com%2F/"
         }
  function onButtonClick3() {
-         var result = confirm("Are you sure?");
+         // var result = confirm("Are you sure?");
          alert("c00 我是江山");
+  setTimeout(function() {
+       alert("c00 我不是江山");
+}, 2000);
         }
     </script>
 <button onclick="onButtonClick()">test https open</button>
