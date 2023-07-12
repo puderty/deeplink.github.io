@@ -82,7 +82,7 @@
         }
  function onButtonClick3() {
          var result = confirm("Are you sure?");
-         alert("confirm result" + result);
+         console.log("confirm result" + result);
         }
     </script>
 <button onclick="onButtonClick()">test https open</button>
