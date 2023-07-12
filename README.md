@@ -82,6 +82,7 @@
         }
  function onButtonClick3() {
          var result = confirm("Are you sure?");
+         alert("c00 我是江山");
         }
     </script>
 <button onclick="onButtonClick()">test https open</button>
