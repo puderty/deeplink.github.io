@@ -82,7 +82,7 @@
         }
  function onButtonClick3() {
          // var result = confirm("Are you sure?");
-
+         alert("这是一个正经alert");
         }
     </script>
 <button onclick="onButtonClick()">test https open</button>
