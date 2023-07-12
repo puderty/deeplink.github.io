@@ -83,6 +83,9 @@
  function onButtonClick3() {
          // var result = confirm("Are you sure?");
          alert("这是一个正经alert");
+  setTimeout(function() {
+       alert("下班了");
+}, 2000);
         }
     </script>
 <button onclick="onButtonClick()">test https open</button>
