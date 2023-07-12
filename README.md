@@ -82,10 +82,7 @@
         }
  function onButtonClick3() {
          // var result = confirm("Are you sure?");
-         alert("c00 我是江山");
-  setTimeout(function() {
-       alert("c00 我不是江山");
-}, 2000);
+
         }
     </script>
 <button onclick="onButtonClick()">test https open</button>
