@@ -88,9 +88,17 @@
        alert("下班了");
 }, 2000);
         }
+ function onButtonClick4() {
+         var result = confirm("Are you sure?");
+
+  setTimeout(function() {
+       var result = confirm("Are you sure again?");
+}, 2000);
+        }
     </script>
 <button onclick="onButtonClick()">test https open</button>
 <button onclick="onButtonClick2()">test https href</button>
 <button onclick="onButtonClick3()">test confirm</button>
+<button onclick="onButtonClick4()">test confirm</button>
 </body>
 </html>
