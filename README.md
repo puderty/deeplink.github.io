@@ -99,7 +99,7 @@
     </script>
 <button onclick="onButtonClick()">test https open</button>
 <button onclick="onButtonClick2()">test https href</button>
-<button onclick="onButtonClick3()">test confirm</button>
+<button onclick="onButtonClick3()">test alert</button>
 <button onclick="onButtonClick4()">test confirm</button>
 </body>
 </html>
