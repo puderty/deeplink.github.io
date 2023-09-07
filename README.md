@@ -4,6 +4,8 @@
 <h2>NFT(okex://metaX/)</h2>
 
  <h3><a href="okex://metaX/nft/featured?jumpType=rebates&inviteCode=186de8c">返佣活动</a></h3>
+ <h3><a href="okex://metaX/nft/featured?jumpType=direct&page=event">Event入口</a></h3>
+ 
   <h3><a href="okx://wallet/dapp/url?dappUrl=https%3A%2F%2Fwww.unemeta.com%2Fzh%2Fprojects%2Fanime">测试活动</a></h3>
   <h3><a href="metamask://">Metamask</a></h3>
 <h3><a href="okex://metaX/dapp/details?dappUrl=https://opensea.io">Dapp打开Opensea</a></h3>
