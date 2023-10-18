@@ -34,7 +34,7 @@
    <h3><a href="okex://metaX/nft/featured?jumpType=ordinals&selectTab=brc20">ordinals2</a></h3>
 <h3><a href="okex://metaX/nft/market?chainId=66">NFT市场筛选链66</a></h3>
 <h3><a href="okex://metaX/nft/primary">NFT Primary</a></h3>
-  <h3><a href="okex://metaX/nft/featured?jumpType=jump&page=cryptopedia&bgColor=#121212">cryptopedia</a></h3>
+  <h3><a href="okex://wallet/nft/featured?jumpType=jump&page=cryptopediaDetail&chainId=137&cryptopediaId=11">cryptopedia</a></h3>
   <h3><a href="okx://wallet/nft/featured?jumpType=jump&page=cryptopediaTaskDetail&chainId=324&cryptopediaId=2&dappId=23519&dappCategory=1">cryptopedia某期详情页</a></h3>
  <h3><a href="okex://metaX/nft/featured?jumpType=jump&page=cryptopediaDetail&chainId=324&cryptopediaId=1&bgColor=#121212">cryptodetail</a></h3>
  <h3><a href="okex://metaX/nft/featured?jumpType=jump&page=brc20_collections&brc20Id=stxo">brc20 stxo详情页</a></h3>
