@@ -3,7 +3,7 @@
 <body>
 <h2>NFT(okex://metaX/)</h2>
 
- <h3><a href="https://www.okx.com/cn/download?deeplink=okex%3A%2F%2FmetaX%2Fnft%2Fprimary%2Fdetails%3FactivityId%3D10569%26chainId%3D66">测试下载跳转</a></h3>
+ <h3><a href="https://www.okx.com/download?deeplink=okex%3A%2F%2FmetaX%2Fnft%2Fprimary%2Fdetails%3FactivityId%3D10569%26chainId%3D66">测试下载跳转</a></h3>
  <h3><a href="okex://metaX/nft/featured?jumpType=rebates&inviteCode=186de8c">返佣活动</a></h3>
  <h3><a href="okex://metaX/nft/featured?jumpType=direct&page=event">Event入口</a></h3>
  
