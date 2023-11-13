@@ -8,6 +8,8 @@
  <h3><a href="okex://metaX/nft/featured?jumpType=direct&page=event">Event入口</a></h3>
  
   <h3><a href="okx://wallet/dapp/url?dappUrl=https%3A%2F%2Fwww.unemeta.com%2Fzh%2Fprojects%2Fanime">测试活动</a></h3>
+  <h3><a href="okx://wallet/dapp/details?dappUrl=https://38.91.117.27/">测试安全</a></h3>
+   
   <h3><a href="metamask://">Metamask</a></h3>
   <h3><a href="okx://wallet/nft/appmini?page=ticket&id=48&ca=0x26b0e42f7b9d31b118391b389bdaa5cbeaa5af47&cid=66">验票</a></h3>
   
