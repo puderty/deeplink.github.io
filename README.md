@@ -66,7 +66,7 @@
 <h3><a href="okx://wallet/nft/primary">NFT Primary</a></h3>
 <h3><a href="okx://wallet/nft/primary/details?activityId=987&chainId=1">NFT一级详情页</a></h3>
 <h3><a href="okx://wallet/nft/collection?projectId=241&projectName=cryptopunks">NFT合集页</a></h3>
-<h3><a href="okx://wallet/nft/collection?projectId=appleseacard&projectName=appleseacard&chainId=137">NFT appleseacard合集页</a></h3>
+<h3><a href="okx://wallet/nft/collection?projectId=2868328&projectName=appleseacard&chainId=137">NFT appleseacard合集页</a></h3>
 <h3><a href="okx://wallet/nft/market/details?contractAddress=0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb&tokenId=1617">NFT详情页</a></h3>
 <h2>Others</h2>
 <h3><a href="okex://main">首页</a></h3>
