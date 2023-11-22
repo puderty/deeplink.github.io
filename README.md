@@ -6,6 +6,7 @@
  <h3><a href="https://www.okx.com/download?deeplink=okex%3A%2F%2FmetaX%2Fnft%2Fprimary%2Fdetails%3FactivityId%3D10569%26chainId%3D66">测试下载跳转</a></h3>
  <h3><a href="okex://metaX/nft/featured?jumpType=rebates&inviteCode=186de8c">返佣活动</a></h3>
  <h3><a href="okex://metaX/nft/featured?jumpType=direct&page=event">Event入口</a></h3>
+ <h3><a href="okx://wallet/annualreport">年度账单</a></h3>
  
   <h3><a href="okx://wallet/dapp/url?dappUrl=https%3A%2F%2Fwww.unemeta.com%2Fzh%2Fprojects%2Fanime">测试活动</a></h3>
   <h3><a href="okx://wallet/dapp/details?dappUrl=https://38.91.117.27/">测试安全</a></h3>
