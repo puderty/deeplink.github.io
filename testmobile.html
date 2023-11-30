@@ -33,7 +33,7 @@
     var button = document.getElementById('connectOKX');
 
     // 添加点击事件
-    button.addEventListener('click', function() {
+    button.addEventListener('click', async function() {
         // 在点击时执行的操作
         const ua = navigator.userAgent;
         const isIOS = /iphone|ipad|ipod|ios/i.test(ua);
