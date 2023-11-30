@@ -50,9 +50,10 @@
           const accounts = await window.okxwallet.request({
                 method: "eth_requestAccounts",
             });
-          label.textContent = '已连接到OKX，地址是：' + accounts;
+          button.textContent = "已连接";
+          label.textContent = '地址是：' + accounts;
           const chainId = await window.okxwallet.request({ method: 'eth_chainId' }); 
-          label.textContent = '已连接到OKX，地址是：' + accounts + " 链ID是: " + chainId;  
+          label.textContent = '已连接到OKX，地址是：' + accounts + " \n链ID是: " + chainId;  
         }
     });
 </script>
