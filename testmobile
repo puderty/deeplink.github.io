@@ -1,0 +1,18 @@
+Jump to OKX Discover
+<script>
+const ua = navigator.userAgent;
+const isIOS = /iphone|ipad|ipod|ios/i.test(ua);
+const isAndroid = /android|XiaoMi|MiuiBrowser/i.test(ua);
+const isMobile = isIOS || isAndroid;
+const isOKApp = /OKApp/i.test(ua);
+
+if(isMobile && !isOKApp){
+  // open dapp in OKX App
+  // replace 'https://opensea.io' with your dapp url
+  window.location.href='https://www.okx.com/download?deeplink=okx%3A%2F%2Fwallet%2Fdapp%2Furl%3FdappUrl%3Dhttps%253A%252F%252Fdeeplink.oker.vip%252Ftest';
+}
+
+
+
+</script>
+Testbbb
