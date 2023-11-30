@@ -1,19 +1,41 @@
-Jump to OKX Discover
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect to OKX Wallet</title>
+</head>
+<body>
+
+<button id="connectOKX" type="button">Connect OKX</button>
+<label id="accountLabel"></label>
 <script>
-const ua = navigator.userAgent;
-const isIOS = /iphone|ipad|ipod|ios/i.test(ua);
-const isAndroid = /android|XiaoMi|MiuiBrowser/i.test(ua);
-const isMobile = isIOS || isAndroid;
-const isOKApp = /OKApp/i.test(ua);
+   
+    // 获取按钮元素
+    var button = document.getElementById('connectOKX');
 
-if(isMobile && !isOKApp){
-  // open dapp in OKX App
-  // replace 'https://opensea.io' with your dapp url
-  const encodedUrl = "https://www.okx.com/download?deeplink=" + encodeURIComponent("okx://wallet/dapp/url?dappUrl=" + encodeURIComponent(location.href));
-  window.location.href = encodedUrl;
-}
-
-
-
+    // 添加点击事件
+    button.addEventListener('click', function() {
+        // 在点击时执行的操作
+        const ua = navigator.userAgent;
+        const isIOS = /iphone|ipad|ipod|ios/i.test(ua);
+        const isAndroid = /android|XiaoMi|MiuiBrowser/i.test(ua);
+        const isMobile = isIOS || isAndroid;
+        const isOKApp = /OKApp/i.test(ua);
+        var label = document.getElementById('myLabel');
+      
+        if (isMobile && !isOKApp){
+          // open dapp in OKX App
+          // replace 'https://opensea.io' with your dapp url
+          const encodedUrl = "https://www.okx.com/download?deeplink=" + encodeURIComponent("okx://wallet/dapp/url?dappUrl=" + encodeURIComponent(location.href));
+          window.location.href = encodedUrl;
+        } else if (window.okxwallet) {
+          var address = okxwallet.request({ method: 'eth_requestAccounts' });
+          label.textContent = '已连接到OKX，地址是：' + address;
+        }
+    });
 </script>
-Testbbb
+
+</body>
+</html>
+
