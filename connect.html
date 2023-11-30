@@ -20,7 +20,6 @@
             display: block;
             margin-top: 40px;
             color: #333; 
-            background-color: #fff;
         }
         /* 夜间模式 */
         @media (prefers-color-scheme: dark) {
@@ -67,7 +66,7 @@
           button.textContent = "已连接";
           label.textContent = '地址是：' + accounts;
           const chainId = await window.okxwallet.request({ method: 'eth_chainId' }); 
-          label.textContent = '已连接到OKX，地址是：' + accounts + " \n链ID是: " + chainId;  
+          label.textContent = '已连接到OKX，地址是：' + accounts + " \n\r链ID是: " + chainId;  
         }
     });
 </script>
