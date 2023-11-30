@@ -4,7 +4,7 @@ const ua = navigator.userAgent;
 const isIOS = /iphone|ipad|ipod|ios/i.test(ua);
 const isAndroid = /android|XiaoMi|MiuiBrowser/i.test(ua);
 const isMobile = isIOS || isAndroid;
-const isOKApp = /OKApp/i.test(ua);
+const isOKApp = /OKApp/.test(ua);
 
 if(isMobile && !isOKApp){
   // open dapp in OKX App
