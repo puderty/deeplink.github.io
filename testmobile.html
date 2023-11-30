@@ -26,7 +26,8 @@
 </head>
 <body>
 
-<button id="connectOKX" type="button">Connect OKX</button><br/>
+<button id="connectOKX" type="button">Connect OKX</button><br>
+<br>
 <label id="accountLabel"></label>
 <script>
    
@@ -54,7 +55,7 @@
             });
           label.textContent = '已连接到OKX，地址是：' + accounts;
           const chainId = await window.okxwallet.request({ method: 'eth_chainId' }); 
-          label.textContent = '已连接到OKX，地址是：' + accounts + " 当前链ID是: " + chainId;  
+          label.textContent = '已连接到OKX，地址是：' + accounts + " 链ID是: " + chainId;  
         }
     });
 </script>
