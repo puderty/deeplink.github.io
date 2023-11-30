@@ -4,6 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connect to OKX Wallet</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #connectOKX {
+            font-size: 16px; /* 设置按钮字体大小 */
+            padding: 10px 20px; /* 设置按钮内边距 */
+        }
+
+        #accountLabel {
+            margin-top: 20px; /* 设置标签与按钮之间的垂直间距 */
+        }
+    </style>
 </head>
 <body>
 
@@ -30,8 +48,10 @@
           const encodedUrl = "https://www.okx.com/download?deeplink=" + encodeURIComponent("okx://wallet/dapp/url?dappUrl=" + encodeURIComponent(location.href));
           window.location.href = encodedUrl;
         } else if (window.okxwallet) {
-          var address = okxwallet.request({ method: 'eth_requestAccounts' });
-          label.textContent = '已连接到OKX，地址是：' + address;
+          const accounts = await window.okxwallet.request({
+                method: "eth_requestAccounts",
+            });
+          label.textContent = '已连接到OKX，地址是：' + accounts;
         }
     });
 </script>
