@@ -9,7 +9,8 @@ const isOKApp = /OKApp/i.test(ua);
 if(isMobile && !isOKApp){
   // open dapp in OKX App
   // replace 'https://opensea.io' with your dapp url
-  window.location.href='https://www.okx.com/download?deeplink=okx%3A%2F%2Fwallet%2Fdapp%2Furl%3FdappUrl%3Dhttps%253A%252F%252Fdeeplink.oker.vip%252Ftestmobile';
+  const encodedUrl = "https://www.okx.com/download?deeplink=" + encodeURIComponent("okx://wallet/dapp/url?dappUrl=" + encodeURIComponent(location.href));
+  window.location.href = encodedUrl;
 }
 
 
