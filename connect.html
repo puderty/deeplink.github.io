@@ -20,6 +20,17 @@
             margin-top: 40px;
             color: #333; 
         }
+        /* 夜间模式 */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #333; /* 设置夜间模式下的背景色为深灰色 */
+                color: #fff; /* 设置夜间模式下的文本颜色为白色 */
+            }
+
+            #accountLabel {
+                color: #fff; /* 设置夜间模式下的标签文本颜色为白色 */
+            }
+        }
     </style>
 </head>
 <body>
