@@ -7,6 +7,7 @@
  <h3><a href="okex://metaX/nft/featured?jumpType=rebates&inviteCode=186de8c">返佣活动</a></h3>
  <h3><a href="okex://metaX/nft/featured?jumpType=direct&page=event">Event入口</a></h3>
  <h3><a href="okx://wallet/annualreport">年度账单</a></h3>
+ <h3><a href="okx://wallet/nft/featured?jumpType=inscription">铭刻</a></h3>
  
   <h3><a href="okx://wallet/dapp/url?dappUrl=https%3A%2F%2Fpreview.crossspace.io%2Fasync%2Fasync-trade-keys%3Faddress%3D0x49c6201bd9560aC4A86F8606A520276b23Fca5dC%26abi%3DtradeAbi%26function_name%3DbuyShares%26args%3D%255B%25220x7f9c6c80e4c0aDECa66D2299d368FdE1f1392E57%2522%252C%2522655f0ec4ebc6559705b419ec%2522%252C1%255D%26value%3D7559999999999999997%26contractNetwork%3D137%26feedID%3D655f0ec4ebc6559705b419ec%26orderInfo%3D%257B%2522ticketPrice%2522%253A%25223600000000000000000%2522%252C%2522creatorKeyQuantity%2522%253A%25221002347564283732027%2522%252C%2522keyPrice%2522%253A%25223599999999999999999%2522%252C%2522fee%2522%253A%2522359999999999999998%2522%252C%2522totalPrice%2522%253A%25227559999999999999997%2522%252C%2522tradeType%2522%253A%2522buy%2522%252C%2522amount%2522%253A1%257D%26sid%3Df03b5185-be11-458f-b47e-ff5cb7d92f00">测试活动</a></h3>
   <h3><a href="okx://wallet/dapp/details?dappUrl=https://38.91.117.27/">测试安全</a></h3>
