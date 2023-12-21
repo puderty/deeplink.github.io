@@ -18,8 +18,8 @@
 <h3><a href="okex://metaX/dapp/details?dappUrl=https://opensea.io">Dapp打开Opensea</a></h3>
 <h3><a href="okex://metaX/dapp/">Discover</a></h3>
 <h3><a href="okx://wallet/dapp/?clid=NFTEST">Discover okx 带channelID</a></h3>
-<h3><a href="okx://wallet/dapp/url?dappUrl=https%3A%2F%2Fwww.okx.com%2Fokc%2Fliquid-staking%2Fstake">Stake活动</a></h3>
-<h3><a href="okx://wallet/dapp/details?dappUrl=https%3A%2F%2Fopensea.io&clid=NFTEST">Opensea新</a></h3>
+<h3><a href="okx://wallet/dapp/url?dappUrl=https%3A%2F%2Fopensea.io%2Fassets%2Fethereum%2F0xbd3531da5cf5857e7cfaa92426877b022e612cf8%2F1682%3Ft%3D1&clid=NFTEST">Opensea直跳</a></h3>
+<h3><a href="okx://wallet/dapp/details?dappUrl=https%3A%2F%2Fopensea.io%2Fassets%2Fethereum%2F0xbd3531da5cf5857e7cfaa92426877b022e612cf8%2F1682%3Ft%3D1&clid=NFTEST">Opensea切tab跳</a></h3>
 <h3><a href="https://www.okx.com/download?deeplink=okx%3A%2F%2Fwallet%2Fdapp%2Furl%3FdappUrl%3Dhttps%253A%252F%252Fdappradar.com">dapp打开dappradar https</a></h3>
 <h3><a href="okex://web?url=https://www.okx.com/okc/liquid-staking/stake">Stake活动webview</a></h3>
 <h3><a href="okx://wallet/invest/home?jumpType=2&openUrl=https%3A%2F%2Fwww.okx.com%2Fweb3%2Fyield%2Fcampaign%2FIRI5KH">yield活动</a></h3>
