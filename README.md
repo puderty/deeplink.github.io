@@ -7,6 +7,7 @@
  <h3><a href="okex://metaX/nft/featured?jumpType=rebates&inviteCode=186de8c">返佣活动</a></h3>
  <h3><a href="okex://metaX/nft/featured?jumpType=direct&page=event">Event入口</a></h3>
  <h3><a href="okx://miniapp?appid=Web3AnnualReport2023&pageurl=%2Fweb3annual">年度账单</a></h3>
+ <h3><a href="https://www.okx.com/download?deeplink=eport2023%26pageurl%3D%252Fweb3annual">年度账单https</a></h3>
  <h3><a href="okx://wallet/annualreport">年度账单自带d</a></h3>
  <h3><a href="okx://wallet/nft/featured?jumpType=inscription">铭刻</a></h3>
  
