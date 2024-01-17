@@ -17,6 +17,8 @@
  
   <h3><a href="okx://wallet/dapp/url?dappUrl=https%3A%2F%2Fwww.okx.com%2Fcn%2Fweb3%2Fmarketplace%2Fnft%2Fasset%2Feth%2F0xe841e6e68becfc54b621a23a41f8c1a829a4cf44%2F6176">discover到NFT详情页https</a></h3>
   <h3><a href="okx://wallet/dapp/url?dappUrl=https%3A%2F%2Fwww.okx.com%2Fweb3%2Fmarketplace%2Fnft%2Fcollection%2Feth%2Fazuki">discover到NFT合集页https</a></h3>
+<h3><a href="okx://wallet/dapp/url?dappUrl=https%3A%2F%2Fwww.okx.com%2Fweb3%2Fmarketplace%2Flaunchpad%2Fevent%2Fnobody">discover到drops https</a></h3>
+  
   <h3><a href="okx://wallet/dapp/details?dappUrl=https://38.91.117.27/">测试安全</a></h3>
    
   <h3><a href="metamask://">Metamask</a></h3>
