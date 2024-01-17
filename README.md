@@ -4,7 +4,7 @@
 <h2>NFT(okex://metaX/)</h2>
 
 <input type="text" id="inputText" placeholder="在这里输入deeplink">
-    <button onclick="showInput()">获取输入并弹出</button>
+    <button onclick="showInput()">跳转</button>
     
  <h3><a href="https://www.okx.com/download?deeplink=okex%3A%2F%2FmetaX%2Fnft%2Fprimary%2Fdetails%3FactivityId%3D10569%26chainId%3D66">测试下载跳转</a></h3>
  <h3><a href="okex://metaX/nft/featured?jumpType=rebates&inviteCode=186de8c">返佣活动</a></h3>
@@ -96,8 +96,7 @@
             // 获取输入框中的文本
             var inputValue = document.getElementById('inputText').value;
 
-            // 弹出获取的文本
-            alert('你输入的文本是: ' + inputValue);
+            window.location.href=inputValue
         }
         function onButtonClick() {
          window.open("https://www.okx.com/download?deeplink=okx%3A%2F%2Fwallet%2Fdapp%2Furl%3FdappUrl%3Dhttps%253A%252F%252Fdappradar.com", "_self")
