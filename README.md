@@ -88,6 +88,7 @@
 <h3><a href="okex://web?url=https://www.okx.com/academy">学院(语言自适应)</a></h3>
 <h3><a href="okex://web?url=https://www.okx.com/academy/zh">学院(中文)</a></h3>
 <h3><a href="okex://web?url=https://www.okx.com/academy/en">学院(英文)</a></h3>
+<h3><a href="https://www.okx.com/download?deeplink=okex%3A%2F%2Fweb%3Furl%3Dhttps%3A%2F%2Fwww.okx.com%2Facademy%2Fen">学院(英文https)</a></h3>
 <h3><a href="okex://security_bind_email">绑定邮箱</a></h3>
 <h3><a href="okex://assets/overview_analysis?account_type=0">资产分析</a></h3>
 <h3><a href="/test">测试</a></h3>
