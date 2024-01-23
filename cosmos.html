@@ -81,7 +81,7 @@
 
     signMessageButton.addEventListener('click', async () => {
       try {
-        const addr = await mykeplr.getKey(chainId)
+        const addr = await window.keplr.getKey(chainId)
         const address = addr.bech32Address
         // !!!okx app can not use signArbitrary function, (funciont in doc, but no response)
         // const res = await window.keplr.signArbitrary(chainId, address, 'test cosmos')
