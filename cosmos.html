@@ -36,7 +36,7 @@
       return new Promise((resolve) => {
         const documentStateChange = (event) => {
           if (event.target.readyState === 'complete') {
-            console.log("find keplr ready state 2");
+            console.log("find keplr ready state 2", window.keplr);
             resolve(window.keplr)
             document.removeEventListener('readystatechange', documentStateChange)
           }
