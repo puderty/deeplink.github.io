@@ -102,7 +102,7 @@
 
     async function getAccount() {
       try {
-        mykeplr.enable(chainId)
+        window.keplr.enable(chainId)
         const res = await window.keplr.getKey(chainId)
         publicKey = res.bech32Address
         resultDom.innerHTML = publicKey
