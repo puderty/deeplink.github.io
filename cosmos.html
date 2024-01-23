@@ -84,10 +84,10 @@
         const addr = await mykeplr.getKey(chainId)
         const address = addr.bech32Address
         // !!!okx app can not use signArbitrary function, (funciont in doc, but no response)
-        // const res = await mykeplr.signArbitrary(chainId, address, 'test cosmos')
+        // const res = await window.keplr.signArbitrary(chainId, address, 'test cosmos')
 
         // !!!okx app not compliant with ADR-36.
-        const res = await mykeplr.signArbitrary(
+        const res = await window.keplr.signArbitrary(
           chainId,
           address,
           'test cosmos'
@@ -107,8 +107,8 @@
 
     async function getAccount() {
       try {
-        mykeplr.enable(chainId)
-        const res = await mykeplr.getKey(chainId)
+        window.keplr.enable(chainId)
+        const res = await window.keplr.getKey(chainId)
         publicKey = res.bech32Address
         resultDom.innerHTML = publicKey
       } catch (error) {
