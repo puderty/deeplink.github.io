@@ -1,0 +1,114 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>COSS</title>
+  </head>
+
+  <body style="background-color: black; color: white;">
+    <button class="enableCosmosButton">Connect Cosmos</button>
+    <button class="signMessageButton">Sign Message</button>
+
+    <div>
+      <strong>Result:</strong>
+      <span class="result"> </span>
+    </div>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317" integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA==" data-cf-beacon='{"rayId":"84738b774d2d0449","version":"2023.10.0","token":"7ec358d60dff440cb6791c0239f61c2d"}' crossorigin="anonymous"></script>
+</body>
+  <script type="text/javascript">
+    async function getKeplrFromWindow() {
+      if (typeof window === 'undefined') {
+        return undefined
+      }
+
+      if (window.keplr) {
+        return window.keplr
+      }
+
+      if (document.readyState === 'complete') {
+        return window.keplr
+      }
+
+      return new Promise((resolve) => {
+        const documentStateChange = (event) => {
+          if (event.target.readyState === 'complete') {
+            resolve(window.keplr)
+            document.removeEventListener('readystatechange', documentStateChange)
+          }
+        }
+
+        document.addEventListener('readystatechange', documentStateChange)
+      })
+    }
+    let mykeplr = null
+    getKeplrFromWindow().then((value) => {
+      mykeplr = value
+    })
+
+    const makeADR36AminoSignDoc = function (signer, data) {
+      data = btoa(data)
+      return {
+        chain_id: '',
+        account_number: '0',
+        sequence: '0',
+        fee: {
+          gas: '0',
+          amount: []
+        },
+        msgs: [
+          {
+            type: 'sign/MsgSignData',
+            value: {
+              signer,
+              data
+            }
+          }
+        ],
+        memo: ''
+      }
+    }
+    const enableCosmosButton = document.querySelector('.enableCosmosButton')
+    const signMessageButton = document.querySelector('.signMessageButton')
+    const resultDom = document.querySelector('.result')
+
+    let publicKey = ''
+    const chainId = 'cosmoshub-4'
+
+    signMessageButton.addEventListener('click', async () => {
+      try {
+        const addr = await window.keplr.getKey(chainId)
+        const address = addr.bech32Address
+
+        // const res = await mykeplr.signArbitrary(chainId, address, 'test cosmos')
+        const res = await window.keplr.signAmino(
+          chainId,
+          address,
+          makeADR36AminoSignDoc(address, 'test cosmos')
+        )
+        console.log(res)
+        resultDom.innerHTML = JSON.stringify(res)
+      } catch (error) {
+        console.log(error)
+        resultDom.innerHTML = error?.message || error
+      }
+    })
+
+    enableCosmosButton.addEventListener('click', async () => {
+      console.log('enableCosmosButton')
+      await getAccount()
+    })
+
+    async function getAccount() {
+      try {
+        mykeplr.enable(chainId)
+        const res = await window.keplr.getKey(chainId)
+        publicKey = res.bech32Address
+        resultDom.innerHTML = publicKey
+      } catch (error) {
+        console.log(error)
+      }
+    }
+  </script>
+</html>
