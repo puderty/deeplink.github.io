@@ -64,11 +64,11 @@
           // open dapp in OKX App
           // replace 'https://opensea.io' with your dapp url
           
-            
-           window.location.href = encodedUrl;
+           const encodedUrl = "https://www.okx.com/download?deeplink=" + encodeURIComponent("okx://wallet/dapp/url?dappUrl=" + encodeURIComponent(location.href)); 
+           //window.location.href = encodedUrl;
            // window.location.replace(encodedUrl);
           //  window.location = encodedUrl;
-          //window.open(encodedUrl);
+          window.open(encodedUrl);
            // window.open("okx://wallet/dapp/url?dappUrl=" + encodeURIComponent(location.href));
         } else if (window.okxwallet) {
           const accounts = await window.okxwallet.request({
