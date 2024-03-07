@@ -9,7 +9,7 @@
  <h3><a href="https://www.okx.com/download?deeplink=okex%3A%2F%2FmetaX%2Fnft%2Fprimary%2Fdetails%3FactivityId%3D10569%26chainId%3D66">测试下载跳转</a></h3>
  <h3><a href="okex://metaX/nft/featured?jumpType=rebates&inviteCode=186de8c">返佣活动</a></h3>
  <h3><a href="okex://metaX/nft/featured?jumpType=direct&page=event">Event入口</a></h3>
- <h3><a href="okx://wallet/nft/appmini?jumpType=direct&page=pointDashboard">mini测试</a></h3>
+ <h3><a href="okx://wallet/nft/appmini?page=pointDashboard">mini测试</a></h3>
  
  <h3><a href="okx://miniapp?appid=Web3AnnualReport2023&pageurl=%2Fweb3annual">年度账单</a></h3>
  <h3><a href="https://www.okx.com/download?deeplink=okx%3A%2F%2Fminiapp%3Fappid%3DWeb3AnnualReport2023%26pageurl%3D%252Fweb3annual">年度账单https</a></h3>
