@@ -121,11 +121,7 @@
 }, 2000);
         }
  function onButtonClick4() {
-         var result = confirm("Are you sure?");
-
-  setTimeout(function() {
-       var result = confirm("Are you sure again?");
-}, 2000);
+         window.open('https://www.baidu.com', 'new_window');
         }
     </script>
 <button onclick="onButtonClick()">test https open</button>
