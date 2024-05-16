@@ -9,6 +9,8 @@
 <h3><a href="okx://wallet/nft/primary/details?activityId=10716&chainId=0">1BTC Drops活动</a></h3>
  <h3><a href="https://www.okx.com/download?deeplink=okex%3A%2F%2FmetaX%2Fnft%2Fprimary%2Fdetails%3FactivityId%3D10569%26chainId%3D66">测试下载跳转</a></h3>
  <h3><a href="https://www.okx.com">测试推特跳转</a></h3>
+ <h3><a href="https://www.oklink.com">测试oklink跳转</a></h3>
+ <h3><a href="https://www.google.com">测试google跳转</a></h3>
  <h3><a href="https://www.okx.com/zh-hans/web3/marketplace/launchpad/share?platform=twitter&App=true&scope=tweet.read">测试推特跳转无302</a></h3>
  <h3><a href="okex://metaX/nft/featured?jumpType=direct&page=event">Event入口</a></h3>
  <h3><a href="okx://wallet/nft/appmini?page=pointDashboard">mini测试</a></h3>
