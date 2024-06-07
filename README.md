@@ -51,7 +51,6 @@
  <h3><a href="okex://metaX/nft/featured?jumpType=jump&page=christmas_create">chrimstmas</a></h3>
   <h3><a href="okex://metaX/nft/featured?jumpType=jump&page=rebates">rebate</a></h3>
 <h3><a href="okex://metaX/nft/creation">NFT创作欢迎页</a></h3>
-<h3><a href="okex://metaX/nft/featured?jumpType=aptos_trade">aptos交易活动</a></h3>
 <h3><a href="okex://metaX/nft/market">NFT市场</a></h3>
  <h3><a href="okex://metaX/nft/featured?jumpType=jump&page=explore&chainId=66">NFT市场直跳</a></h3>
  <h3><a href="okex://metaX/nft/featured?jumpType=ordinals">ordinals</a></h3>
