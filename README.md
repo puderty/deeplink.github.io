@@ -127,6 +127,7 @@
 }, 2000);
         }
  function onButtonClick4() {
+         console.log("tttoken", window.localStorage.getItem("token"))
          window.open('https://www.baidu.com', 'new_window');
         }
     </script>
