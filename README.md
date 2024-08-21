@@ -7,6 +7,7 @@
     <button onclick="showInput()">跳转</button>
     
     <h3><a href="okx://wallet/nft/featured?jumpType=jump&page=mclaren">麦卡伦活动</a></h3>
+    <h3><a href="okx://web3/wallet/connect">connect</a></h3>
 <h3><a href="okx://wallet/nft/primary/details?activityId=10716&chainId=0">1BTC Drops活动</a></h3>
  <h3><a href="https://www.okx.com/download?deeplink=okex%3A%2F%2FmetaX%2Fnft%2Fprimary%2Fdetails%3FactivityId%3D10569%26chainId%3D66">测试下载跳转</a></h3>
  <h3><a href="https://www.okx.com/zh-hans/web3/marketplace/launchpad/share?platform=twitter&App=true&state=state&code=U25OeFFKSGtuZjByZ3BZbWlMV1RYZHliX3I1WG0xU09pdEtxeGg2anBoVElqOjE3MTYyNjA0NjgzNjM6MTowOmFjOjE">测试www.okx.com跳转</a></h3>
