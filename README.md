@@ -7,6 +7,8 @@
     <button onclick="showInput()">跳转</button>
     
     <h3><a href="okx://wallet/nft/featured?jumpType=jump&page=mclaren">麦卡伦活动</a></h3>
+    <h3><a href="[okx://wallet/nft/featured?jumpType=jump&page=mclaren](https://www.okx.com/download?deeplink=okx%3A%2F%2Fwallet%2Fnft%2Ffeatured%3FjumpType%3Djump%26page%3Dmclaren%26appearance%3Dalternativeweb3%26qr%3Dmc%26aid%3D29)">麦卡伦活动https</a></h3>
+    
     <h3><a href="okx://web3/wallet/connect">connect</a></h3>
 <h3><a href="okx://wallet/nft/primary/details?activityId=10716&chainId=0">1BTC Drops活动</a></h3>
 <h3><a href="https://www.okx.com/download?deeplink=okx%3A%2F%2Fminiapp%3Fappid%3Dokluanftactivity%26pageurl%3D%252Fcryptopedia%26cryptopediaId%3D45%26chainId%3D1">test</a></h3>
