@@ -50,11 +50,11 @@
 <h3><a href="https://www.okx.com/download?deeplink=okx%3A%2F%2Fwallet%2Fdapp%2Furl%3FdappUrl%3Dhttps%253A%252F%252Fdappradar.com">dapp打开dappradar https</a></h3>
 <h3><a href="okex://web?url=https://www.okx.com/okc/liquid-staking/stake">Stake活动webview</a></h3>
 <h3><a href="okx://wallet/invest/home?jumpType=2&openUrl=https%3A%2F%2Fwww.okx.com%2Fweb3%2Fyield%2Fcampaign%2FIRI5KH">yield活动</a></h3>
+<h3><a href="okex://metaX/nft/featured">NFT首页</a></h3>
 <h3><a href="okex://metaX/nft/featured?jumpType=worldcup">NFT世界杯</a></h3>
 <h3><a href="okex://web?url=https://www.oklink.com/report/year2022?hmsr=web3banner&hmpl=&hmcu=&hmkw=&hmci=">OKLink年终总结</a></h3>
 <h3><a href="okex://metaX/nft/featured?jumpType=christmas_create">NFT圣诞节活动</a></h3>
  <h3><a href="okex://metaX/nft/featured?jumpType=jump&page=ticket&id=31&contractAddress=0x5da64df7d73b9bab8f3d02daa8a13158fe6344c1&chain=1">NFT ticket</a></h3>
-<h3><a href="okex://metaX/nft/featured">NFT首页</a></h3>
  <h3><a href="okex://metaX/nft/featured?jumpType=jump&page=christmas_create">chrimstmas</a></h3>
   <h3><a href="okex://metaX/nft/featured?jumpType=jump&page=rebates">rebate</a></h3>
 <h3><a href="okex://metaX/nft/creation">NFT创作欢迎页</a></h3>
@@ -86,7 +86,6 @@
   <h2>NFT新(okx://wallet/)</h2>
 <h3><a href="okx://wallet/dapp/details?dappUrl=https://opensea.io">Dapp打开Opensea</a></h3>
 <h3><a href="okx://wallet/nft/featured?jumpType=worldcup">NFT世界杯</a></h3>
-<h3><a href="okx://wallet/nft/featured">NFT首页</a></h3>
 <h3><a href="okx://wallet/nft/creation">NFT创作欢迎页</a></h3>
 <h3><a href="okx://wallet/nft/featured?jumpType=aptos_trade">aptos交易活动</a></h3>
 <h3><a href="okx://wallet/nft/market">NFT市场</a></h3>
@@ -111,6 +110,49 @@
 <h3><a href="https://www.okx.com/download?deeplink=okex%3A%2F%2Fweb%3Furl%3Dhttps%3A%2F%2Fwww.okx.com%2Facademy%2Fen">学院(英文https)</a></h3>
 <h3><a href="okex://security_bind_email">绑定邮箱</a></h3>
 <h3><a href="okex://assets/overview_analysis?account_type=0">资产分析</a></h3>
+
+<h2>NFT 直跳(okx://wallet/nft/appmini/)</h2>
+<h3><a href="okx://wallet/nft/appmini?page=explore&chainId=1&state=buyNow">NFT首页</a></h3>
+<h3><a href="okx://wallet/nft/appmini?page=primary&activityId=701&chainId=1">一级市场详情</a></h3>
+<h3><a href="okx://miniapp?appid=okluanftactivity&pageurl=/nftactivity&activityId=44&chainId=0">一级市场详情容器化</a></h3>
+<h3><a href="okx://wallet/nft/appmini?page=ticket&id=26&contractAddress=0xb2b4cafa17f92b42263f223382e9751b4307b817&chain=66">一级市场门票验票页面</a></h3>
+<h3><a href="okx://wallet/nft/appmini?page=brc20_collections&brc20Id=OXBT&selectTab=1&tokenId=860960:2358&tickerType=4">币种详情页</a></h3>
+<h3><a href="okx://miniapp?appid=okluanftactivity&pageurl=/nftactivity&activityId=10848&chainId=137">Drops 容器化</a></h3>
+
+
+
+<h2>NFT 切Tab再跳转</h2>
+<h3><a href="okx://wallet/nft/featured">MarketPlace Tab</a></h3>
+<h3><a href="okx://wallet/nft/ranking">排行榜</a></h3>
+<h3><a href="okx://wallet/nft/primary">一级市场</a></h3>
+<h3><a href="okx://wallet/nft/search?searchKey=CryptoPunks">搜索 searchKey = CryptoPunks</a></h3>
+<h3><a href="okx://wallet/nft/creation">一级市场</a></h3>
+<h3><a href="okx://wallet/nft/market">NFT首页</a></h3>
+<h3><a href="okx://wallet/nft/market/details?contractAddress=0xed5af388653567af2f388e6224dc7c4b3241c544&tokenId=1708&chainId=1&nftId=28796280713211907
+">详情页面</a></h3>
+<h3><a href="okx://wallet/nft/collection?projectId=52831&projectName=Azuki&chainId=1">合集页面</a></h3>
+<h3><a href="okx://wallet/nft/featured?jumpType=ordinals&selectTab=brc20">Ordinals tab</a></h3>
+<h3><a href="okx://wallet/nft/featured?jumpType=brc20_collections&brc20Id=OXBT&selectTab=1&tokenId=860960:2358&tickerType=4">币种详情页</a></h3>
+<h3><a href="okx://wallet/nft/featured?jumpType=inscription">铭刻</a></h3>
+<h3><a href="okx://wallet/nft/featured?jumpType=cart">购物车</a></h3>
+<h3><a href="okx://wallet/nft/featured?jumpType=myCreate">我的创作</a></h3>
+<h3><a href="okx://wallet/nft/featured?jumpType=myFavorite">我的收藏</a></h3>
+<h3><a href="okx://wallet/wallet/home/nft">个人中心-我的NFT</a></h3>
+<h3><a href="okx://wallet/nft/featured?jumpType=nftOrderCenter">NFT订单中心</a></h3>
+<h3><a href="okx://wallet/nft/featured?jumpType=runes">Runes Tab</a></h3>
+
+<h2>Discover 直接跳</h2>
+<h3><a href="okx://wallet/dapp/url?dappUrl=https%3A%2F%2Fwww.unemeta.com%2Fzh%2Fprojects%2Fanime">DApp details/DApp详情</a></h3>
+<h3><a href="okx://wallet/dapp/appmini?page=event">Discover Event首页</a></h3>
+<h3><a href="okx://wallet/nft/appmini?page=event_detail&eventId=1543">Discover Event详情页</a></h3>
+<h3><a href="okx://miniapp?appid=okluanftactivity&pageurl=/cryptopedia&cryptopediaId=44&chainId=0&dappId=56133&dappCategory=1">Cryptopedia某期详情页</a></h3>
+
+<h2>Discover 切Tab再跳转</h2>
+<h3><a href="okx://wallet/dapp/details?dappUrl=https://lido.fi/">DApp details/DApp详情</a></h3>
+<h3><a href="okx://wallet/dapp?page=Ecosystemhub">EcoHub</a></h3>
+
+
+
 <h3><a href="/test">测试</a></h3>
 <script>
  function showInput() {
