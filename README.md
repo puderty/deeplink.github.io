@@ -141,7 +141,7 @@
 <h3><a href="okx://wallet/nft/featured?jumpType=nftOrderCenter">NFT订单中心</a></h3>
 <h3><a href="okx://wallet/nft/featured?jumpType=runes">Runes Tab</a></h3>
 <h3><a href="okx://wallet/nft/featured?jumpType=swagStore">SwagStore</a></h3>
-<h3><a href="okx://wallet/nft/appmini?page=swagStoreScene&scene=okx">SwagStore场景页面</a></h3>
+<h3><a href="okx://wallet/nft/featured?jumpType=swagStoreScene&scene=okx">SwagStore场景页面</a></h3>
 
 <h2>Discover 直接跳</h2>
 <h3><a href="okx://wallet/dapp/url?dappUrl=https%3A%2F%2Fwww.unemeta.com%2Fzh%2Fprojects%2Fanime">DApp details/DApp详情</a></h3>
