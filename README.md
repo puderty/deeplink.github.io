@@ -118,6 +118,8 @@
 <h3><a href="okx://wallet/nft/appmini?page=ticket&id=26&contractAddress=0xb2b4cafa17f92b42263f223382e9751b4307b817&chain=66">一级市场门票验票页面</a></h3>
 <h3><a href="okx://wallet/nft/appmini?page=brc20_collections&brc20Id=OXBT&selectTab=1&tokenId=860960:2358&tickerType=4">币种详情页</a></h3>
 <h3><a href="okx://miniapp?appid=okluanftactivity&pageurl=/nftactivity&activityId=10848&chainId=137">Drops 容器化</a></h3>
+<h3><a href="okx://wallet/nft/appmini?page=swagStore">SwagStore</a></h3>
+<h3><a href="okx://wallet/nft/appmini?page=swagStoreScene&scene=okx">SwagStore场景页面</a></h3>
 
 <h2>NFT 切Tab再跳转</h2>
 <h3><a href="okx://wallet/nft/featured">MarketPlace Tab</a></h3>
@@ -138,6 +140,8 @@
 <h3><a href="okx://wallet/wallet/home/nft">个人中心-我的NFT</a></h3>
 <h3><a href="okx://wallet/nft/featured?jumpType=nftOrderCenter">NFT订单中心</a></h3>
 <h3><a href="okx://wallet/nft/featured?jumpType=runes">Runes Tab</a></h3>
+<h3><a href="okx://wallet/nft/featured?jumpType=swagStore">SwagStore</a></h3>
+<h3><a href="okx://wallet/nft/appmini?page=swagStoreScene&scene=okx">SwagStore场景页面</a></h3>
 
 <h2>Discover 直接跳</h2>
 <h3><a href="okx://wallet/dapp/url?dappUrl=https%3A%2F%2Fwww.unemeta.com%2Fzh%2Fprojects%2Fanime">DApp details/DApp详情</a></h3>
