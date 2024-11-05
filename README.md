@@ -8,6 +8,7 @@
     
     <h3><a href="okx://wallet/nft/featured?jumpType=jump&page=mclaren">麦卡伦活动</a></h3>
     <h3><a href="https://www.ouxyi.link/ul/42nG0D">giveaway</a></h3>
+    <h3><a href="okx://wallet/dapp/url?dappUrl=https://www.okx.com%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09@google.com">测试这个</a></h3>
     <h3><a href="https://www.okx.com/download?deeplink=okx%3A%2F%2Fwallet%2Fnft%2Ffeatured%3FjumpType%3Djump%26page%3Dmclaren%26appearance%3Dalternativeweb3%26qr%3Dmc%26aid%3D29">麦卡伦活动https</a></h3>
 
 <h3><a href="https://www.okx.com/download?deeplink=okx%3A%2F%2Fwallet%2Fnft%2Ffeatured%3FjumpType%3Dinscription">铭刻</a></h3>
