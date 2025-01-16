@@ -162,8 +162,9 @@
  function showInput() {
             // 获取输入框中的文本
             var inputValue = document.getElementById('inputText').value;
+            window.open(inputValue, "_self")
 
-            window.location.href=inputValue
+            //window.location.href=inputValue
         }
         function onButtonClick() {
          window.open("https://www.okx.com/download?deeplink=okx%3A%2F%2Fwallet%2Fdapp%2Furl%3FdappUrl%3Dhttps%253A%252F%252Fdappradar.com", "_self")
