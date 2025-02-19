@@ -170,7 +170,8 @@
          window.open("https://www.okx.com/download?deeplink=okx%3A%2F%2Fwallet%2Fdapp%2Furl%3FdappUrl%3Dhttps%253A%252F%252Fdappradar.com", "_self")
     }
  function onButtonClick2() {
-       window.location.href="https://www.okx.com/download?deeplink=okx%3A%2F%2Fwallet%2Fdapp%2Furl%3FdappUrl%3Dhttps%3A%2F%2Fclaim.omtch.com%2F/"
+       var aaaa = 'https://web3.ggarcade.io/payment?t=ee1a33b83ce94101a5c719a3bc43c91f&u=7243266946&o=20250218214638620765'
+       window.location.href="okx://wallet/dapp/url?dappUrl=" + encodeURIComponent(aaaa)
         }
  function onButtonClick3() {
          // var result = confirm("Are you sure?");
