@@ -171,7 +171,8 @@
     }
  function onButtonClick2() {
        var aaaa = 'https://web3.ggarcade.io/payment?t=ee1a33b83ce94101a5c719a3bc43c91f&u=7243266946&o=20250218214638620765'
-       window.location.href="okx://wallet/dapp/url?dappUrl=" + encodeURIComponent(aaaa)
+       //window.location.href="okx://wallet/dapp/url?dappUrl=" + encodeURIComponent(aaaa)
+       window.open("okx://wallet/dapp/url?dappUrl=" + encodeURIComponent(aaaa), '_blank');
         }
  function onButtonClick3() {
          // var result = confirm("Are you sure?");
