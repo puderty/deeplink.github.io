@@ -1,6 +1,6 @@
 # OKX Connect Android SDK
 ![Platform](https://img.shields.io/badge/platform-android-green.svg)
-![Version](https://img.shields.io/badge/version-1.0.5-blue.svg)
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 A powerful SDK for integrating OKX Connect functionality into your Android applications.
 
@@ -41,7 +41,7 @@ allprojects {
 2.Add the dependency to your app's build.gradle:
 ```groovy
 dependencies {
-	implementation 'io.gitee.ganlinux:connectsdk-android:1.0.5'
+	implementation 'io.gitee.ganlinux:connectsdk-android:1.0.0'
 }
 ```
 3.Configure AndroidManifest.xml (if needed):
@@ -51,7 +51,7 @@ dependencies {
 </application>
 ```
 
-4.(Optional) Add Deep Link or Universal Link support:
+4.(Optional) Add Deeplink or Universal Link support:
 ```xml
 <intent-filter>
     <action android:name="android.intent.action.VIEW" />
@@ -111,8 +111,8 @@ val okxConnect = OKXConnectSDKAndroid.create(
     }
 )
 ```
-## Core Features
-### Connection Management
+# Core Features
+## Connection Management
 
 **Connection observe**
 
@@ -161,7 +161,8 @@ val connectJob = okxConnect.connect(
 ```
 This example use ethereum chain. You can define the chains you want.
 The API returns the connect job, you can cancel this job by yourself.
-IMPORTANT: If there are chains not support in `requiredNamespaces`, it will connect failed. If there are chains not support in `optionalNamespaces`, it will ignore it.
+
+**IMPORTANT:** If there are chains not support in `requiredNamespaces`, it will connect failed. If there are chains not support in `optionalNamespaces`, it will ignore it.
 
 **Disconnect**
 
@@ -190,16 +191,16 @@ Restore previous connection before displaying connection information.
 
 **Suspend and resume connection**
 ```java
-okxConnect.suspendConnection()
+okxConnect.suspendConnection()  //suspend
 if(okxConnect.connectionState.value == OKConnectionState.CONNECTED_SUSPENDED){
-    okxConnect.resumeConnection()
+    okxConnect.resumeConnection()  //resume
 }
 ```
 - suspendConnection - Temporarily suspends the connection by closing WebSocket to reduce network usage.Used when connection or transaction requests are not needed, such as in specific UI pages.
 - resumeConnection - Reestablishes the connection with the websocket server.
 
 
-### Send Request
+## Send Request
 
 ```java
     val request = RequestParamsMethod(method = EthMethod.PersonalSign(EVM_NORMAL_SIGNDATA), chainId = ETH)
@@ -207,10 +208,10 @@ if(okxConnect.connectionState.value == OKConnectionState.CONNECTED_SUSPENDED){
 	    ...
     }
 ```
-You can use the method entity to start request, this method will return the request job, you can cancel this job by yourself.You can find the support methods in EthMethod and SolanaMethod.
+You can use the method entity to start request, this method will return the request job and cancel this job by yourself.You can find the support methods in EthMethod and SolanaMethod, find the response type in EthMethodResponse and SolanaMethodResponse. 
 
 
-### Default Chain Management 
+## Default Chain Management 
 **Set selected chain and RPC url**
 ```java
 okxConnect.setDefaultChain("eip155:137", "https://polygon.drpc.org")
@@ -223,13 +224,14 @@ okxConnect.getDefaultChain("solana")
 Get the selected chain what you set before.
 
 
-## Blockchain Support
-### Features
+# Blockchain Support
+## Features
 - Connect and sign support
 - HTTP RPC support
+- EVM and SVM series chains support
 
 
-### Ethereum Networks
+## Ethereum Networks
 | Network | Chain ID | Constant |
 |---------|----------|----------|
 | Ethereum | eip155:1 | Ethereum.CHAIN_ID.ETH |
@@ -239,7 +241,7 @@ Get the selected chain what you set before.
 | Ronin | eip155:2020 | Ethereum.CHAIN_ID.RONIN |
 | Harmony | eip155:1666600000 | Ethereum.CHAIN_ID.HARMONY |
 
-### Solana Networks
+## Solana Networks
 | Network | Chain ID | Constant |
 |---------|----------|----------|
 | Solana Mainnet | solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp | Solana.CHAIN_ID.SOLANA_MAINNET |
