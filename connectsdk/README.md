@@ -118,7 +118,7 @@ val okxConnect = OKXConnectSDKAndroid.create(
 
 ```java
 val connectionState by okxConnect.connectionState.collectAsState()
-if(okxConnect.connectionState.value == OKConnectionState.CONNECTED_SUSPENDED){
+if(okxConnect.connectionState.value == OKConnectionState.SUSPENDED){
        // Handle suspended state
 }
 ```
@@ -192,7 +192,7 @@ Restore previous connection before displaying connection information.
 **Suspend and resume connection**
 ```java
 okxConnect.suspendConnection()  //suspend
-if(okxConnect.connectionState.value == OKConnectionState.CONNECTED_SUSPENDED){
+if(okxConnect.connectionState.value == OKConnectionState.SUSPENDED){
     okxConnect.resumeConnection()  //resume
 }
 ```
