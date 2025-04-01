@@ -3,37 +3,47 @@
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-A powerful SDK for integrating OKX Connect functionality into your Android applications.
+一个功能强大的Wallet Connect SDK，用于将 OKX Connect 功能集成到您的 Android 应用程序中。
 
-## Key Features
-- 🔒 Secure wallet connection and authentication
-- 🔄 Multi-chain support (Ethereum, Solana)
-- 📱 Deep Link and Universal Link support
-- 🌐 Customizable RPC endpoints
-- ⚡ Efficient connection state management
-- 💫 Automatic session restoration
+## 主要特性
+- 🔒 安全的钱包连接和认证
+- 🔄 多链支持 (EVM系和Solana系)
+- 📱 支持自定义 Deep Link 和 Universal Link
+- 🌐 可自定义 RPC 节点
+- ⚡ 高效的连接状态管理
+- 💫 自动会话恢复
 
-## Table of Contents
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Quick Start](#quick-start)
-- [Core Features](#core-features)
-    - [Connection Management](#connection-management)
-    - [Send Request](#send-request)
-    - [Default Chain Management](#default-chain-management)
-- [Blockchain Support](#blockchain-support)
-    - [Ethereum](#ethereum)
-    - [Solana](#solana)
+## 目录
+## 目录
+- [系统要求](#系统要求)
+- [获取集成授权](#获取集成授权)
+- [安装](#安装)
+- [示例](#示例)
+- [快速开始](#快速开始)
+  - [初始化 SDK](#初始化-sdk)
+- [核心功能](#核心功能)
+  - [连接管理](#连接管理)
+  - [发送请求](#发送请求)
+  - [默认链管理](#默认链管理)
+- [链相关支持](#链相关支持)
+  - [特色功能](#特色功能)
+  - [支持连接和签名](#支持连接和签名)
+  - [支持 HTTP RPC](#支持-http-rpc)
+  - [EVM 网络](#evm-网络)
+    - [EVM 方法](#evm-方法)
+  - [Solana 网络](#solana-网络)
+    - [Solana 方法](#solana-方法)
+- [版本历史](#版本历史)
   
-# Requirements
-- Android SDK 23 or higher
+# 系统要求
+- Android SDK 23 或更高版本
 - Java 11
 
-# Obtain Integration Authorization
-Provide your official website domain, application package name and fingerprint to our BD colleagues. 
+# 获取集成授权
+请向我们的 BD 同事提供您的官方网站域名、应用程序包名和指纹信息。
 
-# Installation
-1. Add the Maven Central repository to your root build.gradle:
+# 安装
+1. 在根目录的 build.gradle 中添加 Maven Central 仓库：
 ```groovy
 allprojects {
     repositories {
@@ -42,20 +52,20 @@ allprojects {
 }
 ```
 
-2. Add the dependency to your app's build.gradle:
+2. 在应用的 build.gradle 中添加依赖：
 ```groovy
 dependencies {
-	implementation 'io.gitee.ganlinux:connectsdk-android:1.0.0'
+  implementation 'io.gitee.ganlinux:connectsdk-android:1.0.0'
 }
 ```
-3. Configure AndroidManifest.xml (if needed):
+3. 配置 AndroidManifest.xml（如需要）：
 ```xml
 <application
-        tools:replace="android:allowBackup">
+    tools:replace="android:allowBackup">
 </application>
 ```
 
-4. (Optional) Add Deeplink or Universal Link support:
+4. （可选）添加 Deeplink 或 Universal Link 支持：
 ```xml
 <intent-filter>
     <action android:name="android.intent.action.VIEW" />
@@ -63,8 +73,8 @@ dependencies {
     <category android:name="android.intent.category.BROWSABLE" />
 
     <data
-            android:scheme="okxconnect"
-            android:host="demo" />
+        android:scheme="okxconnect"
+        android:host="demo" />
 
 </intent-filter>
 
@@ -74,63 +84,77 @@ dependencies {
     <category android:name="android.intent.category.BROWSABLE" />
 
     <data
-            android:scheme="https"
-            android:host="connectsdk.com"
-            android:pathPrefix="/demo" />
+        android:scheme="https"
+        android:host="connectsdk.com"
+        android:pathPrefix="/demo" />
 </intent-filter>
 ```
 
-# Example
-For a complete implementation example, check out our [Demo App](https://github.com/okx/connectsdk-android-demo).
+# 示例
+完整的实现示例，请查看我们的 [演示应用](https://github.com/okx/connectsdk-android-demo).
 
 
-# Quick Start
-## Initialize SDK
-OKXConnectSDK is a singleton object, when you create this, you can use it to call other APIs.
+# 快速开始
+## 初始化 SDK
+OKXConnectSDK 是一个单例对象，创建后您可以使用它来调用其他 API。
 
 ```java
 val dAppInfo = DAppInfo(
-        url = "https://connect.okx.com",  // Your DApp's URL
-        name = "OKX Connect Android Demo", // Display name
-        icon = "https://static.okx.com/cdn/assets/imgs/247/58E63FEA47A2B7D7.png" // App icon URL
+  url = "https://connect.okx.com",  // 您的 DApp URL
+  name = "OKX Connect Android Demo", // 显示名称
+  icon = "https://static.okx.com/cdn/assets/imgs/247/58E63FEA47A2B7D7.png" // 应用图标 URL
 )
 
 val okxConnect = OKXConnectSDKAndroid.create(
-    context = this,
-    dappInfo = dAppInfo,
-    onSuccess = {
-        // SDK initialized successfully
-        // Ready to connect to wallet
-    },
-    onError = { error ->
-       // Handle initialization errors
-       // e.g., invalid configuration, network issues
-    }
+  context = this,
+  dappInfo = dAppInfo,
+  onSuccess = {
+      // SDK 初始化成功
+      // 准备连接钱包
+  },
+  onError = { error ->
+     // 处理初始化错误
+     // 例如：配置无效、网络问题
+  }
 )
 ```
-# Core Features
-## Connection Management
+# 核心功能
+## 连接管理
 
-**Connection observe**
+**连接状态观察**
 
 ```java
 val connectionState by okxConnect.connectionState.collectAsState()
 if (okxConnect.connectionState.value == OKConnectionState.SUSPENDED) {
-       // Handle suspended state
+       // 处理暂停状态
 }
 ```
-You can get the connection state types in class "OKConnectionState".
 
-**Get Connection State**
+您可以在 OKConnectionState 类中找到所有连接状态类型。
+
+OKConnectionState详解
+```java
+enum class OKConnectionState(val state: Int) {
+  CONNECTED(0), //已连接
+  DISCONNECTED(1), //已断开连接
+  CONNECTING(2), //连接中
+  RECONNECTING(3), //重新连接中
+  CONNECT_FAILURE(4), //连接失败
+  RECONNECT_FAILURE(5), //重新连接失败
+  SUSPENDED(6); //暂停连接
+}
+```
+
+**获取连接状态**
 
 ```java
 if (okxConnect.isConnected()) {
        ...
 }
 ```
-Use this to check if connected.
+用于检查是否已连接。
 
-**Connect to Wallet**
+**连接到钱包**
 
 ```java
 val connectRequestMethods = listOf(RequestConnectAndSignMethod(EthMethod.PersonalSign("0x4d7920656d61696c206973206a6f686e40646f652e636f6d202d2031373237353937343537313336"), ETH))
@@ -149,25 +173,25 @@ val connectParams = ConnectParams(requiredNamespaces = requiredNamespaces, optio
 val connectJob = okxConnect.connect(
      connectParams = connectParams,
      onSuccess = { sessionInfo, methodResults ->
-     // callback when connection is successful
+     // 连接成功的回调
      },
      onError = { error ->
-     // callback when connection fails
+     // 连接失败的回调
      }
 )
 ```
-This example use ethereum chain. You can define the chains you want.
-The API returns the connect job, you can cancel this job by yourself.
+这个例子使用了以太坊链。您可以定义您想要的链。
+此API 返回连接任务，您可以自行取消这个任务。
 
-**IMPORTANT:** If there are chains not support in `requiredNamespaces`, it will connect failed. If there are chains not support in `optionalNamespaces`, it will ignore it.
+**重要提示：** 如果`requiredNamespaces`中有钱包不支持的链，连接将直接失败。如果`optionalNamespaces`中有钱包不支持的链，将被忽略。
 
-**Disconnect**
+**断开连接**
 
 ```java
 okxConnect.disconnect()
 ```
 
-**ConnectionState Listener**
+**连接状态监听器**
 ```java
 private val connectionStateListener = object : ConnectionStateListener {
     override fun onConnectionStateChange(state: OKConnectionState, session: SessionInfo?) {
@@ -175,61 +199,65 @@ private val connectionStateListener = object : ConnectionStateListener {
     }
 }
 okxConnect.addConnectionStateListener(connectionStateListener)
-// remove the listener when not needed    
+// 不需要时移除监听器    
 okxConnect.removeConnectionStateListener(connectionStateListener)
 ```
-It will return the information(SessionInfo) and state(OKConnectionState) about the connection.
+它将返回关于连接的信息(SessionInfo)和状态(OKConnectionState)。
 
-**Restore Connection**
+**恢复连接**
 ```java
 okxConnect.restoreSessionIfExit()
 ```
-Restore previous connection before displaying connection information.
+在显示连接信息之前恢复之前的连接。
 
-**Suspend and resume connection**
+**暂停和恢复连接**
 ```java
-okxConnect.suspendConnection()  //suspend
+okxConnect.suspendConnection()  //暂停
 if (okxConnect.connectionState.value == OKConnectionState.SUSPENDED) {
-    okxConnect.resumeConnection()  //resume
+    okxConnect.resumeConnection()  //恢复
 }
 ```
-- suspendConnection - Temporarily suspends the connection by closing WebSocket to reduce network usage.Used when connection or transaction requests are not needed, such as in specific UI pages.
-- resumeConnection - Reestablishes the connection with the websocket server.
+- suspendConnection - 通过关闭WebSocket，临时暂停连接以减少网络占用。在不需要连接或交易请求时使用，比如在特定的 UI 页面中。
+- resumeConnection - 重新建立与Websocket服务器的连接。
 
 
-## Send Request
+## 发送请求
 
 ```java
-    val request = RequestParamsMethod(method = EthMethod.PersonalSign(EVM_NORMAL_SIGNDATA), chainId = ETH)
-    okxConnect.request(request){ result ->
-	    ...
+val method = EthMethod.PersonalSign("Hello, World!")
+val request = RequestParamsMethod(method = method, chainId = ETH)
+okxConnect.request(request){ result ->
+    val response = result.getOrNull()
+    if (response is EthMethodResponse.PersonalSign) {
+        val signature = response.signature
+        //do something
     }
+}
 ```
-You can use the method entity to start request, this method will return the request job and cancel this job by yourself.You can find the support methods in EthMethod and SolanaMethod, find the response type in EthMethodResponse and SolanaMethodResponse. 
+您可以使用方法实体来发起请求，这个方法将返回请求任务，您可以自行取消这个任务。您可以在 EthMethod 和 SolanaMethod 中找到支持的方法，在 EthMethodResponse 和 SolanaMethodResponse 中找到响应类型。
 
-
-## Default Chain Management 
-**Set selected chain and RPC url**
+## 默认链管理
+**设置选定的链和 RPC URL**
 ```java
 okxConnect.setDefaultChain("eip155:137", "https://polygon.drpc.org")
 ```
 
-**Get selected chain**
+**获取选定的链**
 ```java
 okxConnect.getDefaultChain("solana")
 ```
-Get the selected chain what you set before.
+获取您之前设置的选定链。
 
 
-# Blockchain Support
-## Features
-- Connect and sign support
-- HTTP RPC support
-- EVM and SVM series chains support
+# 链相关支持
+## 特色功能
+- 支持连接和签名
+- 支持 HTTP RPC
+- 支持 EVM 和 Solana 系列链
 
-## Connect and sign support
+## 支持连接和签名
 ```java
-//set request method
+//设置请求方法
 //ETH PersonalSign
 val connectRequestMethods = listOf(RequestConnectAndSignMethod(EthMethod.PersonalSign("0x4d7920656d61696c206973206a6f686e40646f652e636f6d202d2031373237353937343537313336"), ETH))
 //Solana SignBase58Message
@@ -239,28 +267,29 @@ val requiredNamespaces = listOf(
       namespace = NAMESPACE_EVM,
       chains = listOf(ETH, POLYGON),
       rpcMap = mapOf(POLYGON to "https://polygon.drpc.org")
-    ))
+    )
+)
 val sessionConfig = SessionConfig(redirect = "okxconnect://demo")
 val connectParams = ConnectParams(requiredNamespaces = requiredNamespaces, connectRequestMethods = connectRequestMethods, sessionConfig = sessionConfig)
 val connectJob = okxConnect.connect(
   connectParams = connectParams,
   onSuccess = { sessionInfo, methodResults ->
-    // callback when connection is successful
+    // 连接成功的回调
       val response = methodResults?.find {
         it.chainId == ETH && it.method == PERSONAL_SIGN }
         if (response != null && response is Response.Accounts.ConnectRequestMethodResponse.Success) {
           val signResult = response.result
-          //check
+          //检查
         }
    },
    onError = { error ->
-    // callback when connection fails
-    }
+      // 连接失败的回调
+   }
 )
 ```
 
-## HTTP RPC support
-**Evm RPC Method**
+## 支持 HTTP RPC
+**Evm RPC 方法**
 ```java
 val methodName = "eth_getTransactionByHash"
 val params = buildJsonArray { add("0xd62fa4ea3cf7ee3bf6f5302b764490730186ed6a567c283517e8cb3c36142e1a") }
@@ -275,16 +304,16 @@ okxConnect.request(request){ result ->
 }
 ```
 
-## EVM Networks
-| Network | Chain ID | Constant                  |
+## EVM 网络
+| 网络 | 链 ID | 常量                  |
 |---------|----------|---------------------------|
 | Ethereum | eip155:1 | Ethereum.CHAIN_ID.ETH     |
 | Polygon | eip155:137 | Ethereum.CHAIN_ID.POLYGON |
 | Binance Smart Chain | eip155:56 | Ethereum.CHAIN_ID.BSC     |
 
 
-### EVM Methods
-**Add Custom Chain**
+### EVM 方法
+**添加自定义链**
 ```java
 val method = EthMethod.WalletAddEthereumChain(
   listOf("https://explorer.fuse.io"), "0x7a", "Fuse",
@@ -300,7 +329,7 @@ okxConnect.request(request){ result ->
 }
 ```
 
-**Switch Chain**
+**链切换**
 ```java
 val method = EthMethod.WalletSwitchEthereumChain(chainId = "0x7a")
 val request = RequestParamsMethod(method = method, chainId = ETH)
@@ -312,7 +341,7 @@ okxConnect.request(request){ result ->
 }
 ```
 
-**Watch Asset**
+**观察资产**
 ```java
 val options = AssetOptions("0xe0f63a424a4439cbe457d80e4f4b51ad25b2c56c", "SPX6900", "https://assets.coingecko.com/coins/images/31401/standard/sticker_%281%29.jpg?1702371083", 8)
 val method = EthMethod.WalletWatchAsset("ERC20", options)
@@ -325,7 +354,7 @@ okxConnect.request(request){ result ->
     }
 }
 ```
-**Request Accounts**
+**请求账户信息**
 ```java
 val method = EthMethod.RequestAccounts(emptyList(), 0L)
 val request = RequestParamsMethod(method = method, chainId = ETH)
@@ -338,7 +367,7 @@ okxConnect.request(request){ result ->
 }
 ```
 
-**ChainId**
+**获取链Id**
 ```java
 val method = EthMethod.ChainId()
 val request = RequestParamsMethod(method = method, chainId = ETH)
@@ -351,7 +380,7 @@ okxConnect.request(request){ result ->
 }
 ```
 
-**PersonalSign**
+**个人签名**
 ```java
 val method = EthMethod.PersonalSign("Hello, World!")
 val request = RequestParamsMethod(method = method, chainId = ETH)
@@ -363,7 +392,7 @@ okxConnect.request(request){ result ->
     }
 }
 ```
-**SignTypedDataV4**
+**SignTypedDataV4签名方法**
 ```java
 private val TYPEDDATAV_JSONSTRING = buildJsonObject {
   putJsonObject("message") {
@@ -388,7 +417,7 @@ okxConnect.request(request){ result ->
     }
 }
 ```
-**SendTransaction**
+**发送交易**
 ```java
 val method = EthMethod.SendTransaction(gas = "0x2665f", from = "0xf2F3e73be57031114dd1f4E75c1DD87658be7F0E", to = "0xf2614A233c7C3e7f08b1F887Ba133a13f1eb2c55", value = "0x38d7ea4c68000", data = "0x2646478b000000000000000000000000eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee00000000000000000000000000000000000000000000000000038d7ea4c68000000000000000000000000000620fd5fa44be6af63715ef4e65ddfa0387ad13f5000000000000000000000000000000000000000000000000000000000000001b000000000000000000000000f2f3e73be57031114dd1f4e75c1dd87658be7f0e00000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000000700301ffff0201602352A9Eb5234466Eac23E59e7B99bCaE79C39c0BE9e53fd7EDaC9F859882AfdDa116645287C629040BE9e53fd7EDaC9F859882AfdDa116645287C62900602352A9Eb5234466Eac23E59e7B99bCaE79C39c01f2F3e73be57031114dd1f4E75c1DD87658be7F0E000bb800000000000000000000000000000000")
 val request = RequestParamsMethod(method = method, chainId = ETH)
@@ -401,17 +430,17 @@ okxConnect.request(request){ result ->
 }
 ```
 
-## Solana Networks
-| Network | Chain ID | Constant |
-|---------|----------|----------|
-| Solana Mainnet | solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp | Solana.CHAIN_ID.SOLANA_MAINNET |
-| Soon Mainnet | soon:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp | Solana.CHAIN_ID.SOON_MAINNET |
-| Soon Testnet | soon:4uhcVJyU9pJkvQyS88uRDiswHXSCkY3z | Solana.CHAIN_ID.SOON_TESTNET |
+## Solana 网络
+| 网络 | 链ID                                      | 常量 |
+|---------|------------------------------------------|----------|
+| Solana Mainnet | solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp  | Solana.CHAIN_ID.SOLANA_MAINNET |
+| Soon Mainnet | soon:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp    | Solana.CHAIN_ID.SOON_MAINNET |
+| Soon Testnet | soon:4uhcVJyU9pJkvQyS88uRDiswHXSCkY3z    | Solana.CHAIN_ID.SOON_TESTNET |
 | Eclipse Mainnet | eclipse:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp | Solana.CHAIN_ID.ECLIPSE_MAINNET |
 
-### Solana Methods
+### Solana 方法
 
-**SignMessage**
+**签名消息**
 ```java
 val messageBytes = "Hello Solana".toByteArray(Charset.forName("UTF-8"))
 val method = SolanaMethod.SignMessage(Base58.encode(messageBytes))
@@ -425,7 +454,7 @@ okxConnect.request(request){ result ->
 }
 ```
 
-**SignTransaction**
+**签名交易**
 ```java
 private val base58 = "transaction data"
 private val address = "wallet address"
@@ -440,7 +469,7 @@ okxConnect.request(request){ result ->
 }
 ```
 
-**SignAllTransactions**
+**签名所有交易**
 ```java
 private val base58 = "transaction data"
 private val address = "wallet address"
@@ -455,7 +484,7 @@ okxConnect.request(request){ result ->
 }
 ```
 
-**SignAndSendTransaction**
+**签名并发送交易**
 ```java
 private val base58 = "transaction data"
 private val address = "wallet address"
@@ -471,11 +500,11 @@ okxConnect.request(request){ result ->
 }
 ```
 
-## Version History
+## 版本历史
 
-### 1.0.0 (Latest)
-- Basic wallet connection support
-- Ethereum chain support and Solana chain support
-- Improved connection stability
+### 1.0.0（最新）
+- 基础钱包连接支持
+- 支持以太坊链和Solana系列链
+- 改进连接稳定性
 
 
