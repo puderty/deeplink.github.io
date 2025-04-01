@@ -125,13 +125,13 @@ val okxConnect = OKXConnectSDKAndroid.create(
 ```java
 val connectionState by okxConnect.connectionState.collectAsState()
 if (okxConnect.connectionState.value == OKConnectionState.SUSPENDED) {
-       // 处理暂停状态
+  // 处理暂停状态
 }
 ```
 
 您可以在 OKConnectionState 类中找到所有连接状态类型。
 
-OKConnectionState详解
+OKConnectionState连接状态介绍
 ```java
 enum class OKConnectionState(val state: Int) {
   CONNECTED(0), //已连接
@@ -148,7 +148,7 @@ enum class OKConnectionState(val state: Int) {
 
 ```java
 if (okxConnect.isConnected()) {
-       ...
+  ...
 }
 ```
 用于检查是否已连接。
@@ -158,9 +158,9 @@ if (okxConnect.isConnected()) {
 ```java
 val connectRequestMethods = listOf(RequestConnectAndSignMethod(EthMethod.PersonalSign("0x4d7920656d61696c206973206a6f686e40646f652e636f6d202d2031373237353937343537313336"), ETH))
 val requiredNamespaces = listOf(Request.RequestAccounts.Namespace(
-	namespace = NAMESPACE_EVM,
-	chains = listOf(ETH, POLYGON),
-        rpcMap = mapOf(POLYGON to "https://polygon.drpc.org")
+    namespace = NAMESPACE_EVM,
+    chains = listOf(ETH, POLYGON),
+    rpcMap = mapOf(POLYGON to "https://polygon.drpc.org")
 ))
 val optionalNamespaces = listOf(Request.RequestAccounts.Namespace(
      namespace = NAMESPACE_EVM,
@@ -194,7 +194,7 @@ okxConnect.disconnect()
 ```java
 private val connectionStateListener = object : ConnectionStateListener {
     override fun onConnectionStateChange(state: OKConnectionState, session: SessionInfo?) {
-		...
+      ...
     }
 }
 okxConnect.addConnectionStateListener(connectionStateListener)
