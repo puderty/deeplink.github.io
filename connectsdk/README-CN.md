@@ -204,12 +204,6 @@ okxConnect.removeConnectionStateListener(connectionStateListener)
 ```
 它将返回关于连接的信息(SessionInfo)和状态(OKConnectionState)。
 
-**恢复连接**
-```java
-okxConnect.restoreSessionIfExit()
-```
-在显示连接信息之前恢复之前的连接。
-
 **暂停和恢复连接**
 ```java
 okxConnect.suspendConnection()  //暂停
