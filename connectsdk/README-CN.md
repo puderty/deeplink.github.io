@@ -11,7 +11,7 @@
 - 📱 支持自定义 Deep Link 和 Universal Link
 - 🌐 可自定义 RPC 节点
 - ⚡ 高效的连接状态管理
-- 💫 自动会话恢复
+- 💫 自动恢复连接
 
 ## 目录
 - [系统要求](#系统要求)
@@ -42,7 +42,7 @@
 请向我们的 BD 同事提供您的官方网站域名、应用程序包名和指纹信息。
 
 # 安装
-1. 在根目录的 build.gradle 中添加 Maven Central 仓库：
+1. 在项目根目录的 build.gradle 中添加 Maven Central 仓库：
 ```groovy
 allprojects {
     repositories {
@@ -90,7 +90,7 @@ dependencies {
 ```
 
 # 示例
-完整的实现示例，请查看我们的 [演示应用](https://github.com/okx/connectsdk-android-demo).
+完整的实现示例，请查看 [演示应用](https://github.com/okx/connectsdk-android-demo).
 
 
 # 快速开始
@@ -120,7 +120,7 @@ val okxConnect = OKXConnectSDKAndroid.create(
 # 核心功能
 ## 连接管理
 
-**连接状态观察**
+**连接状态监听**
 
 ```java
 val connectionState by okxConnect.connectionState.collectAsState()
@@ -129,9 +129,7 @@ if (okxConnect.connectionState.value == OKConnectionState.SUSPENDED) {
 }
 ```
 
-您可以在 OKConnectionState 类中找到所有连接状态类型。
-
-OKConnectionState连接状态介绍
+OKConnectionState连接状态类型介绍
 ```java
 enum class OKConnectionState(val state: Int) {
   CONNECTED(0), //已连接
@@ -180,7 +178,7 @@ val connectJob = okxConnect.connect(
 )
 ```
 这个例子使用了以太坊链。您可以定义您想要的链。
-此API 返回连接任务，您可以自行取消这个任务。
+此API 返回值为此连接任务对象，您可以自行取消这个任务。
 
 **重要提示：** 如果`requiredNamespaces`中有钱包不支持的链，连接将直接失败。如果`optionalNamespaces`中有钱包不支持的链，将被忽略。
 
@@ -210,7 +208,7 @@ if (okxConnect.connectionState.value == OKConnectionState.SUSPENDED) {
     okxConnect.resumeConnection()  //恢复
 }
 ```
-- suspendConnection - 通过关闭WebSocket，临时暂停连接以减少网络占用。在不需要连接或交易请求时使用，比如在特定的 UI 页面中。
+- suspendConnection - 用来临时关闭WebSocket，以减少网络资源占用。一般用于在特定的 UI 页面，不需要连接或交易请求的场景，可以手动控制WebSocket连接。
 - resumeConnection - 重新建立与Websocket服务器的连接。
 
 
@@ -227,28 +225,28 @@ okxConnect.request(request){ result ->
     }
 }
 ```
-您可以使用方法实体来发起请求，这个方法将返回请求任务，您可以自行取消这个任务。您可以在 EthMethod 和 SolanaMethod 中找到支持的方法，在 EthMethodResponse 和 SolanaMethodResponse 中找到响应类型。
+您可以使用方法实体来发起请求，这个方法将返回请求任务对象，您可以自行取消这个任务。您可以在 EthMethod 和 SolanaMethod 中找到支持的方法，在 EthMethodResponse 和 SolanaMethodResponse 中找到响应类型。
 
 ## 默认链管理
-**设置选定的链和 RPC URL**
+**设置默认链和 RPC URL**
 ```java
 okxConnect.setDefaultChain("eip155:137", "https://polygon.drpc.org")
 ```
 
-**获取选定的链**
+**获取默认链**
 ```java
 okxConnect.getDefaultChain("solana")
 ```
-获取您之前设置的选定链。
+获取您之前设置的默认链。
 
 
 # 链相关支持
 ## 特色功能
-- 支持连接和签名
-- 支持 HTTP RPC
+- 支持连接时签名
+- 支持自定义RPC节点
 - 支持 EVM 和 Solana 系列链
 
-## 支持连接和签名
+## 支持连接时签名
 ```java
 //设置请求方法
 //ETH PersonalSign
@@ -281,7 +279,7 @@ val connectJob = okxConnect.connect(
 )
 ```
 
-## 支持 HTTP RPC
+## 支持自定义RPC节点
 **Evm RPC 方法**
 ```java
 val methodName = "eth_getTransactionByHash"
@@ -334,7 +332,7 @@ okxConnect.request(request){ result ->
 }
 ```
 
-**观察资产**
+**观察特定资产**
 ```java
 val options = AssetOptions("0xe0f63a424a4439cbe457d80e4f4b51ad25b2c56c", "SPX6900", "https://assets.coingecko.com/coins/images/31401/standard/sticker_%281%29.jpg?1702371083", 8)
 val method = EthMethod.WalletWatchAsset("ERC20", options)
@@ -360,7 +358,7 @@ okxConnect.request(request){ result ->
 }
 ```
 
-**获取链Id**
+**获取链id**
 ```java
 val method = EthMethod.ChainId()
 val request = RequestParamsMethod(method = method, chainId = ETH)
@@ -373,7 +371,7 @@ okxConnect.request(request){ result ->
 }
 ```
 
-**个人签名**
+**个人签名方法**
 ```java
 val method = EthMethod.PersonalSign("Hello, World!")
 val request = RequestParamsMethod(method = method, chainId = ETH)
@@ -494,9 +492,8 @@ okxConnect.request(request){ result ->
 ```
 
 ## 版本历史
-
 ### 1.0.0（最新）
-- 基础钱包连接支持
+- 钱包连接支持
 - 支持以太坊链和Solana系列链
 - 改进连接稳定性
 
