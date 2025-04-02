@@ -7,7 +7,7 @@
 
 ## 主要特性
 - 🔒 安全的钱包连接和认证
-- 🔄 多链支持 (EVM系和Solana系)
+- 🔄 多网络支持 (EVM系和Solana系)
 - 📱 支持自定义 Deep Link 和 Universal Link
 - 🌐 可自定义 RPC 节点
 - ⚡ 高效的连接状态管理
@@ -23,11 +23,11 @@
 - [核心功能](#核心功能)
   - [连接管理](#连接管理)
   - [发送请求](#发送请求)
-  - [默认链管理](#默认链管理)
-- [链相关支持](#链相关支持)
+  - [默认网络管理](#默认网络管理)
+- [网络相关支持](#网络相关支持)
   - [特色功能](#特色功能)
-  - [支持连接和签名](#支持连接和签名)
-  - [支持 HTTP RPC](#支持-http-rpc)
+  - [支持连接时签名](#支持连接时签名)
+  - [支持EVM系RPC请求](#支持EVM系RPC请求)
   - [EVM 网络](#evm-网络)
     - [EVM 方法](#evm-方法)
   - [Solana 网络](#solana-网络)
@@ -95,7 +95,7 @@ dependencies {
 
 # 快速开始
 ## 初始化 SDK
-OKXConnectSDK 是一个单例对象，创建后您可以使用它来调用其他 API。
+创建后您将得到一个OKXConnectSDK类型的单例对象，您可以使用它来调用其他 API。
 
 ```java
 val dAppInfo = DAppInfo(
@@ -122,6 +122,7 @@ val okxConnect = OKXConnectSDKAndroid.create(
 
 **连接状态监听**
 
+您可以使用此方法来监听连接状态变化:
 ```java
 val connectionState by okxConnect.connectionState.collectAsState()
 if (okxConnect.connectionState.value == OKConnectionState.SUSPENDED) {
@@ -129,7 +130,7 @@ if (okxConnect.connectionState.value == OKConnectionState.SUSPENDED) {
 }
 ```
 
-OKConnectionState连接状态类型介绍
+连接状态类型介绍
 ```java
 enum class OKConnectionState(val state: Int) {
   CONNECTED(0), //已连接
@@ -143,13 +144,12 @@ enum class OKConnectionState(val state: Int) {
 ```
 
 **获取连接状态**
-
 ```java
 if (okxConnect.isConnected()) {
   ...
 }
 ```
-用于检查是否已连接。
+用于检查是否有钱包连接。
 
 **连接到钱包**
 
@@ -179,11 +179,14 @@ val connectJob = okxConnect.connect(
 ```
 这个例子使用了以太坊链。您可以定义您想要的链。
 此API 返回值为此连接任务对象，您可以自行取消这个任务。
+成功回调中包含SessionInfo（会话信息）和ConnectRequestMethodResponse（请求方法返回内容）。
+失败回调返回值为OKXConnectException类型。
 
 **重要提示：** 如果`requiredNamespaces`中有钱包不支持的链，连接将直接失败。如果`optionalNamespaces`中有钱包不支持的链，将被忽略。
 
 **断开连接**
 
+断开已连接钱包，并删除当前会话，如果要切换连接钱包，请先断开当前钱包。
 ```java
 okxConnect.disconnect()
 ```
@@ -199,7 +202,7 @@ okxConnect.addConnectionStateListener(connectionStateListener)
 // 不需要时移除监听器    
 okxConnect.removeConnectionStateListener(connectionStateListener)
 ```
-它将返回关于连接的信息(SessionInfo)和状态(OKConnectionState)。
+回调中返回连接的信息(SessionInfo)和状态(OKConnectionState)。
 
 **暂停和恢复连接**
 ```java
@@ -225,28 +228,31 @@ okxConnect.request(request){ result ->
     }
 }
 ```
-您可以使用方法实体来发起请求，这个方法将返回请求任务对象，您可以自行取消这个任务。您可以在 EthMethod 和 SolanaMethod 中找到支持的方法，在 EthMethodResponse 和 SolanaMethodResponse 中找到响应类型。
+您可以使用方法实体来发起请求，这个方法将返回请求任务对象，您可以自行取消这个任务。您可以在 EthMethod 和 SolanaMethod 中找到支持的方法的定义，在 EthMethodResponse 和 SolanaMethodResponse 中找到响应类型的定义。
 
-## 默认链管理
-**设置默认链和 RPC URL**
+## 默认网络管理
+**设置默认网络和 RPC URL**
+
+在连接多个网络的状况下，如果没有明确指定当前操作所在网络，则通过默认网络进行交互。
 ```java
 okxConnect.setDefaultChain("eip155:137", "https://polygon.drpc.org")
 ```
 
-**获取默认链**
+**获取默认网络**
+
+获取您之前设置的默认网络。
 ```java
 okxConnect.getDefaultChain("solana")
 ```
-获取您之前设置的默认链。
 
-
-# 链相关支持
+# 网络相关支持
 ## 特色功能
 - 支持连接时签名
-- 支持自定义RPC节点
-- 支持 EVM 和 Solana 系列链
+- 支持EVM系RPC请求
+- 支持 EVM 和 Solana 系列网络
 
 ## 支持连接时签名
+可以让您在连接钱包时同时进行签名操作，避免多次操作的繁琐体验。
 ```java
 //设置请求方法
 //ETH PersonalSign
@@ -278,8 +284,11 @@ val connectJob = okxConnect.connect(
    }
 )
 ```
+连接成功后，可以通过 ConnectRequestMethodResponse.Success 类型的result字段获取签名信息。
 
-## 支持自定义RPC节点
+## 支持EVM系RPC请求
+如果当前EVM系的方法无法满足需求时，可通过配置 RPC 实现更多功能。
+
 **Evm RPC 方法**
 ```java
 val methodName = "eth_getTransactionByHash"
@@ -294,17 +303,13 @@ okxConnect.request(request){ result ->
   }
 }
 ```
+成功后的回调类型为EvmRpcResponse，可通过其内部JsonElement类型参数获取RPC返回内容。
 
 ## EVM 网络
-| 网络 | 链 ID | 常量                  |
-|---------|----------|---------------------------|
-| Ethereum | eip155:1 | Ethereum.CHAIN_ID.ETH     |
-| Polygon | eip155:137 | Ethereum.CHAIN_ID.POLYGON |
-| Binance Smart Chain | eip155:56 | Ethereum.CHAIN_ID.BSC     |
-
-
 ### EVM 方法
-**添加自定义链**
+**添加自定义网络**
+
+如果钱包无某个EVM网络，可通过此方法添加。
 ```java
 val method = EthMethod.WalletAddEthereumChain(
   listOf("https://explorer.fuse.io"), "0x7a", "Fuse",
@@ -319,8 +324,9 @@ okxConnect.request(request){ result ->
     }
 }
 ```
+成功后的回调类型为WalletAddEthereumChain类型，参数caipAccount为钱包在此网络的地址。
 
-**链切换**
+**切换网络**
 ```java
 val method = EthMethod.WalletSwitchEthereumChain(chainId = "0x7a")
 val request = RequestParamsMethod(method = method, chainId = ETH)
@@ -331,8 +337,9 @@ okxConnect.request(request){ result ->
     }
 }
 ```
+此方法用来切换到指定 chainId 的网络上。
 
-**观察特定资产**
+**添加代币**
 ```java
 val options = AssetOptions("0xe0f63a424a4439cbe457d80e4f4b51ad25b2c56c", "SPX6900", "https://assets.coingecko.com/coins/images/31401/standard/sticker_%281%29.jpg?1702371083", 8)
 val method = EthMethod.WalletWatchAsset("ERC20", options)
@@ -345,7 +352,9 @@ okxConnect.request(request){ result ->
     }
 }
 ```
-**请求账户信息**
+让OKX钱包上会显示特定代币的资产。成功后的回调类型为WalletWatchAsset，其中的isAdded参数用来判断是否添加成功。
+
+**连接账户**
 ```java
 val method = EthMethod.RequestAccounts(emptyList(), 0L)
 val request = RequestParamsMethod(method = method, chainId = ETH)
@@ -357,8 +366,9 @@ okxConnect.request(request){ result ->
     }
 }
 ```
+成功后的回调类型为RequestAccounts，访问其参数可以得到用户帐户地址。
 
-**获取链id**
+**获取 chainId**
 ```java
 val method = EthMethod.ChainId()
 val request = RequestParamsMethod(method = method, chainId = ETH)
@@ -370,8 +380,9 @@ okxConnect.request(request){ result ->
     }
 }
 ```
+成功后的回调类型为ChainId，访问其参数chainId，获取用户当前的链 ID。
 
-**个人签名方法**
+**签署消息**
 ```java
 val method = EthMethod.PersonalSign("Hello, World!")
 val request = RequestParamsMethod(method = method, chainId = ETH)
@@ -383,6 +394,8 @@ okxConnect.request(request){ result ->
     }
 }
 ```
+成功后的回调类型为PersonalSign，访问其参数signature，获取签名结果。
+
 **SignTypedDataV4签名方法**
 ```java
 private val TYPEDDATAV_JSONSTRING = buildJsonObject {
@@ -408,7 +421,9 @@ okxConnect.request(request){ result ->
     }
 }
 ```
-**发送交易**
+成功后的回调类型为SignTypedDataV4，访问其参数signature，获取签名结果。
+
+**签名交易**
 ```java
 val method = EthMethod.SendTransaction(gas = "0x2665f", from = "0xf2F3e73be57031114dd1f4E75c1DD87658be7F0E", to = "0xf2614A233c7C3e7f08b1F887Ba133a13f1eb2c55", value = "0x38d7ea4c68000", data = "0x2646478b000000000000000000000000eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee00000000000000000000000000000000000000000000000000038d7ea4c68000000000000000000000000000620fd5fa44be6af63715ef4e65ddfa0387ad13f5000000000000000000000000000000000000000000000000000000000000001b000000000000000000000000f2f3e73be57031114dd1f4e75c1dd87658be7f0e00000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000000700301ffff0201602352A9Eb5234466Eac23E59e7B99bCaE79C39c0BE9e53fd7EDaC9F859882AfdDa116645287C629040BE9e53fd7EDaC9F859882AfdDa116645287C62900602352A9Eb5234466Eac23E59e7B99bCaE79C39c01f2F3e73be57031114dd1f4E75c1DD87658be7F0E000bb800000000000000000000000000000000")
 val request = RequestParamsMethod(method = method, chainId = ETH)
@@ -420,18 +435,20 @@ okxConnect.request(request){ result ->
     }
 }
 ```
+成功后的回调类型为SendTransaction，访问其参数txHash，获取交易hash值。
+
+**部分EVM网络常量定义**
+
+| 网络 | 链 ID | 常量                  |
+|---------|----------|---------------------------|
+| Ethereum | eip155:1 | Ethereum.CHAIN_ID.ETH     |
+| Polygon | eip155:137 | Ethereum.CHAIN_ID.POLYGON |
+| Binance Smart Chain | eip155:56 | Ethereum.CHAIN_ID.BSC     |
 
 ## Solana 网络
-| 网络 | 链ID                                      | 常量 |
-|---------|------------------------------------------|----------|
-| Solana Mainnet | solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp  | Solana.CHAIN_ID.SOLANA_MAINNET |
-| Soon Mainnet | soon:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp    | Solana.CHAIN_ID.SOON_MAINNET |
-| Soon Testnet | soon:4uhcVJyU9pJkvQyS88uRDiswHXSCkY3z    | Solana.CHAIN_ID.SOON_TESTNET |
-| Eclipse Mainnet | eclipse:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp | Solana.CHAIN_ID.ECLIPSE_MAINNET |
-
 ### Solana 方法
 
-**签名消息**
+**签名信息**
 ```java
 val messageBytes = "Hello Solana".toByteArray(Charset.forName("UTF-8"))
 val method = SolanaMethod.SignMessage(Base58.encode(messageBytes))
@@ -444,8 +461,9 @@ okxConnect.request(request){ result ->
     }
 }
 ```
+成功后的回调类型为SignMessage，访问其参数signature，获取签名结果。
 
-**签名交易**
+**签名交易（不发送）**
 ```java
 private val base58 = "transaction data"
 private val address = "wallet address"
@@ -459,8 +477,9 @@ okxConnect.request(request){ result ->
     }
 }
 ```
+成功后的回调类型为SignTransaction，访问其参数signature，获取签名结果。
 
-**签名所有交易**
+**批量签署交易**
 ```java
 private val base58 = "transaction data"
 private val address = "wallet address"
@@ -474,6 +493,7 @@ okxConnect.request(request){ result ->
     }
 }
 ```
+成功后的回调类型为SignAllTransactions，访问其参数transactions，获取签名结果列表。
 
 **签名并发送交易**
 ```java
@@ -485,16 +505,26 @@ okxConnect.request(request){ result ->
     val response = result.getOrNull()
     if (response is SolanaMethodResponse.SignAndSendTransaction) {
         val data = response.data
-        val data = response.data
+        val from = response.from
         //do something
     }
 }
 ```
+成功后的回调类型为SignAndSendTransaction，访问其参数获取结果。
+
+**部分Solana网络常量定义**
+
+| 网络 | 链ID                                      | 常量 |
+|---------|------------------------------------------|----------|
+| Solana Mainnet | solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp  | Solana.CHAIN_ID.SOLANA_MAINNET |
+| Soon Mainnet | soon:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp    | Solana.CHAIN_ID.SOON_MAINNET |
+| Soon Testnet | soon:4uhcVJyU9pJkvQyS88uRDiswHXSCkY3z    | Solana.CHAIN_ID.SOON_TESTNET |
+| Eclipse Mainnet | eclipse:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp | Solana.CHAIN_ID.ECLIPSE_MAINNET |
 
 ## 版本历史
 ### 1.0.0（最新）
 - 钱包连接支持
-- 支持以太坊链和Solana系列链
+- 支持以太坊系列网络和Solana系列网络
 - 改进连接稳定性
 
 
