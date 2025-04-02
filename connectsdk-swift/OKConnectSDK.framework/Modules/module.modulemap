@@ -1,0 +1,6 @@
+framework module OKConnectSDK {
+  umbrella header "OKConnectSDK.h"
+  export *
+
+  module * { export * }
+}

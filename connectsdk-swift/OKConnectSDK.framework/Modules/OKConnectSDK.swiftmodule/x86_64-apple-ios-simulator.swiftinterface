@@ -1,0 +1,843 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
+// swift-module-flags: -target x86_64-apple-ios13-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name OKConnectSDK
+import Combine
+import CommonCrypto
+import CryptoKit
+import Dispatch
+import Foundation
+@_exported import OKConnectSDK
+import Starscream
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public enum MethodType : Swift.String, Swift.Codable {
+  case ethPersonalSign
+  case ethSignTypedDataV4
+  case ethSendTransaction
+  case ethAddEthereumChain
+  case watchAsset
+  case walletSwitchEthereumChain
+  case requestAccounts
+  case chainId
+  case solanaSignTransaction
+  case solanaSignMessage
+  case solanaSignAllTransactions
+  case solanaSignAndSendTransaction
+  public init?(fromString string: Swift.String)
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension Swift.Encodable {
+  public func toJsonString(encoder: Foundation.JSONEncoder = JSONEncoder(), encoding: Swift.String.Encoding = .utf8) throws -> Swift.String?
+}
+public struct OKXConnectAppsRepository {
+  public init(keychainVault: any OKConnectSDK.KeychainVault)
+}
+public struct OKXReportItem : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct AnyCodable : Swift.Codable {
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+extension OKConnectSDK.AnyCodable {
+  public var stringValue: Swift.String? {
+    get
+  }
+  public var intValue: Swift.Int? {
+    get
+  }
+  public var doubleValue: Swift.Double? {
+    get
+  }
+  public var boolValue: Swift.Bool? {
+    get
+  }
+  public var asrrayValue: [Any]? {
+    get
+  }
+  public var dictionaryValue: [Swift.String : Any]? {
+    get
+  }
+}
+public struct OKXConnectWallet : Swift.Codable {
+  public let platform: OKConnectSDK.OKXConnectWallet.Platform
+  public let appName: Swift.String?
+  public let appVersion: Swift.String?
+  public enum Platform : Swift.String, Swift.Codable {
+    case android, ios, iphone
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum OKXConnectState : Swift.String {
+  case initial
+  case connecting
+  case connected
+  case reconnecting
+  case reconnected
+  case disconnected
+  case suspended
+  case connecterror
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct OKXConnectConnectionInfoMessageModel : Swift.Codable {
+  public var payload: OKConnectSDK.OKXConnectConnectionInfoMessageModel.OKXConnectPayloadModel
+  public struct OKXConnectPayloadModel : Swift.Codable {
+    public var responses: [OKConnectSDK.OKXConnectConnectionInfoMessageModel.ConnectResponseItem]?
+    public let wallet: OKConnectSDK.OKXConnectWallet?
+    public let message: Swift.String?
+    public let code: OKConnectSDK.GeneralErrorCode?
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public enum RequireType : Swift.String, Swift.Codable {
+    case requiredType
+    case optionalType
+    case unknownType
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public struct ConnectResponseItem : Swift.Codable {
+    public var accounts: [OKConnectSDK.OKXConnectConnectionInfoMessageModel.ConnectResponseItem.ConnectAccountItem]
+    public let walletName: Swift.String?
+    public let connectRequestMethods: [OKConnectSDK.OKXConnectConnectionInfoMessageModel.ConnectResponseItem.ConnectReqesutMethodsRsp]?
+    public struct ConnectReqesutMethodsRsp : Swift.Codable {
+      public let method: Swift.String
+      public let result: Swift.String
+      public let chainId: Swift.String
+      public func encode(to encoder: any Swift.Encoder) throws
+      public init(from decoder: any Swift.Decoder) throws
+    }
+    public struct ConnectAccountItem : Swift.Codable {
+      public var extra: [Swift.String : [Swift.String : Swift.String]]
+      public let namespace: Swift.String
+      public var addresses: [Swift.String]
+      public var chainDetails: [OKConnectSDK.OKXConnectConnectionInfoMessageModel.ConnectResponseItem.ConnectAccountItem.ChainInfo]?
+      public struct ChainInfo : Swift.Codable {
+        public let namespaceKey: Swift.String
+        public let chainId: Swift.String
+        public let type: [OKConnectSDK.OKXConnectConnectionInfoMessageModel.RequireType]
+        public let address: Swift.String
+        public func encode(to encoder: any Swift.Encoder) throws
+        public init(from decoder: any Swift.Decoder) throws
+      }
+      public init(from decoder: any Swift.Decoder) throws
+      public enum CodingKeys : Swift.CodingKey {
+        case extra
+        case methods
+        case namespace
+        case addresses
+        case chainDetails
+        public static func == (a: OKConnectSDK.OKXConnectConnectionInfoMessageModel.ConnectResponseItem.ConnectAccountItem.CodingKeys, b: OKConnectSDK.OKXConnectConnectionInfoMessageModel.ConnectResponseItem.ConnectAccountItem.CodingKeys) -> Swift.Bool
+        public func hash(into hasher: inout Swift.Hasher)
+        public init?(stringValue: Swift.String)
+        public init?(intValue: Swift.Int)
+        public var hashValue: Swift.Int {
+          get
+        }
+        public var intValue: Swift.Int? {
+          get
+        }
+        public var stringValue: Swift.String {
+          get
+        }
+      }
+      public func encode(to encoder: any Swift.Encoder) throws
+    }
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct OKXConnectDappInteractionResponse : Swift.Codable {
+  public let result: OKConnectSDK.AnyCodable?
+  public let error: OKConnectSDK.OKXConnectDappInteractionResponse.ErrorResult?
+  public struct ErrorResult : Swift.Codable {
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct Caip2ChainId {
+  public let namespace: OKConnectSDK.RequestedNetwork
+  public let chainId: Swift.String
+  public var string: Swift.String {
+    get
+  }
+  public init(namespace: OKConnectSDK.RequestedNetwork, chainId: Swift.String)
+  public static func chainId2ChainName(chainIdStr: Swift.String) -> Swift.String
+  public static func chainName2ChainIdStr(chainName: Swift.String) -> Swift.String
+}
+public struct Caip10ChainId {
+  public let namespace: OKConnectSDK.RequestedNetwork
+  public let chainId: Swift.String
+  public let address: Swift.String
+  public init(namespace: OKConnectSDK.RequestedNetwork, chainId: Swift.String, address: Swift.String)
+}
+extension OKConnectSDK.DappInteraction {
+  public enum Solana {
+    case signTransaction(request: OKConnectSDK.DappInteraction.Solana.SignTransactionDataRequest)
+    case signMessage(request: OKConnectSDK.DappInteraction.Solana.SignMessageRequest)
+    case signAllTransactions(request: OKConnectSDK.DappInteraction.Solana.SignAllTransactionRequest)
+    case signAndSendTransaction(request: OKConnectSDK.DappInteraction.Solana.SignTransactionDataRequest)
+    case rpcRequest(params: OKConnectSDK.DappInteraction.RpcRequest)
+  }
+}
+extension OKConnectSDK.DappInteraction.Solana {
+  public struct SignAllTransactionRequest : Swift.Codable {
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public struct SignTransactionDataRequest : Swift.Codable {
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public struct SignMessageRequest : Swift.Codable {
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+}
+public enum JSONValue : Swift.Codable, Swift.Equatable {
+  case string(Swift.String)
+  case number(Swift.Double)
+  case bool(Swift.Bool)
+  case array([OKConnectSDK.JSONValue])
+  case object([Swift.String : OKConnectSDK.JSONValue])
+  case null
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public static func == (lhs: OKConnectSDK.JSONValue, rhs: OKConnectSDK.JSONValue) -> Swift.Bool
+}
+public protocol RpcResponse : Swift.Decodable, Swift.Encodable {
+  var jsonrpc: Swift.String { get }
+  var id: Swift.Int64 { get }
+}
+public struct RpcSuccess : OKConnectSDK.RpcResponse {
+  public let jsonrpc: Swift.String
+  public let id: Swift.Int64
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct RpcError : OKConnectSDK.RpcResponse {
+  public let jsonrpc: Swift.String
+  public let id: Swift.Int64
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct RPCInnerError : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public class OKXRPCProvider {
+  final public let url: Foundation.URL
+  public init(url: Foundation.URL, method: Swift.String, parameters: [OKConnectSDK.JSONValue]?, logger: OKConnectSDK.OKXConsoleLogger? = nil)
+  public func get() async throws -> any OKConnectSDK.RpcResponse
+  public func post() async throws -> any OKConnectSDK.RpcResponse
+  @objc deinit
+}
+public struct WalletInfo : Swift.Codable, Swift.Equatable, Swift.Sendable {
+  public static func == (a: OKConnectSDK.WalletInfo, b: OKConnectSDK.WalletInfo) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+extension CryptoKit.Curve25519.KeyAgreement.PublicKey : Swift.Equatable {
+  public static func == (lhs: CryptoKit.Curve25519.KeyAgreement.PublicKey, rhs: CryptoKit.Curve25519.KeyAgreement.PublicKey) -> Swift.Bool
+}
+public struct AppMetaData : Swift.Codable {
+  public init(name: Swift.String, icon: Swift.String, url: Swift.String)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum KeychainVaultError : Swift.Error {
+  case noItemFound
+  case unexpectedData
+  case unhandledError(status: Darwin.OSStatus)
+}
+public struct KeychainResult {
+}
+public protocol KeychainQueryable {
+  var query: [Swift.String : Swift.AnyObject] { get throws }
+}
+public protocol KeychainVault {
+  func readValue<T>(_ item: any OKConnectSDK.KeychainQueryable) throws -> T where T : Swift.Decodable, T : Swift.Encodable
+  func saveValue<T>(_ value: T, to item: any OKConnectSDK.KeychainQueryable) throws where T : Swift.Decodable, T : Swift.Encodable
+  func deleteItem(_ item: any OKConnectSDK.KeychainQueryable) throws
+  func getAllKeychainItems<T>(_ item: any OKConnectSDK.KeychainQueryable) throws -> [Swift.String : T]? where T : Swift.Decodable, T : Swift.Encodable
+}
+public typealias KeychainQuery = [Swift.String : Swift.AnyObject]
+public typealias KeychainAttributes = [Swift.String : Swift.AnyObject]
+public enum KeychainAccessible {
+  case whenUnlocked
+  case afterFirstUnlock
+  case whenPasscodeSetThisDeviceOnly
+  case whenUnlockedThisDeviceOnly
+  case afterFirstUnlockThisDeviceOnly
+  public var keychainKey: CoreFoundation.CFString {
+    get
+  }
+  public static func == (a: OKConnectSDK.KeychainAccessible, b: OKConnectSDK.KeychainAccessible) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol Keychain {
+  func add(_ query: OKConnectSDK.KeychainQuery) -> Darwin.OSStatus
+  func fetch(_ query: OKConnectSDK.KeychainQuery) -> OKConnectSDK.KeychainResult
+  func update(_ query: OKConnectSDK.KeychainQuery, with attributes: OKConnectSDK.KeychainAttributes) -> Darwin.OSStatus
+  func delete(_ query: OKConnectSDK.KeychainQuery) -> Darwin.OSStatus
+}
+public struct KeychainImplementation : OKConnectSDK.Keychain {
+  public init()
+  public func add(_ query: OKConnectSDK.KeychainQuery) -> Darwin.OSStatus
+  public func fetch(_ query: OKConnectSDK.KeychainQuery) -> OKConnectSDK.KeychainResult
+  public func update(_ query: OKConnectSDK.KeychainQuery, with attributes: OKConnectSDK.KeychainAttributes) -> Darwin.OSStatus
+  public func delete(_ query: OKConnectSDK.KeychainQuery) -> Darwin.OSStatus
+}
+public struct KeychainVaultImplementation : OKConnectSDK.KeychainVault {
+  public init(keychain: any OKConnectSDK.Keychain)
+  public func readValue<T>(_ item: any OKConnectSDK.KeychainQueryable) throws -> T where T : Swift.Decodable, T : Swift.Encodable
+  public func saveValue<T>(_ value: T, to item: any OKConnectSDK.KeychainQueryable) throws where T : Swift.Decodable, T : Swift.Encodable
+  public func deleteItem(_ item: any OKConnectSDK.KeychainQueryable) throws
+  public func getAllKeychainItems<T>(_ item: any OKConnectSDK.KeychainQueryable) throws -> [Swift.String : T]? where T : Swift.Decodable, T : Swift.Encodable
+}
+public struct KeychainGenericPasswordItem : OKConnectSDK.KeychainQueryable {
+  public init(service: Swift.String, account: Swift.String?, accessGroup: Swift.String?, accessible: OKConnectSDK.KeychainAccessible)
+  public var query: [Swift.String : Swift.AnyObject] {
+    get
+  }
+}
+public enum Redirect : Swift.Encodable {
+  case back
+  case none
+  case deeplink(url: Swift.String)
+  case universallink(url: Swift.String)
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+extension OKConnectSDK.RequestMethod {
+  public enum Evm {
+    case personalSign(params: OKConnectSDK.DappInteraction.Evm.SignRequest)
+    case addEthereumChain(params: OKConnectSDK.DappInteraction.Evm.AddEthereumChainRequest)
+  }
+}
+public enum OKXConstants {
+  public static let secondInDays: Swift.Int
+}
+public struct ChainNamespace : Swift.Encodable {
+  public let namespace: OKConnectSDK.RequestedNetwork
+  public var chains: [Swift.String]
+  public var addresses: [Swift.String]?
+  public var defaultChain: Swift.String?
+  public var defaultAddress: Swift.String?
+  public init(namespace: OKConnectSDK.RequestedNetwork, chains: [Swift.String])
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public enum RequestedNetwork : Swift.String, Swift.Encodable, Swift.Hashable {
+  case evm
+  case solana
+  case soon
+  case eclipse
+  case sonic
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct TaskItem {
+}
+extension OKConnectSDK.DappInteractionParams {
+  public struct RpcRequest : Swift.Codable {
+    public init(method: Swift.String, params: [OKConnectSDK.JSONValue], rpcUrl: Swift.String?)
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public enum Evm {
+    case personalSign(params: OKConnectSDK.DappInteractionParams.Evm.SignRequest)
+    case ethSignTypedDataV4(params: OKConnectSDK.DappInteractionParams.Evm.EthSignTypedDataRequest)
+    case ethSendTransaction(params: OKConnectSDK.DappInteractionParams.Evm.SendTransactionRequest)
+    case switchEthereumChain(params: OKConnectSDK.DappInteractionParams.Evm.SwitchEthereumChainRequest)
+    case addEthereumChain(params: OKConnectSDK.DappInteractionParams.Evm.AddEthereumChainRequest)
+    case watchAsset(params: OKConnectSDK.DappInteractionParams.Evm.WatchAssetRequest)
+    case requestAccounts
+    case chainId
+    case requestRpc(params: OKConnectSDK.DappInteractionParams.RpcRequest)
+  }
+}
+extension OKConnectSDK.DappInteractionParams.Evm {
+  public struct SendTransactionRequest : Swift.Codable, Swift.Equatable {
+    public init(from: Swift.String, to: Swift.String, value: Swift.String?, data: Swift.String?, gas: Swift.String?, gasLimit: Swift.String?, gasPrice: Swift.String?, maxFeePerGas: Swift.String?, maxPriorityFeePerGas: Swift.String?, nonce: Swift.String?, chainId: Swift.String?)
+    public static func == (a: OKConnectSDK.DappInteractionParams.Evm.SendTransactionRequest, b: OKConnectSDK.DappInteractionParams.Evm.SendTransactionRequest) -> Swift.Bool
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public struct SignRequest : Swift.Codable, Swift.Equatable {
+    public init(challenge: Swift.String, hexEncodedAddress: Swift.String?)
+    public static func == (a: OKConnectSDK.DappInteractionParams.Evm.SignRequest, b: OKConnectSDK.DappInteractionParams.Evm.SignRequest) -> Swift.Bool
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public struct EthSignTypedDataRequest : Swift.Codable {
+    public init(address: Swift.String?, typedDataJson: Swift.String)
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+}
+extension OKConnectSDK.DappInteractionParams.Evm {
+  public struct SwitchEthereumChainRequest : Swift.Codable {
+    public init(chainId: Swift.String)
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+}
+extension OKConnectSDK.DappInteractionParams.Evm {
+  public struct AddEthereumChainRequest : Swift.Codable {
+    public init(blockExplorerUrls: [Swift.String], chainId: Swift.String, chainName: Swift.String, nativeCurrency: OKConnectSDK.DappInteractionParams.Evm.NativeCurrency, rpcUrls: [Swift.String])
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public struct NativeCurrency : Swift.Codable {
+    public init(name: Swift.String, symbol: Swift.String, decimals: Swift.Int)
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+}
+extension OKConnectSDK.DappInteractionParams.Evm {
+  public struct WatchAssetRequest : Swift.Codable {
+    public init(type: Swift.String, options: OKConnectSDK.DappInteractionParams.Evm.AssetOptions)
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public struct AssetOptions : Swift.Codable {
+    public init(address: Swift.String, symbol: Swift.String, image: Swift.String, decimals: Swift.Int)
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+}
+extension OKConnectSDK.DappInteractionParams {
+  public enum Solana {
+    case signTransaction(request: OKConnectSDK.DappInteractionParams.Solana.SignTransactionDataRequest)
+    case signMessage(request: OKConnectSDK.DappInteractionParams.Solana.SignMessageRequest)
+    case signAllTransactions(request: OKConnectSDK.DappInteractionParams.Solana.SignAllTransactionRequest)
+    case signAndSendTransaction(request: OKConnectSDK.DappInteractionParams.Solana.SignTransactionDataRequest)
+    case requestRpc(request: OKConnectSDK.DappInteractionParams.RpcRequest)
+  }
+}
+extension OKConnectSDK.DappInteractionParams.Solana {
+  public struct SignAllTransactionRequest : Swift.Codable {
+    public init(transactions: [OKConnectSDK.DappInteractionParams.Solana.SignTransactionDataRequest])
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public struct SignTransactionDataRequest : Swift.Codable {
+    public init(data: Swift.String?, from: Swift.String?)
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public struct SignMessageRequest : Swift.Codable {
+    public init(message: Swift.String, pubkey: Swift.String)
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+}
+public enum ConnectManagerError : Swift.Error {
+  case invalidUrl
+  case appNotInstalled
+  case failToOpenApp
+  case subscribeTopicFailed
+  public static func == (a: OKConnectSDK.ConnectManagerError, b: OKConnectSDK.ConnectManagerError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum DappInteractionParams {
+  case evm(request: OKConnectSDK.DappInteractionParams.Evm)
+  case solana(request: OKConnectSDK.DappInteractionParams.Solana)
+}
+public enum GeneralErrorCode : Swift.Int, Swift.Codable, Swift.Error {
+  case unknownError
+  case badRequest
+  case unknownApp
+  case userDeclinedTransaction
+  case userDeclinedTransactionCauseRegister
+  case methodNotSupported
+  case chainNotSupported
+  case walletNotSupported
+  case connectionError
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum DappInteraction {
+  public struct RpcRequest : Swift.Codable {
+    public init(method: Swift.String, params: [OKConnectSDK.JSONValue], rpcUrl: Swift.String?)
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public struct Body : Swift.Encodable {
+    public func getRequestId() -> Swift.String
+    public func encode(to encoder: any Swift.Encoder) throws
+  }
+  public enum DappInteractionMethod {
+    case evm(request: OKConnectSDK.DappInteraction.Evm)
+    case solana(request: OKConnectSDK.DappInteraction.Solana)
+  }
+}
+extension OKConnectSDK.DappInteraction {
+  public enum Evm {
+    case personalSign(params: OKConnectSDK.DappInteraction.Evm.SignRequest)
+    case ethSignTypedDataV4(params: OKConnectSDK.DappInteraction.Evm.EthSignTypedDataRequest)
+    case ethSendTransaction(params: OKConnectSDK.DappInteraction.Evm.SendTransactionRequest)
+    case switchEthereumChain(params: OKConnectSDK.DappInteraction.Evm.SwitchEthereumChainRequest)
+    case addEthereumChain(params: OKConnectSDK.DappInteraction.Evm.AddEthereumChainRequest)
+    case watchAsset(params: OKConnectSDK.DappInteraction.Evm.WatchAssetRequest)
+    case requestAccounts
+    case chainId
+    case rpcRequest(params: OKConnectSDK.DappInteraction.RpcRequest)
+  }
+}
+extension OKConnectSDK.DappInteraction.Evm {
+  public struct SendTransactionRequest : Swift.Codable, Swift.Equatable {
+    public static func == (a: OKConnectSDK.DappInteraction.Evm.SendTransactionRequest, b: OKConnectSDK.DappInteraction.Evm.SendTransactionRequest) -> Swift.Bool
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public struct SignRequest : Swift.Codable, Swift.Equatable {
+    public init(message: Swift.String)
+    public static func == (a: OKConnectSDK.DappInteraction.Evm.SignRequest, b: OKConnectSDK.DappInteraction.Evm.SignRequest) -> Swift.Bool
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public struct EthSignTypedDataRequest : Swift.Codable {
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+}
+extension OKConnectSDK.DappInteraction.Evm {
+  public struct SwitchEthereumChainRequest : Swift.Codable {
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+}
+extension OKConnectSDK.DappInteraction.Evm {
+  public struct AddEthereumChainRequest : Swift.Codable {
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public struct NativeCurrency : Swift.Codable {
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+}
+extension OKConnectSDK.DappInteraction.Evm {
+  public struct WatchAssetRequest : Swift.Codable {
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public struct AssetOptions : Swift.Codable {
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+}
+public enum RequestMethodType : Swift.String, Swift.Codable {
+  case ethPersonalSign
+  case ethSignTypedDataV4
+  case ethAddEthereumChain
+  case solanaSignMessage
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum RequestMethod {
+  public struct Body : Swift.Encodable {
+    public init(method: OKConnectSDK.RequestMethodType, params: OKConnectSDK.RequestMethod.Params, chainId: OKConnectSDK.Caip2ChainId)
+    public func encode(to encoder: any Swift.Encoder) throws
+  }
+  public enum Params {
+    case evm(request: OKConnectSDK.RequestMethod.Evm)
+    case solana(request: OKConnectSDK.RequestMethod.Solana)
+  }
+}
+extension CryptoKit.Curve25519.KeyAgreement.PublicKey : Swift.Codable {
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public struct OKXConnectKeyPair : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct OKXConnectKeyPairStoreItem : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct OKXConnectTopicInfo {
+}
+public struct OKXConnectKeyPairCacheData : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum OKXLoggingLevel : Swift.Comparable {
+  case off
+  case error
+  case warn
+  case info
+  case debug
+  public static func == (a: OKConnectSDK.OKXLoggingLevel, b: OKConnectSDK.OKXLoggingLevel) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func < (a: OKConnectSDK.OKXLoggingLevel, b: OKConnectSDK.OKXLoggingLevel) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct OKXLogMessage {
+  public let message: Swift.String
+  public let properties: [Swift.String : Swift.String]?
+  public var aggregated: Swift.String {
+    get
+  }
+  public init(message: Swift.String, properties: [Swift.String : Swift.String]? = nil)
+}
+public enum OKXLog {
+  case error(OKConnectSDK.OKXLogMessage)
+  case warn(OKConnectSDK.OKXLogMessage)
+  case info(OKConnectSDK.OKXLogMessage)
+  case debug(OKConnectSDK.OKXLogMessage)
+}
+public protocol OKXConsoleLogging {
+  var logsPublisher: Combine.AnyPublisher<OKConnectSDK.OKXLog, Swift.Never> { get }
+  func debug(_ items: Any..., file: Swift.String, function: Swift.String, line: Swift.Int, properties: [Swift.String : Swift.String]?)
+  func info(_ items: Any..., file: Swift.String, function: Swift.String, line: Swift.Int)
+  func warn(_ items: Any..., file: Swift.String, function: Swift.String, line: Swift.Int)
+  func error(_ items: Any..., file: Swift.String, function: Swift.String, line: Swift.Int)
+  func setLogging(level: OKConnectSDK.OKXLoggingLevel)
+}
+extension OKConnectSDK.OKXConsoleLogging {
+  public func debug(_ items: Any..., file: Swift.String = #file, function: Swift.String = #function, line: Swift.Int = #line, properties: [Swift.String : Swift.String]? = nil)
+  public func info(_ items: Any..., file: Swift.String = #file, function: Swift.String = #function, line: Swift.Int = #line)
+  public func warn(_ items: Any..., file: Swift.String = #file, function: Swift.String = #function, line: Swift.Int = #line)
+  public func error(_ items: Any..., file: Swift.String = #file, function: Swift.String = #function, line: Swift.Int = #line)
+}
+public class OKXConsoleLogger {
+  public var logsPublisher: Combine.AnyPublisher<OKConnectSDK.OKXLog, Swift.Never> {
+    get
+  }
+  public func setLogging(level: OKConnectSDK.OKXLoggingLevel)
+  public init(prefix: Swift.String? = nil, loggingLevel: OKConnectSDK.OKXLoggingLevel = .warn)
+  @objc deinit
+}
+extension OKConnectSDK.OKXConsoleLogger : OKConnectSDK.OKXConsoleLogging {
+  public func debug(_ items: Any..., file: Swift.String, function: Swift.String, line: Swift.Int, properties: [Swift.String : Swift.String]?)
+  public func info(_ items: Any..., file: Swift.String, function: Swift.String, line: Swift.Int)
+  public func warn(_ items: Any..., file: Swift.String, function: Swift.String, line: Swift.Int)
+  public func error(_ items: Any..., file: Swift.String, function: Swift.String, line: Swift.Int)
+  public func handle(error: any Swift.Error)
+}
+public enum OKXConnectWSStatus : Swift.Equatable {
+  case disconnected
+  case connecting
+  case connected
+  case authenticating
+  case authenticated
+  case error(any Swift.Error)
+  public static func == (lhs: OKConnectSDK.OKXConnectWSStatus, rhs: OKConnectSDK.OKXConnectWSStatus) -> Swift.Bool
+}
+public enum OKXConnectWSError : Swift.Error {
+  case invalidToken
+  case authenticationFailed
+  case connectionFailed
+  case invalidData
+  case timeout
+  case selfReleased
+  case taskFailed
+  case connectionNotViable
+  public static func == (a: OKConnectSDK.OKXConnectWSError, b: OKConnectSDK.OKXConnectWSError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension OKConnectSDK.RequestMethod {
+  public enum Solana {
+    case signMessage(request: OKConnectSDK.RequestMethod.Solana.SignMessageRequest)
+  }
+}
+extension OKConnectSDK.RequestMethod.Solana {
+  public struct SignMessageRequest : Swift.Codable {
+    public init(message: Swift.String, bs58Message: Swift.String?)
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+}
+public struct DAppInfo : Swift.Codable {
+  public init(url: Swift.String?, name: Swift.String, icon: Swift.String?)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct SignRequestParams : Swift.Codable, Swift.Equatable {
+  public init(data: Swift.String, chainId: Swift.String)
+  public static func == (a: OKConnectSDK.SignRequestParams, b: OKConnectSDK.SignRequestParams) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct SendTransactionRequestParams : Swift.Codable, Swift.Equatable {
+  public init(from: Swift.String, to: Swift.String, value: Swift.String, data: Swift.String, gas: Swift.String? = nil, gasLimit: Swift.String? = nil, gasPrice: Swift.String? = nil, maxFeePerGas: Swift.String? = nil, maxPriorityFeePerGas: Swift.String? = nil, nonce: Swift.String? = nil, chainId: Swift.String)
+  public static func == (a: OKConnectSDK.SendTransactionRequestParams, b: OKConnectSDK.SendTransactionRequestParams) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum SupportedJSONRPC : Swift.Codable, Swift.Equatable {
+  case ethSign(params: OKConnectSDK.SignRequestParams)
+  case personalSign(params: OKConnectSDK.SignRequestParams)
+  case ethSignTypedData(params: OKConnectSDK.SignRequestParams)
+  case ethSignTypedDataV4(params: OKConnectSDK.SignRequestParams)
+  case ethSendTransaction(params: OKConnectSDK.SendTransactionRequestParams)
+  public static func == (a: OKConnectSDK.SupportedJSONRPC, b: OKConnectSDK.SupportedJSONRPC) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum OKXConnectClientError : Swift.Error {
+  case chainNotConnected
+  public static func == (a: OKConnectSDK.OKXConnectClientError, b: OKConnectSDK.OKXConnectClientError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum OKXWalletSDKError : Swift.Error, Swift.Equatable {
+  case notConnected
+  case dataProcessingFailed
+  case openUrlFailed
+  case encryptedFail
+  case invalidSession
+  case sdkIncompatible
+  case walletIncompatible
+  case walletReturnedError(Swift.String)
+  public static func == (a: OKConnectSDK.OKXWalletSDKError, b: OKConnectSDK.OKXWalletSDKError) -> Swift.Bool
+}
+@_hasMissingDesignatedInitializers final public class OKXConnect {
+  public static let version: Swift.String
+  public struct Configuration {
+    public init(dappInfo: OKConnectSDK.DAppInfo, redirect: OKConnectSDK.Redirect)
+  }
+  public static var instance: OKConnectSDK.OKXConnectClient
+  public static func configure(configuration: OKConnectSDK.OKXConnect.Configuration)
+  @objc deinit
+}
+public protocol OKXConnectProtocol {
+  var dappInteractionResponsePublisher: Combine.AnyPublisher<Swift.Void, Swift.Never> { get }
+  var connectionStatusPublisher: Combine.AnyPublisher<OKConnectSDK.OKXConnectConnectionInfoMessageModel, Swift.Never> { get }
+  var connectStatePublisher: Combine.AnyPublisher<OKConnectSDK.OKXConnectState, Swift.Never> { get }
+  func connect(requiredNamespaces: [OKConnectSDK.ChainNamespace], optionalNamespaces: [OKConnectSDK.ChainNamespace], connectRequestMethods: [OKConnectSDK.RequestMethod.Body]) async throws
+  func disconnect() async throws
+  func request(chainId: OKConnectSDK.Caip2ChainId, params: OKConnectSDK.DappInteraction.DappInteractionMethod, redirect: OKConnectSDK.Redirect) async throws -> OKConnectSDK.OKXConnectDappInteractionResponse?
+  func requestRpc(url: Foundation.URL, method: Swift.String, parameters: [OKConnectSDK.JSONValue]?) async throws -> any OKConnectSDK.RpcResponse
+  var getSessionInfo: OKConnectSDK.OKXConnectConnectionInfoMessageModel? { get }
+  func suspendWebSocket()
+  func resumeWebSocket() async throws
+  func restoreSessionIfExit() async throws
+  func setDefaultChain(chainId: Swift.String, rpcUrl: Swift.String?)
+  func getDefaultChain(namespace: Swift.String) -> Swift.String
+}
+@_hasMissingDesignatedInitializers final public class OKXConnectClient {
+  final public var dappInteractionResponsePublisher: Combine.AnyPublisher<Swift.Void, Swift.Never>
+  final public var connectRequestMethodPublisher: Combine.AnyPublisher<OKConnectSDK.OKXConnectDappInteractionResponse, Swift.Never>
+  final public var connectionStatusPublisher: Combine.AnyPublisher<OKConnectSDK.OKXConnectConnectionInfoMessageModel, Swift.Never>
+  final public var connectStatePublisher: Combine.AnyPublisher<OKConnectSDK.OKXConnectState, Swift.Never>
+  final public var logsPublisher: Combine.AnyPublisher<OKConnectSDK.OKXLog, Swift.Never> {
+    get
+  }
+  final public var isConnected: Swift.Bool {
+    get
+  }
+  final public var getSessionInfo: OKConnectSDK.OKXConnectConnectionInfoMessageModel? {
+    get
+  }
+  final public func connect(requiredNamespaces: [OKConnectSDK.ChainNamespace], optionalNamespaces: [OKConnectSDK.ChainNamespace], connectRequestMethods: [OKConnectSDK.RequestMethod.Body]) async throws
+  final public func disconnect() async throws
+  final public func request(chainId: OKConnectSDK.Caip2ChainId, params: OKConnectSDK.DappInteractionParams, redirect: OKConnectSDK.Redirect) async throws -> OKConnectSDK.OKXConnectDappInteractionResponse?
+  final public func suspendWebSocket()
+  final public func resumeWebSocket() async throws
+  final public func restoreSessionIfExit() async throws
+  final public func setDefaultChain(chainId: Swift.String, rpcUrl: Swift.String?)
+  final public func getDefaultChain(namespace: Swift.String) -> Swift.String?
+  @objc deinit
+}
+public enum OKXConnectReportType : Swift.String {
+  case pageIn
+  case pageOut
+  case click
+  case log
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+final public class OKXReporter {
+  public init(logger: OKConnectSDK.OKXConsoleLogger)
+  final public func beginReport()
+  final public func sendRecordContent(action: Swift.String, type: OKConnectSDK.OKXConnectReportType, url: Swift.String? = nil, reverved1: Swift.String? = nil, reverved2: Swift.String? = nil, reverved3: Swift.String? = nil, reverved4: Swift.String? = nil, reverved5: Swift.String? = nil)
+  final public func cachedErrors() -> [OKConnectSDK.OKXReportItem]?
+  @objc deinit
+}
+extension OKConnectSDK.MethodType : Swift.Equatable {}
+extension OKConnectSDK.MethodType : Swift.Hashable {}
+extension OKConnectSDK.MethodType : Swift.RawRepresentable {}
+extension OKConnectSDK.OKXConnectWallet.Platform : Swift.Equatable {}
+extension OKConnectSDK.OKXConnectWallet.Platform : Swift.Hashable {}
+extension OKConnectSDK.OKXConnectWallet.Platform : Swift.RawRepresentable {}
+extension OKConnectSDK.OKXConnectState : Swift.Equatable {}
+extension OKConnectSDK.OKXConnectState : Swift.Hashable {}
+extension OKConnectSDK.OKXConnectState : Swift.RawRepresentable {}
+extension OKConnectSDK.OKXConnectConnectionInfoMessageModel.RequireType : Swift.Equatable {}
+extension OKConnectSDK.OKXConnectConnectionInfoMessageModel.RequireType : Swift.Hashable {}
+extension OKConnectSDK.OKXConnectConnectionInfoMessageModel.RequireType : Swift.RawRepresentable {}
+extension OKConnectSDK.OKXConnectConnectionInfoMessageModel.ConnectResponseItem.ConnectAccountItem.CodingKeys : Swift.Equatable {}
+extension OKConnectSDK.OKXConnectConnectionInfoMessageModel.ConnectResponseItem.ConnectAccountItem.CodingKeys : Swift.Hashable {}
+extension OKConnectSDK.KeychainAccessible : Swift.Equatable {}
+extension OKConnectSDK.KeychainAccessible : Swift.Hashable {}
+extension OKConnectSDK.RequestedNetwork : Swift.RawRepresentable {}
+extension OKConnectSDK.ConnectManagerError : Swift.Equatable {}
+extension OKConnectSDK.ConnectManagerError : Swift.Hashable {}
+extension OKConnectSDK.GeneralErrorCode : Swift.Equatable {}
+extension OKConnectSDK.GeneralErrorCode : Swift.Hashable {}
+extension OKConnectSDK.GeneralErrorCode : Swift.RawRepresentable {}
+extension OKConnectSDK.RequestMethodType : Swift.Equatable {}
+extension OKConnectSDK.RequestMethodType : Swift.Hashable {}
+extension OKConnectSDK.RequestMethodType : Swift.RawRepresentable {}
+extension OKConnectSDK.OKXLoggingLevel : Swift.Hashable {}
+extension OKConnectSDK.OKXConnectWSError : Swift.Equatable {}
+extension OKConnectSDK.OKXConnectWSError : Swift.Hashable {}
+extension OKConnectSDK.OKXConnectClientError : Swift.Equatable {}
+extension OKConnectSDK.OKXConnectClientError : Swift.Hashable {}
+extension OKConnectSDK.OKXConnectReportType : Swift.Equatable {}
+extension OKConnectSDK.OKXConnectReportType : Swift.Hashable {}
+extension OKConnectSDK.OKXConnectReportType : Swift.RawRepresentable {}
