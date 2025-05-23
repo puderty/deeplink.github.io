@@ -8,7 +8,7 @@
 ## 主要特性
 - 🔒 安全的钱包连接和认证
 - 🔄 多网络支持 (EVM系和Solana系)
-- 📱 支持自定义 Deep Link 和 Universal Link
+- 📱 支持自定义 deeplink 和 universal link
 - 🌐 可自定义 RPC 节点
 - ⚡ 高效的连接状态管理
 - 💫 自动恢复连接
@@ -39,7 +39,7 @@
 - Java 11
 
 # 获取集成授权
-请向我们的 BD 同事提供您的官方网站域名、应用程序包名和指纹信息。
+请向我们的 BD 同事提供您的官方网站域名、应用程序包名和签名指纹信息。
 
 # 安装
 1. 在项目根目录的 build.gradle 中添加 Maven Central 仓库：
@@ -124,9 +124,21 @@ val okxConnect = OKXConnectSDKAndroid.create(
 
 您可以使用此方法来监听连接状态变化:
 ```java
-val connectionState by okxConnect.connectionState.collectAsState()
-if (okxConnect.connectionState.value == OKConnectionState.SUSPENDED) {
-  // 处理暂停状态
+okxConnect.connectionState.collect { state ->
+  when (state) {
+    OKConnectionState.CONNECTED -> {
+      // 处理连接成功状态
+    }
+    OKConnectionState.DISCONNECTED -> {
+      // 处理断开连接状态
+    }
+    OKConnectionState.CONNECTING -> {
+      // 处理正在连接状态
+    }
+    else -> {
+      // 处理其他状态...
+    }
+  }
 }
 ```
 
@@ -154,7 +166,7 @@ if (okxConnect.isConnected()) {
 **连接到钱包**
 
 ```java
-val connectRequestMethods = listOf(RequestConnectAndSignMethod(EthMethod.PersonalSign("0x4d7920656d61696c206973206a6f686e40646f652e636f6d202d2031373237353937343537313336"), ETH))
+val connectRequestMethods = listOf(RequestConnectAndSignMethod(EthMethod.PersonalSign("Hello World!"), ETH))
 val requiredNamespaces = listOf(Request.RequestAccounts.Namespace(
     namespace = NAMESPACE_EVM,
     chains = listOf(ETH, POLYGON),
@@ -256,7 +268,7 @@ okxConnect.getDefaultChain("solana")
 ```java
 //设置请求方法
 //ETH PersonalSign
-val connectRequestMethods = listOf(RequestConnectAndSignMethod(EthMethod.PersonalSign("0x4d7920656d61696c206973206a6f686e40646f652e636f6d202d2031373237353937343537313336"), ETH))
+val connectRequestMethods = listOf(RequestConnectAndSignMethod(EthMethod.PersonalSign("Hello, World!"), ETH))
 //Solana SignBase58Message
 //val connectRequestMethods = listOf(RequestConnectAndSignMethod(SolanaMethod.SignBase58Message("xx"), SOLANA_MAINNET))
 val requiredNamespaces = listOf(
