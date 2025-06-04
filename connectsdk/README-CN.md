@@ -41,7 +41,47 @@
 请向我们的 BD 同事提供您的官方网站域名、应用程序包名和签名指纹信息。
 
 # 安装
-1. 在项目根目录的 build.gradle 中添加 Maven Central 仓库：
+## 1. 在项目中集成SDK
+我们提供两种集成方式：aar集成和Maven仓库集成，接入者可根据自身项目情况使用对应的接入方式。
+### 1.1 aar集成
+#### 1. 添加 aar 文件
+将 `okx-connectsdk-1.0.0.aar`和`okx-connectsdk-android-1.0.0.aar` 复制到项目的 `app/libs` 目录
+
+#### 2. 配置 build.gradle
+在项目级 build.gradle 添加：
+```groovy
+allprojects {
+    repositories {
+        // ... 其他仓库
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+```
+
+在 app 模块的 build.gradle 添加：
+```groovy
+dependencies {
+    //SDK依赖
+    implementation(name: 'okx-connectsdk-1.0.0', ext: 'aar')
+    implementation(name: 'okx-connectsdk-android-1.0.0', ext: 'aar')
+    
+    // 其他依赖
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.12.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3'
+    implementation 'androidx.security:security-crypto:1.1.0-alpha06'
+    implementation 'org.bouncycastle:bcprov-jdk15on:1.70'
+    implementation 'com.github.joshjdevl.libsodiumjni:libsodium-jni-aar:2.0.2'
+    implementation 'androidx.lifecycle:lifecycle-process:2.6.1'
+}
+```
+
+### 1.2 Maven仓库集成
+
+#### 1. 在项目根目录的 build.gradle 中添加 Maven Central 仓库：
 ```groovy
 allprojects {
     repositories {
@@ -50,20 +90,20 @@ allprojects {
 }
 ```
 
-2. 在应用的 build.gradle 中添加依赖：
+#### 2. 在应用的 build.gradle 中添加依赖：
 ```groovy
 dependencies {
   implementation 'io.gitee.ganlinux:connectsdk-android:1.0.0'
 }
 ```
-3. 配置 AndroidManifest.xml（如需要）：
+## 2. 配置 AndroidManifest.xml（如需要）：
 ```xml
 <application
     tools:replace="android:allowBackup">
 </application>
 ```
 
-4. （可选）添加 Deeplink 或 Universal Link 支持：
+## 3. （可选）添加 Deeplink 或 Universal Link 支持：
 ```xml
 <intent-filter>
     <action android:name="android.intent.action.VIEW" />
