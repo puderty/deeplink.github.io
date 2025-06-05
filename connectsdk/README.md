@@ -40,13 +40,13 @@
 # 获取集成授权
 请向我们的 BD 同事提供您的官方网站域名、应用程序包名和签名指纹信息。
 
-# 快速开始
+# 开始接入
 ## 1. 在项目中集成SDK
-我们提供两种集成方式：aar集成和Maven仓库集成，接入者可根据自身项目情况使用对应的接入方式。
-### 1.1 添加 aar 文件
+
+### 添加 aar 文件
 将 `okx-connectsdk-1.0.0.aar`和`okx-connectsdk-android-1.0.0.aar` 复制到项目的 `app/libs` 目录
 
-### 1.2 配置 build.gradle
+### 配置 build.gradle
 在项目级 build.gradle 添加：
 ```groovy
 allprojects {
@@ -85,7 +85,7 @@ dependencies {
 </application>
 ```
 
-## 3. （可选）添加 Deeplink 或 Universal Link 支持：
+## 3. 添加 Deeplink 或 Universal Link 支持（可选）：
 ```xml
 <intent-filter>
   <action android:name="android.intent.action.VIEW" />
@@ -467,7 +467,7 @@ okxConnect.request(request){ result ->
 | Polygon | eip155:137 | Ethereum.CHAIN_ID.POLYGON |
 | Binance Smart Chain | eip155:56 | Ethereum.CHAIN_ID.BSC     |
 
-## Solana 网络
+## 9. Solana 网络
 ### Solana 方法
 
 **签名信息**
