@@ -236,7 +236,44 @@ val connectJob = okxConnect.connect(
 - `connectJob` 可用于取消连接任务。
 - 确保钱包支持指定的链和方法。
 
-#### 6.1.4 断开连接
+#### 6.1.4 连接时签名
+
+支持在连接时执行签名，优化用户体验：
+
+```kotlin
+val connectRequestMethods = listOf(
+    RequestConnectAndSignMethod(EthMethod.PersonalSign("Hello, World!"), ETH)
+)
+val requiredNamespaces = listOf(
+    Request.RequestAccounts.Namespace(
+        namespace = NAMESPACE_EVM,
+        chains = listOf(ETH, POLYGON),
+        rpcMap = mapOf(POLYGON to "https://polygon.drpc.org")
+    )
+)
+val sessionConfig = SessionConfig(redirect = "okxconnect://demo")
+val connectParams = ConnectParams(
+    requiredNamespaces = requiredNamespaces,
+    connectRequestMethods = connectRequestMethods,
+    sessionConfig = sessionConfig
+)
+
+okxConnect.connect(
+    connectParams = connectParams,
+    onSuccess = { sessionInfo, methodResults ->
+        methodResults?.find { it.chainId == ETH && it.method == PERSONAL_SIGN }?.let { response ->
+            if (response is Response.Accounts.ConnectRequestMethodResponse.Success) {
+                Log.d("OKXConnect", "签名结果: ${response.result}")
+            }
+        }
+    },
+    onError = { error ->
+        Log.e("OKXConnect", "连接失败: ${error.message}")
+    }
+)
+```
+
+#### 6.1.5 断开连接
 
 ```kotlin
 okxConnect.disconnect()
@@ -245,7 +282,7 @@ Log.d("OKXConnect", "已断开钱包连接")
 
 **注意**：断开后需重新连接以恢复会话。
 
-#### 6.1.5 连接状态监听器
+#### 6.1.6 连接状态监听器
 
 ```kotlin
 private val connectionStateListener = object : ConnectionStateListener {
@@ -258,7 +295,7 @@ okxConnect.addConnectionStateListener(connectionStateListener)
 okxConnect.removeConnectionStateListener(connectionStateListener)
 ```
 
-#### 6.1.6 暂停和恢复连接
+#### 6.1.7 暂停和恢复连接
 
 ```kotlin
 // 暂停 WebSocket 连接
@@ -316,46 +353,9 @@ Log.d("OKXConnect", "默认 Solana 网络: $defaultChain")
 
 ## 7. 网络支持
 
-### 7.1 连接时签名
+### 7.1 EVM 网络支持
 
-支持在连接时执行签名，优化用户体验：
-
-```kotlin
-val connectRequestMethods = listOf(
-    RequestConnectAndSignMethod(EthMethod.PersonalSign("Hello, World!"), ETH)
-)
-val requiredNamespaces = listOf(
-    Request.RequestAccounts.Namespace(
-        namespace = NAMESPACE_EVM,
-        chains = listOf(ETH, POLYGON),
-        rpcMap = mapOf(POLYGON to "https://polygon.drpc.org")
-    )
-)
-val sessionConfig = SessionConfig(redirect = "okxconnect://demo")
-val connectParams = ConnectParams(
-    requiredNamespaces = requiredNamespaces,
-    connectRequestMethods = connectRequestMethods,
-    sessionConfig = sessionConfig
-)
-
-okxConnect.connect(
-    connectParams = connectParams,
-    onSuccess = { sessionInfo, methodResults ->
-        methodResults?.find { it.chainId == ETH && it.method == PERSONAL_SIGN }?.let { response ->
-            if (response is Response.Accounts.ConnectRequestMethodResponse.Success) {
-                Log.d("OKXConnect", "签名结果: ${response.result}")
-            }
-        }
-    },
-    onError = { error ->
-        Log.e("OKXConnect", "连接失败: ${error.message}")
-    }
-)
-```
-
-### 7.2 EVM 网络支持
-
-#### 7.2.1 EVM RPC 请求
+#### 7.1.1 EVM RPC 请求
 
 支持自定义 RPC 调用：
 
@@ -373,7 +373,7 @@ okxConnect.request(request) { result ->
 }
 ```
 
-#### 7.2.2 EVM 方法
+#### 7.1.2 EVM 方法
 
 - **添加网络**：
 
@@ -518,7 +518,7 @@ okxConnect.request(request) { result ->
 }
 ```
 
-#### 7.2.3 EVM 网络常量
+#### 7.1.3 EVM 网络常量
 
 | 网络                | 链 ID         | 常量                     |
 |---------------------|---------------|--------------------------|
@@ -526,9 +526,9 @@ okxConnect.request(request) { result ->
 | Polygon             | eip155:137    | Ethereum.CHAIN_ID.POLYGON|
 | Binance Smart Chain | eip155:56     | Ethereum.CHAIN_ID.BSC    |
 
-### 7.3 Solana 网络支持
+### 7.2 Solana 网络支持
 
-#### 7.3.1 Solana 方法
+#### 7.2.1 Solana 方法
 
 - **签名消息**：
 
@@ -593,7 +593,7 @@ okxConnect.request(request) { result ->
 }
 ```
 
-#### 7.3.2 Solana 网络常量
+#### 7.2.2 Solana 网络常量
 
 | 网络             | 链 ID                                    | 常量                              |
 |------------------|------------------------------------------|-----------------------------------|
