@@ -27,6 +27,8 @@
  <h3><a href="okx://wallet/nft/appmini?page=pointDashboard">mini测试</a></h3>
 <h3><a href="okx://wallet/nft/featured?jumpType=direct&page=event_detail&eventId=1543">event详情</a></h3>
 <h3><a href="about:blank">blank</a></h3>
+
+<h3><a target="_blank" href="https://x.com/ZenithSwapxyz">twitter</a></h3>
  
  
  <h3><a href="okx://miniapp?appid=Web3AnnualReport2023&pageurl=%2Fweb3annual">年度账单</a></h3>
