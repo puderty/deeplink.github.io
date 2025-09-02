@@ -171,10 +171,11 @@
          window.open("https://www.okx.com/download?deeplink=okx%3A%2F%2Fwallet%2Fdapp%2Furl%3FdappUrl%3Dhttps%253A%252F%252Fdappradar.com", "_self")
     }
  function onButtonClick2() {
-       var aaaa = 'https://web3.ggarcade.io/payment?t=ee1a33b83ce94101a5c719a3bc43c91f&u=7243266946&o=20250218214638620765'
+       //var aaaa = 'https://web3.ggarcade.io/payment?t=ee1a33b83ce94101a5c719a3bc43c91f&u=7243266946&o=20250218214638620765'
        //window.location.href="okx://wallet/dapp/url?dappUrl=" + encodeURIComponent(aaaa)
-       alert("okx://wallet/dapp/url?dappUrl=" + encodeURIComponent(aaaa));
-       window.open("okx://wallet/dapp/url?dappUrl=" + encodeURIComponent(aaaa), '_blank');
+       //alert("okx://wallet/dapp/url?dappUrl=" + encodeURIComponent(aaaa));
+       //window.open("okx://wallet/dapp/url?dappUrl=" + encodeURIComponent(aaaa), '_blank');
+       window.open("about:blank");
         }
  function onButtonClick3() {
          // var result = confirm("Are you sure?");
