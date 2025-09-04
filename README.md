@@ -1,6 +1,6 @@
 <html>
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta name="apple-itunes-app" content="app-id=1327268470, app-argument=https://myapp.com/article/123">
+    <meta name="apple-itunes-app" content="app-id=1327268470, app-argument=https://web3.okx.com/ul/joindex?ref=DONALD">
 <body>
 <h2>NFT(okex://metaX/)</h2>
 
