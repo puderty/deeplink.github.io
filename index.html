@@ -196,84 +196,37 @@
         }
         
         .section-body {
-            padding: 8px;
+            padding: 10px;
         }
         
-        .link-item {
-            display: flex;
-            align-items: center;
-            padding: 12px 10px;
+        .link-btn {
+            display: block;
+            width: 100%;
+            padding: 14px 16px;
+            margin-bottom: 8px;
             border-radius: 10px;
-            text-decoration: none;
-            color: var(--text);
-            font-size: 15px;
-            transition: background 0.15s;
-            -webkit-tap-highlight-color: transparent;
-            position: relative;
-        }
-        
-        .link-item:active {
-            background: var(--bg-hover);
-        }
-        
-        .link-item .icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
-            background: linear-gradient(135deg, var(--accent), #0969da);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 12px;
-            font-size: 16px;
-            flex-shrink: 0;
-        }
-        
-        .link-item .content {
-            flex: 1;
-            min-width: 0;
-        }
-        
-        .link-item .title {
-            font-weight: 500;
-            margin-bottom: 2px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        
-        .link-item .url {
-            font-size: 12px;
-            color: var(--text-secondary);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        
-        .link-item .copy-btn {
-            padding: 6px 10px;
-            border-radius: 8px;
             background: var(--bg);
             border: 1px solid var(--border);
-            color: var(--text-secondary);
-            font-size: 12px;
-            cursor: pointer;
-            margin-left: 8px;
-            flex-shrink: 0;
+            color: var(--text);
+            text-align: left;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.15s;
             -webkit-tap-highlight-color: transparent;
         }
         
-        .link-item .copy-btn:active {
+        .link-btn:last-child {
+            margin-bottom: 0;
+        }
+        
+        .link-btn:active {
             background: var(--bg-hover);
+            border-color: var(--accent);
+            transform: scale(0.98);
         }
         
-        .link-item .copy-btn.copied {
-            background: var(--success);
-            color: #fff;
-            border-color: var(--success);
-        }
-        
-        /* PRED 专用大按钮 */
+        /* PRED 专用渐变按钮 */
         .pred-btn {
             display: block;
             width: 100%;
@@ -303,7 +256,6 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 10px;
-            margin-top: 16px;
         }
         
         .test-buttons .btn {
@@ -320,12 +272,6 @@
             color: var(--text-secondary);
             font-size: 15px;
         }
-        
-        /* 不同分组的图标颜色 */
-        .section:nth-child(4n+1) .link-item .icon { background: linear-gradient(135deg, #58a6ff, #0969da); }
-        .section:nth-child(4n+2) .link-item .icon { background: linear-gradient(135deg, #f0883e, #d47618); }
-        .section:nth-child(4n+3) .link-item .icon { background: linear-gradient(135deg, #3fb950, #238636); }
-        .section:nth-child(4n+4) .link-item .icon { background: linear-gradient(135deg, #a371f7, #8957e5); }
     </style>
 </head>
 <body>
@@ -353,31 +299,31 @@
                 </div>
             </div>
             <div class="section-body">
-                <a class="link-item" href="okx://wallet/nft/featured?jumpType=jump&page=mclaren"><div class="icon">🏎</div><div class="content"><div class="title">麦卡伦活动</div><div class="url">okx://wallet/nft/featured</div></div></a>
-                <a class="link-item" href="https://www.ouxyi.link/ul/42nG0D"><div class="icon">🎁</div><div class="content"><div class="title">giveaway</div><div class="url">ouxyi.link</div></div></a>
-                <a class="link-item" href="https://web3.okx.com/join/DONALD"><div class="icon">🚀</div><div class="content"><div class="title">join dex</div><div class="url">web3.okx.com/join</div></div></a>
-                <a class="link-item" href="https://web3.okx.com/token/solana/pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn"><div class="icon">💰</div><div class="content"><div class="title">PUMP</div><div class="url">web3.okx.com/token</div></div></a>
-                <a class="link-item" href="https://www.okx.com/download?deeplink=okx%3A%2F%2Fwallet%2Fnft%2Ffeatured%3FjumpType%3Djump%26page%3Dmclaren%26appearance%3Dalternativeweb3%26qr%3Dmc%26aid%3D29"><div class="icon">🏎</div><div class="content"><div class="title">麦卡伦活动https</div><div class="url">okx.com/download</div></div></a>
-                <a class="link-item" href="https://www.okx.com/download?deeplink=okx%3A%2F%2Fwallet%2Fnft%2Ffeatured%3FjumpType%3Dinscription"><div class="icon">🔨</div><div class="content"><div class="title">铭刻</div><div class="url">okx.com/download</div></div></a>
-                <a class="link-item" href="okx://web3/wallet/connect"><div class="icon">🔗</div><div class="content"><div class="title">connect</div><div class="url">okx://web3/wallet/connect</div></div></a>
-                <a class="link-item" href="okx://wallet/nft/primary/details?activityId=10716&chainId=0"><div class="icon">🎯</div><div class="content"><div class="title">1BTC Drops活动</div><div class="url">okx://wallet/nft/primary</div></div></a>
-                <a class="link-item" href="okex://metaX/nft/featured?jumpType=direct&page=event"><div class="icon">🎪</div><div class="content"><div class="title">Event入口</div><div class="url">okex://metaX/nft/featured</div></div></a>
-                <a class="link-item" href="okx://wallet/nft/featured?jumpType=direct&page=event_detail&eventId=1543"><div class="icon">📋</div><div class="content"><div class="title">event详情</div><div class="url">okx://wallet/nft/featured</div></div></a>
-                <a class="link-item" href="https://x.com/ZenithSwapxyz" target="_blank"><div class="icon">🐦</div><div class="content"><div class="title">twitter</div><div class="url">x.com/ZenithSwapxyz</div></div></a>
-                <a class="link-item" href="okx://miniapp?appid=Web3AnnualReport2023&pageurl=%2Fweb3annual"><div class="icon">📊</div><div class="content"><div class="title">年度账单</div><div class="url">okx://miniapp</div></div></a>
-                <a class="link-item" href="okx://wallet/annualreport"><div class="icon">📈</div><div class="content"><div class="title">年度账单自带d</div><div class="url">okx://wallet/annualreport</div></div></a>
-                <a class="link-item" href="okx://wallet/dapp/url?dappUrl=https%3A%2F%2Fwww.okx.com%2Fcn%2Fweb3%2Fmarketplace%2Fnft%2Fasset%2Feth%2F0xe841e6e68becfc54b621a23a41f8c1a829a4cf44%2F6176"><div class="icon">🖼</div><div class="content"><div class="title">discover到NFT详情页https</div><div class="url">okx://wallet/dapp/url</div></div></a>
-                <a class="link-item" href="okx://wallet/dapp/url?dappUrl=https%3A%2F%2Fwww.okx.com%2Fweb3%2Fmarketplace%2Fnft%2Fcollection%2Feth%2Fazuki"><div class="icon">🎨</div><div class="content"><div class="title">discover到NFT合集页https</div><div class="url">okx://wallet/dapp/url</div></div></a>
-                <a class="link-item" href="okx://wallet/dapp/url?dappUrl=https%3A%2F%2Fwww.okx.com%2Fweb3%2Fmarketplace%2Flaunchpad%2Fevent%2Fnobody"><div class="icon">🎭</div><div class="content"><div class="title">discover到drops https</div><div class="url">okx://wallet/dapp/url</div></div></a>
-                <a class="link-item" href="metamask://"><div class="icon">🦊</div><div class="content"><div class="title">Metamask</div><div class="url">metamask://</div></div></a>
-                <a class="link-item" href="okex://metaX/dapp/details?dappUrl=https://opensea.io"><div class="icon">🌊</div><div class="content"><div class="title">Dapp打开Opensea</div><div class="url">okex://metaX/dapp</div></div></a>
-                <a class="link-item" href="okx://wallet/dapp/url?dappUrl=https%3A%2F%2Fopensea.io%2Fassets%2Fethereum%2F0xbd3531da5cf5857e7cfaa92426877b022e612cf8%2F1682%3Ft%3D1&clid=NFTEST"><div class="icon">⚡</div><div class="content"><div class="title">Opensea直跳</div><div class="url">okx://wallet/dapp/url</div></div></a>
-                <a class="link-item" href="okx://wallet/invest/home?jumpType=2&openUrl=https%3A%2F%2Fwww.okx.com%2Fweb3%2Fyield%2Fcampaign%2FIRI5KH"><div class="icon">💎</div><div class="content"><div class="title">yield活动</div><div class="url">okx://wallet/invest/home</div></div></a>
-                <a class="link-item" href="okex://metaX/nft/featured?jumpType=worldcup"><div class="icon">🏆</div><div class="content"><div class="title">NFT世界杯</div><div class="url">okex://metaX/nft/featured</div></div></a>
-                <a class="link-item" href="okex://metaX/nft/featured?jumpType=ordinals"><div class="icon">🔢</div><div class="content"><div class="title">ordinals</div><div class="url">okex://metaX/nft/featured</div></div></a>
-                <a class="link-item" href="okex://metaX/nft/featured?jumpType=jump&page=brc20_collections&brc20Id=stxo"><div class="icon">🪙</div><div class="content"><div class="title">brc20 stxo详情页</div><div class="url">okex://metaX/nft/featured</div></div></a>
-                <a class="link-item" href="okex://metaX/nft/collection?projectId=241&projectName=cryptopunks"><div class="icon">👾</div><div class="content"><div class="title">NFT合集页</div><div class="url">okex://metaX/nft/collection</div></div></a>
-                <a class="link-item" href="okex://metaX/nft/market/details?contractAddress=0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb&tokenId=1617"><div class="icon">🔍</div><div class="content"><div class="title">NFT详情页</div><div class="url">okex://metaX/nft/market</div></div></a>
+                <a class="link-btn" href="okx://wallet/nft/featured?jumpType=jump&page=mclaren">麦卡伦活动</a>
+                <a class="link-btn" href="https://www.ouxyi.link/ul/42nG0D">giveaway</a>
+                <a class="link-btn" href="https://web3.okx.com/join/DONALD">join dex</a>
+                <a class="link-btn" href="https://web3.okx.com/token/solana/pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn">PUMP</a>
+                <a class="link-btn" href="https://www.okx.com/download?deeplink=okx%3A%2F%2Fwallet%2Fnft%2Ffeatured%3FjumpType%3Djump%26page%3Dmclaren%26appearance%3Dalternativeweb3%26qr%3Dmc%26aid%3D29">麦卡伦活动https</a>
+                <a class="link-btn" href="https://www.okx.com/download?deeplink=okx%3A%2F%2Fwallet%2Fnft%2Ffeatured%3FjumpType%3Dinscription">铭刻</a>
+                <a class="link-btn" href="okx://web3/wallet/connect">connect</a>
+                <a class="link-btn" href="okx://wallet/nft/primary/details?activityId=10716&chainId=0">1BTC Drops活动</a>
+                <a class="link-btn" href="okex://metaX/nft/featured?jumpType=direct&page=event">Event入口</a>
+                <a class="link-btn" href="okx://wallet/nft/featured?jumpType=direct&page=event_detail&eventId=1543">event详情</a>
+                <a class="link-btn" href="https://x.com/ZenithSwapxyz" target="_blank">twitter</a>
+                <a class="link-btn" href="okx://miniapp?appid=Web3AnnualReport2023&pageurl=%2Fweb3annual">年度账单</a>
+                <a class="link-btn" href="okx://wallet/annualreport">年度账单自带d</a>
+                <a class="link-btn" href="okx://wallet/dapp/url?dappUrl=https%3A%2F%2Fwww.okx.com%2Fcn%2Fweb3%2Fmarketplace%2Fnft%2Fasset%2Feth%2F0xe841e6e68becfc54b621a23a41f8c1a829a4cf44%2F6176">discover到NFT详情页https</a>
+                <a class="link-btn" href="okx://wallet/dapp/url?dappUrl=https%3A%2F%2Fwww.okx.com%2Fweb3%2Fmarketplace%2Fnft%2Fcollection%2Feth%2Fazuki">discover到NFT合集页https</a>
+                <a class="link-btn" href="okx://wallet/dapp/url?dappUrl=https%3A%2F%2Fwww.okx.com%2Fweb3%2Fmarketplace%2Flaunchpad%2Fevent%2Fnobody">discover到drops https</a>
+                <a class="link-btn" href="metamask://">Metamask</a>
+                <a class="link-btn" href="okex://metaX/dapp/details?dappUrl=https://opensea.io">Dapp打开Opensea</a>
+                <a class="link-btn" href="okx://wallet/dapp/url?dappUrl=https%3A%2F%2Fopensea.io%2Fassets%2Fethereum%2F0xbd3531da5cf5857e7cfaa92426877b022e612cf8%2F1682%3Ft%3D1&clid=NFTEST">Opensea直跳</a>
+                <a class="link-btn" href="okx://wallet/invest/home?jumpType=2&openUrl=https%3A%2F%2Fwww.okx.com%2Fweb3%2Fyield%2Fcampaign%2FIRI5KH">yield活动</a>
+                <a class="link-btn" href="okex://metaX/nft/featured?jumpType=worldcup">NFT世界杯</a>
+                <a class="link-btn" href="okex://metaX/nft/featured?jumpType=ordinals">ordinals</a>
+                <a class="link-btn" href="okex://metaX/nft/featured?jumpType=jump&page=brc20_collections&brc20Id=stxo">brc20 stxo详情页</a>
+                <a class="link-btn" href="okex://metaX/nft/collection?projectId=241&projectName=cryptopunks">NFT合集页</a>
+                <a class="link-btn" href="okex://metaX/nft/market/details?contractAddress=0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb&tokenId=1617">NFT详情页</a>
             </div>
         </div>
         
@@ -391,122 +337,17 @@
                 </div>
             </div>
             <div class="section-body">
-                <a class="link-item" href="okx://wallet/dapp/details?dappUrl=https://opensea.io"><div class="icon">🌊</div><div class="content"><div class="title">Dapp打开Opensea</div><div class="url">okx://wallet/dapp</div></div></a>
-                <a class="link-item" href="okx://wallet/nft/featured?jumpType=worldcup"><div class="icon">🏆</div><div class="content"><div class="title">NFT世界杯</div><div class="url">okx://wallet/nft/featured</div></div></a>
-                <a class="link-item" href="okx://wallet/nft/creation"><div class="icon">✏</div><div class="content"><div class="title">NFT创作欢迎页</div><div class="url">okx://wallet/nft/creation</div></div></a>
-                <a class="link-item" href="okx://wallet/nft/featured?jumpType=aptos_trade"><div class="icon">⚡</div><div class="content"><div class="title">aptos交易活动</div><div class="url">okx://wallet/nft/featured</div></div></a>
-                <a class="link-item" href="okx://wallet/nft/market"><div class="icon">🏪</div><div class="content"><div class="title">NFT市场</div><div class="url">okx://wallet/nft/market</div></div></a>
-                <a class="link-item" href="okx://wallet/nft/market?chainId=66"><div class="icon">⛓</div><div class="content"><div class="title">NFT市场筛选链66</div><div class="url">okx://wallet/nft/market</div></div></a>
-                <a class="link-item" href="okx://wallet/nft/primary"><div class="icon">🎯</div><div class="content"><div class="title">NFT Primary</div><div class="url">okx://wallet/nft/primary</div></div></a>
-                <a class="link-item" href="okx://wallet/nft/primary/details?activityId=987&chainId=1"><div class="icon">📋</div><div class="content"><div class="title">NFT一级详情页</div><div class="url">okx://wallet/nft/primary</div></div></a>
-                <a class="link-item" href="okx://wallet/nft/collection?projectId=241&projectName=cryptopunks"><div class="icon">👾</div><div class="content"><div class="title">NFT合集页</div><div class="url">okx://wallet/nft/collection</div></div></a>
-                <a class="link-item" href="okx://wallet/nft/collection?projectId=2868328&projectName=appleseacard&chainId=137"><div class="icon">🍎</div><div class="content"><div class="title">NFT appleseacard合集页</div><div class="url">okx://wallet/nft/collection</div></div></a>
-                <a class="link-item" href="okx://wallet/nft/market/details?contractAddress=0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb&tokenId=1617"><div class="icon">🔍</div><div class="content"><div class="title">NFT详情页</div><div class="url">okx://wallet/nft/market</div></div></a>
-            </div>
-        </div>
-        
-        <!-- Others -->
-        <div class="section" data-keywords="others main dex invite regist pool earn academy email assets">
-            <div class="section-header" onclick="toggleSection(this)">
-                <h2>Others</h2>
-                <div style="display:flex;align-items:center">
-                    <span class="count">0</span>
-                    <span class="arrow">▼</span>
-                </div>
-            </div>
-            <div class="section-body">
-                <a class="link-item" href="okex://main"><div class="icon">🏠</div><div class="content"><div class="title">首页</div><div class="url">okex://main</div></div></a>
-                <a class="link-item" href="metaX/dex/swap"><div class="icon">🔄</div><div class="content"><div class="title">Dex首页</div><div class="url">metaX/dex/swap</div></div></a>
-                <a class="link-item" href="okex://invite_friends"><div class="icon">👥</div><div class="content"><div class="title">邀请好友</div><div class="url">okex://invite_friends</div></div></a>
-                <a class="link-item" href="okex://regist"><div class="icon">📝</div><div class="content"><div class="title">注册页面</div><div class="url">okex://regist</div></div></a>
-                <a class="link-item" href="okex://pool_home"><div class="icon">⛏</div><div class="content"><div class="title">Android矿池首页</div><div class="url">okex://pool_home</div></div></a>
-                <a class="link-item" href="okex://pool"><div class="icon">⛏</div><div class="content"><div class="title">iOS矿池首页</div><div class="url">okex://pool</div></div></a>
-                <a class="link-item" href="okex://metaX/wallet/home"><div class="icon">👛</div><div class="content"><div class="title">MetaX首页</div><div class="url">okex://metaX/wallet/home</div></div></a>
-                <a class="link-item" href="okex://security_bind_email"><div class="icon">📧</div><div class="content"><div class="title">绑定邮箱</div><div class="url">okex://security_bind_email</div></div></a>
-                <a class="link-item" href="okex://assets/overview_analysis?account_type=0"><div class="icon">📊</div><div class="content"><div class="title">资产分析</div><div class="url">okex://assets/overview_analysis</div></div></a>
-            </div>
-        </div>
-        
-        <!-- NFT 直跳 -->
-        <div class="section" data-keywords="nft appmini explore primary ticket brc20 drops swagstore">
-            <div class="section-header" onclick="toggleSection(this)">
-                <h2>NFT 直跳 (okx://wallet/nft/appmini/)</h2>
-                <div style="display:flex;align-items:center">
-                    <span class="count">0</span>
-                    <span class="arrow">▼</span>
-                </div>
-            </div>
-            <div class="section-body">
-                <a class="link-item" href="okx://wallet/nft/appmini?page=explore&chainId=1&state=buyNow"><div class="icon">🔍</div><div class="content"><div class="title">NFT首页</div><div class="url">okx://wallet/nft/appmini</div></div></a>
-                <a class="link-item" href="okx://wallet/nft/appmini?page=primary&activityId=701&chainId=1"><div class="icon">🎯</div><div class="content"><div class="title">一级市场详情</div><div class="url">okx://wallet/nft/appmini</div></div></a>
-                <a class="link-item" href="okx://miniapp?appid=okluanftactivity&pageurl=/nftactivity&activityId=44&chainId=0"><div class="icon">📦</div><div class="content"><div class="title">一级市场详情容器化</div><div class="url">okx://miniapp</div></div></a>
-                <a class="link-item" href="okx://wallet/nft/appmini?page=ticket&id=26&contractAddress=0xb2b4cafa17f92b42263f223382e9751b4307b817&chain=66"><div class="icon">🎫</div><div class="content"><div class="title">一级市场门票验票页面</div><div class="url">okx://wallet/nft/appmini</div></div></a>
-                <a class="link-item" href="okx://wallet/nft/appmini?page=brc20_collections&brc20Id=OXBT&selectTab=1&tokenId=860960:2358&tickerType=4"><div class="icon">🪙</div><div class="content"><div class="title">币种详情页</div><div class="url">okx://wallet/nft/appmini</div></div></a>
-                <a class="link-item" href="okx://miniapp?appid=okluanftactivity&pageurl=/nftactivity&activityId=10848&chainId=137"><div class="icon">📦</div><div class="content"><div class="title">Drops 容器化</div><div class="url">okx://miniapp</div></div></a>
-                <a class="link-item" href="okx://wallet/nft/appmini?page=swagStore"><div class="icon">🛍</div><div class="content"><div class="title">SwagStore</div><div class="url">okx://wallet/nft/appmini</div></div></a>
-                <a class="link-item" href="okx://wallet/nft/appmini?page=swagStoreScene&scene=okx"><div class="icon">🎪</div><div class="content"><div class="title">SwagStore场景页面</div><div class="url">okx://wallet/nft/appmini</div></div></a>
-            </div>
-        </div>
-        
-        <!-- NFT 切Tab再跳转 -->
-        <div class="section" data-keywords="nft featured ranking primary search creation market collection ordinals brc20 inscription cart mycreate myfavorite runes swagstore">
-            <div class="section-header" onclick="toggleSection(this)">
-                <h2>NFT 切Tab再跳转</h2>
-                <div style="display:flex;align-items:center">
-                    <span class="count">0</span>
-                    <span class="arrow">▼</span>
-                </div>
-            </div>
-            <div class="section-body">
-                <a class="link-item" href="okx://wallet/nft/featured"><div class="icon">🏪</div><div class="content"><div class="title">MarketPlace Tab</div><div class="url">okx://wallet/nft/featured</div></div></a>
-                <a class="link-item" href="okx://wallet/nft/ranking"><div class="icon">📈</div><div class="content"><div class="title">排行榜</div><div class="url">okx://wallet/nft/ranking</div></div></a>
-                <a class="link-item" href="okx://wallet/nft/primary"><div class="icon">🎯</div><div class="content"><div class="title">一级市场</div><div class="url">okx://wallet/nft/primary</div></div></a>
-                <a class="link-item" href="okx://wallet/nft/search?searchKey=CryptoPunks"><div class="icon">🔍</div><div class="content"><div class="title">搜索 searchKey = CryptoPunks</div><div class="url">okx://wallet/nft/search</div></div></a>
-                <a class="link-item" href="okx://wallet/nft/creation"><div class="icon">✏</div><div class="content"><div class="title">一级市场</div><div class="url">okx://wallet/nft/creation</div></div></a>
-                <a class="link-item" href="okx://wallet/nft/market"><div class="icon">🏪</div><div class="content"><div class="title">NFT首页</div><div class="url">okx://wallet/nft/market</div></div></a>
-                <a class="link-item" href="okx://wallet/nft/collection?projectId=52831&projectName=Azuki&chainId=1"><div class="icon">🎨</div><div class="content"><div class="title">合集页面</div><div class="url">okx://wallet/nft/collection</div></div></a>
-                <a class="link-item" href="okx://wallet/nft/featured?jumpType=ordinals&selectTab=brc20"><div class="icon">🔢</div><div class="content"><div class="title">Ordinals tab</div><div class="url">okx://wallet/nft/featured</div></div></a>
-                <a class="link-item" href="okx://wallet/nft/featured?jumpType=inscription"><div class="icon">🔨</div><div class="content"><div class="title">铭刻</div><div class="url">okx://wallet/nft/featured</div></div></a>
-                <a class="link-item" href="okx://wallet/nft/featured?jumpType=cart"><div class="icon">🛒</div><div class="content"><div class="title">购物车</div><div class="url">okx://wallet/nft/featured</div></div></a>
-                <a class="link-item" href="okx://wallet/nft/featured?jumpType=myCreate"><div class="icon">✏</div><div class="content"><div class="title">我的创作</div><div class="url">okx://wallet/nft/featured</div></div></a>
-                <a class="link-item" href="okx://wallet/nft/featured?jumpType=myFavorite"><div class="icon">⭐</div><div class="content"><div class="title">我的收藏</div><div class="url">okx://wallet/nft/featured</div></div></a>
-                <a class="link-item" href="okx://wallet/wallet/home/nft"><div class="icon">👤</div><div class="content"><div class="title">个人中心-我的NFT</div><div class="url">okx://wallet/wallet/home/nft</div></div></a>
-                <a class="link-item" href="okx://wallet/nft/featured?jumpType=nftOrderCenter"><div class="icon">📋</div><div class="content"><div class="title">NFT订单中心</div><div class="url">okx://wallet/nft/featured</div></div></a>
-                <a class="link-item" href="okx://wallet/nft/featured?jumpType=runes"><div class="icon">ᚱ</div><div class="content"><div class="title">Runes Tab</div><div class="url">okx://wallet/nft/featured</div></div></a>
-                <a class="link-item" href="okx://wallet/nft/featured?jumpType=swagStore"><div class="icon">🛍</div><div class="content"><div class="title">SwagStore</div><div class="url">okx://wallet/nft/featured</div></div></a>
-                <a class="link-item" href="okx://wallet/nft/featured?jumpType=swagStoreScene&scene=okx"><div class="icon">🎪</div><div class="content"><div class="title">SwagStore场景页面</div><div class="url">okx://wallet/nft/featured</div></div></a>
-            </div>
-        </div>
-        
-        <!-- Discover 直接跳 -->
-        <div class="section" data-keywords="discover dapp unemeta event cryptopedia">
-            <div class="section-header" onclick="toggleSection(this)">
-                <h2>Discover 直接跳</h2>
-                <div style="display:flex;align-items:center">
-                    <span class="count">0</span>
-                    <span class="arrow">▼</span>
-                </div>
-            </div>
-            <div class="section-body">
-                <a class="link-item" href="okx://wallet/dapp/url?dappUrl=https%3A%2F%2Fwww.unemeta.com%2Fzh%2Fprojects%2Fanime"><div class="icon">🎮</div><div class="content"><div class="title">DApp details/DApp详情</div><div class="url">okx://wallet/dapp/url</div></div></a>
-                <a class="link-item" href="okx://wallet/dapp/appmini?page=event"><div class="icon">🎪</div><div class="content"><div class="title">Discover Event首页</div><div class="url">okx://wallet/dapp/appmini</div></div></a>
-                <a class="link-item" href="okx://wallet/nft/appmini?page=event_detail&eventId=1543"><div class="icon">📋</div><div class="content"><div class="title">Discover Event详情页</div><div class="url">okx://wallet/nft/appmini</div></div></a>
-                <a class="link-item" href="okx://miniapp?appid=okluanftactivity&pageurl=/cryptopedia&cryptopediaId=44&chainId=0&dappId=56133&dappCategory=1"><div class="icon">📚</div><div class="content"><div class="title">Cryptopedia某期详情页</div><div class="url">okx://miniapp</div></div></a>
-            </div>
-        </div>
-        
-        <!-- Discover 切Tab再跳转 -->
-        <div class="section" data-keywords="discover dapp lido ecosystem">
-            <div class="section-header" onclick="toggleSection(this)">
-                <h2>Discover 切Tab再跳转</h2>
-                <div style="display:flex;align-items:center">
-                    <span class="count">0</span>
-                    <span class="arrow">▼</span>
-                </div>
-            </div>
-            <div class="section-body">
-                <a class="link-item" href="okx://wallet/dapp/details?dappUrl=https://lido.fi/"><div class="icon">💧</div><div class="content"><div class="title">DApp details/DApp详情</div><div class="url">okx://wallet/dapp/details</div></div></a>
-                <a class="link-item" href="okx://wallet/dapp?page=Ecosystemhub"><div class="icon">🌐</div><div class="content"><div class="title">EcoHub</div><div class="url">okx://wallet/dapp</div></div></a>
+                <a class="link-btn" href="okx://wallet/dapp/details?dappUrl=https://opensea.io">Dapp打开Opensea</a>
+                <a class="link-btn" href="okx://wallet/nft/featured?jumpType=worldcup">NFT世界杯</a>
+                <a class="link-btn" href="okx://wallet/nft/creation">NFT创作欢迎页</a>
+                <a class="link-btn" href="okx://wallet/nft/featured?jumpType=aptos_trade">aptos交易活动</a>
+                <a class="link-btn" href="okx://wallet/nft/market">NFT市场</a>
+                <a class="link-btn" href="okx://wallet/nft/market?chainId=66">NFT市场筛选链66</a>
+                <a class="link-btn" href="okx://wallet/nft/primary">NFT Primary</a>
+                <a class="link-btn" href="okx://wallet/nft/primary/details?activityId=987&chainId=1">NFT一级详情页</a>
+                <a class="link-btn" href="okx://wallet/nft/collection?projectId=241&projectName=cryptopunks">NFT合集页</a>
+                <a class="link-btn" href="okx://wallet/nft/collection?projectId=2868328&projectName=appleseacard&chainId=137">NFT appleseacard合集页</a>
+                <a class="link-btn" href="okx://wallet/nft/market/details?contractAddress=0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb&tokenId=1617">NFT详情页</a>
             </div>
         </div>
         
@@ -526,7 +367,112 @@
             </div>
         </div>
         
-        <!-- 测试按钮 -->
+        <!-- Others -->
+        <div class="section" data-keywords="others main dex invite regist pool earn academy email assets">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2>Others</h2>
+                <div style="display:flex;align-items:center">
+                    <span class="count">0</span>
+                    <span class="arrow">▼</span>
+                </div>
+            </div>
+            <div class="section-body">
+                <a class="link-btn" href="okex://main">首页</a>
+                <a class="link-btn" href="metaX/dex/swap">Dex首页</a>
+                <a class="link-btn" href="okex://invite_friends">邀请好友</a>
+                <a class="link-btn" href="okex://regist">注册页面</a>
+                <a class="link-btn" href="okex://pool_home">Android矿池首页</a>
+                <a class="link-btn" href="okex://pool">iOS矿池首页</a>
+                <a class="link-btn" href="okex://metaX/wallet/home">MetaX首页</a>
+                <a class="link-btn" href="okex://security_bind_email">绑定邮箱</a>
+                <a class="link-btn" href="okex://assets/overview_analysis?account_type=0">资产分析</a>
+            </div>
+        </div>
+        
+        <!-- NFT 直跳 -->
+        <div class="section" data-keywords="nft appmini explore primary ticket brc20 drops swagstore">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2>NFT 直跳 (okx://wallet/nft/appmini/)</h2>
+                <div style="display:flex;align-items:center">
+                    <span class="count">0</span>
+                    <span class="arrow">▼</span>
+                </div>
+            </div>
+            <div class="section-body">
+                <a class="link-btn" href="okx://wallet/nft/appmini?page=explore&chainId=1&state=buyNow">NFT首页</a>
+                <a class="link-btn" href="okx://wallet/nft/appmini?page=primary&activityId=701&chainId=1">一级市场详情</a>
+                <a class="link-btn" href="okx://miniapp?appid=okluanftactivity&pageurl=/nftactivity&activityId=44&chainId=0">一级市场详情容器化</a>
+                <a class="link-btn" href="okx://wallet/nft/appmini?page=ticket&id=26&contractAddress=0xb2b4cafa17f92b42263f223382e9751b4307b817&chain=66">一级市场门票验票页面</a>
+                <a class="link-btn" href="okx://wallet/nft/appmini?page=brc20_collections&brc20Id=OXBT&selectTab=1&tokenId=860960:2358&tickerType=4">币种详情页</a>
+                <a class="link-btn" href="okx://miniapp?appid=okluanftactivity&pageurl=/nftactivity&activityId=10848&chainId=137">Drops 容器化</a>
+                <a class="link-btn" href="okx://wallet/nft/appmini?page=swagStore">SwagStore</a>
+                <a class="link-btn" href="okx://wallet/nft/appmini?page=swagStoreScene&scene=okx">SwagStore场景页面</a>
+            </div>
+        </div>
+        
+        <!-- NFT 切Tab再跳转 -->
+        <div class="section" data-keywords="nft featured ranking primary search creation market collection ordinals brc20 inscription cart mycreate myfavorite runes swagstore">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2>NFT 切Tab再跳转</h2>
+                <div style="display:flex;align-items:center">
+                    <span class="count">0</span>
+                    <span class="arrow">▼</span>
+                </div>
+            </div>
+            <div class="section-body">
+                <a class="link-btn" href="okx://wallet/nft/featured">MarketPlace Tab</a>
+                <a class="link-btn" href="okx://wallet/nft/ranking">排行榜</a>
+                <a class="link-btn" href="okx://wallet/nft/primary">一级市场</a>
+                <a class="link-btn" href="okx://wallet/nft/search?searchKey=CryptoPunks">搜索 searchKey = CryptoPunks</a>
+                <a class="link-btn" href="okx://wallet/nft/creation">一级市场</a>
+                <a class="link-btn" href="okx://wallet/nft/market">NFT首页</a>
+                <a class="link-btn" href="okx://wallet/nft/collection?projectId=52831&projectName=Azuki&chainId=1">合集页面</a>
+                <a class="link-btn" href="okx://wallet/nft/featured?jumpType=ordinals&selectTab=brc20">Ordinals tab</a>
+                <a class="link-btn" href="okx://wallet/nft/featured?jumpType=inscription">铭刻</a>
+                <a class="link-btn" href="okx://wallet/nft/featured?jumpType=cart">购物车</a>
+                <a class="link-btn" href="okx://wallet/nft/featured?jumpType=myCreate">我的创作</a>
+                <a class="link-btn" href="okx://wallet/nft/featured?jumpType=myFavorite">我的收藏</a>
+                <a class="link-btn" href="okx://wallet/wallet/home/nft">个人中心-我的NFT</a>
+                <a class="link-btn" href="okx://wallet/nft/featured?jumpType=nftOrderCenter">NFT订单中心</a>
+                <a class="link-btn" href="okx://wallet/nft/featured?jumpType=runes">Runes Tab</a>
+                <a class="link-btn" href="okx://wallet/nft/featured?jumpType=swagStore">SwagStore</a>
+                <a class="link-btn" href="okx://wallet/nft/featured?jumpType=swagStoreScene&scene=okx">SwagStore场景页面</a>
+            </div>
+        </div>
+        
+        <!-- Discover 直接跳 -->
+        <div class="section" data-keywords="discover dapp unemeta event cryptopedia">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2>Discover 直接跳</h2>
+                <div style="display:flex;align-items:center">
+                    <span class="count">0</span>
+                    <span class="arrow">▼</span>
+                </div>
+            </div>
+            <div class="section-body">
+                <a class="link-btn" href="okx://wallet/dapp/url?dappUrl=https%3A%2F%2Fwww.unemeta.com%2Fzh%2Fprojects%2Fanime">DApp details/DApp详情</a>
+                <a class="link-btn" href="okx://wallet/dapp/appmini?page=event">Discover Event首页</a>
+                <a class="link-btn" href="okx://wallet/nft/appmini?page=event_detail&eventId=1543">Discover Event详情页</a>
+                <a class="link-btn" href="okx://miniapp?appid=okluanftactivity&pageurl=/cryptopedia&cryptopediaId=44&chainId=0&dappId=56133&dappCategory=1">Cryptopedia某期详情页</a>
+            </div>
+        </div>
+        
+        <!-- Discover 切Tab再跳转 -->
+        <div class="section" data-keywords="discover dapp lido ecosystem">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2>Discover 切Tab再跳转</h2>
+                <div style="display:flex;align-items:center">
+                    <span class="count">0</span>
+                    <span class="arrow">▼</span>
+                </div>
+            </div>
+            <div class="section-body">
+                <a class="link-btn" href="okx://wallet/dapp/details?dappUrl=https://lido.fi/">DApp details/DApp详情</a>
+                <a class="link-btn" href="okx://wallet/dapp?page=Ecosystemhub">EcoHub</a>
+            </div>
+        </div>
+        
+        <!-- 测试工具 -->
         <div class="section" data-keywords="test">
             <div class="section-header" onclick="toggleSection(this)">
                 <h2>测试工具</h2>
@@ -549,7 +495,7 @@
     <script>
         // 初始化：更新每个分组的链接数量，默认折叠
         document.querySelectorAll('.section').forEach(section => {
-            const count = section.querySelectorAll('.link-item').length;
+            const count = section.querySelectorAll('.link-btn, .pred-btn').length;
             section.querySelector('.count').textContent = count;
             // 默认折叠，除了 PRED 和测试工具
             if (!section.dataset.keywords.includes('pred') && !section.dataset.keywords.includes('test')) {
@@ -572,7 +518,7 @@
         function showAll() {
             document.querySelectorAll('.section').forEach(s => {
                 s.classList.remove('hidden');
-                s.querySelectorAll('.link-item').forEach(l => l.classList.remove('hidden'));
+                s.querySelectorAll('.link-btn, .pred-btn').forEach(l => l.classList.remove('hidden'));
             });
             document.getElementById('searchInput').value = '';
         }
@@ -587,14 +533,13 @@
             
             document.querySelectorAll('.section').forEach(section => {
                 const keywords = section.dataset.keywords || '';
-                const links = section.querySelectorAll('.link-item');
+                const links = section.querySelectorAll('.link-btn, .pred-btn');
                 let hasVisible = false;
                 
                 links.forEach(link => {
-                    const title = link.querySelector('.title').textContent.toLowerCase();
-                    const url = link.querySelector('.url').textContent.toLowerCase();
+                    const text = link.textContent.toLowerCase();
                     
-                    if (title.includes(query) || url.includes(query) || keywords.includes(query)) {
+                    if (text.includes(query) || keywords.includes(query)) {
                         link.classList.remove('hidden');
                         hasVisible = true;
                     } else {
@@ -637,27 +582,6 @@
         function testNewWindow() {
             window.open('https://www.baidu.com', 'new_window');
         }
-        
-        // 复制功能
-        document.querySelectorAll('.link-item').forEach(link => {
-            const copyBtn = document.createElement('button');
-            copyBtn.className = 'copy-btn';
-            copyBtn.textContent = '复制';
-            copyBtn.onclick = function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                const url = link.getAttribute('href');
-                navigator.clipboard.writeText(url).then(() => {
-                    copyBtn.textContent = '已复制';
-                    copyBtn.classList.add('copied');
-                    setTimeout(() => {
-                        copyBtn.textContent = '复制';
-                        copyBtn.classList.remove('copied');
-                    }, 1500);
-                });
-            };
-            link.appendChild(copyBtn);
-        });
     </script>
 </body>
 </html>
