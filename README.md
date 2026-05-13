@@ -167,6 +167,11 @@
 <h3><a href="okx://wallet/dapp/details?dappUrl=https://lido.fi/">DApp details/DApp详情</a></h3>
 <h3><a href="okx://wallet/dapp?page=Ecosystemhub">EcoHub</a></h3>
 
+<h2>PRED</h2>
+<h3><a href="okxtr://exchange/miniapp?appid=okluapredictions&pageurl=/home&isSecondaryPage=1&pageanim=push">TR PRED</a></h3>
+<h3><a href="okx://exchange/miniapp?appid=okluapredictions&pageurl=/home&isSecondaryPage=1&pageanim=push">PRED</a></h3>
+<h3><a href="okx://exchange/miniapp?appid=okluapredictions&pageurl=/profile">PRED profile</a></h3>
+
 
 
 <h3><a href="/test">测试</a></h3>
