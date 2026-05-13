@@ -226,32 +226,6 @@
             transform: scale(0.98);
         }
         
-        /* PRED 专用渐变按钮 */
-        .pred-btn {
-            display: block;
-            width: 100%;
-            padding: 16px;
-            margin-bottom: 10px;
-            border-radius: 12px;
-            background: linear-gradient(135deg, var(--accent), #0969da);
-            color: #fff;
-            text-align: center;
-            text-decoration: none;
-            font-size: 17px;
-            font-weight: 600;
-            transition: all 0.2s;
-            -webkit-tap-highlight-color: transparent;
-        }
-        
-        .pred-btn:last-child {
-            margin-bottom: 0;
-        }
-        
-        .pred-btn:active {
-            transform: scale(0.98);
-            opacity: 0.9;
-        }
-        
         .test-buttons {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -361,9 +335,9 @@
                 </div>
             </div>
             <div class="section-body">
-                <a class="pred-btn" href="okxtr://exchange/miniapp?appid=okluapredictions&pageurl=/home&isSecondaryPage=1&pageanim=push">TR PRED</a>
-                <a class="pred-btn" href="okx://exchange/miniapp?appid=okluapredictions&pageurl=/home&isSecondaryPage=1&pageanim=push">PRED</a>
-                <a class="pred-btn" href="okx://exchange/miniapp?appid=okluapredictions&pageurl=/profile">PRED profile</a>
+                <a class="link-btn" href="okxtr://exchange/miniapp?appid=okluapredictions&pageurl=/home&isSecondaryPage=1&pageanim=push">TR PRED</a>
+                <a class="link-btn" href="okx://exchange/miniapp?appid=okluapredictions&pageurl=/home&isSecondaryPage=1&pageanim=push">PRED</a>
+                <a class="link-btn" href="okx://exchange/miniapp?appid=okluapredictions&pageurl=/profile">PRED profile</a>
             </div>
         </div>
         
@@ -495,7 +469,7 @@
     <script>
         // 初始化：更新每个分组的链接数量，默认折叠
         document.querySelectorAll('.section').forEach(section => {
-            const count = section.querySelectorAll('.link-btn, .pred-btn').length;
+            const count = section.querySelectorAll('.link-btn').length;
             section.querySelector('.count').textContent = count;
             // 默认折叠，除了 PRED 和测试工具
             if (!section.dataset.keywords.includes('pred') && !section.dataset.keywords.includes('test')) {
@@ -518,7 +492,7 @@
         function showAll() {
             document.querySelectorAll('.section').forEach(s => {
                 s.classList.remove('hidden');
-                s.querySelectorAll('.link-btn, .pred-btn').forEach(l => l.classList.remove('hidden'));
+                s.querySelectorAll('.link-btn').forEach(l => l.classList.remove('hidden'));
             });
             document.getElementById('searchInput').value = '';
         }
@@ -533,7 +507,7 @@
             
             document.querySelectorAll('.section').forEach(section => {
                 const keywords = section.dataset.keywords || '';
-                const links = section.querySelectorAll('.link-btn, .pred-btn');
+                const links = section.querySelectorAll('.link-btn');
                 let hasVisible = false;
                 
                 links.forEach(link => {
