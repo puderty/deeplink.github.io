@@ -273,6 +273,32 @@
             border-color: var(--success);
         }
         
+        /* PRED 专用大按钮 */
+        .pred-btn {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            margin-bottom: 10px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--accent), #0969da);
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 600;
+            transition: all 0.2s;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .pred-btn:last-child {
+            margin-bottom: 0;
+        }
+        
+        .pred-btn:active {
+            transform: scale(0.98);
+            opacity: 0.9;
+        }
+        
         .test-buttons {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -494,9 +520,9 @@
                 </div>
             </div>
             <div class="section-body">
-                <a class="link-item" href="okxtr://exchange/miniapp?appid=okluapredictions&pageurl=/home&isSecondaryPage=1&pageanim=push"><div class="icon">🔮</div><div class="content"><div class="title">TR PRED</div><div class="url">okxtr://exchange/miniapp</div></div></a>
-                <a class="link-item" href="okx://exchange/miniapp?appid=okluapredictions&pageurl=/home&isSecondaryPage=1&pageanim=push"><div class="icon">🔮</div><div class="content"><div class="title">PRED</div><div class="url">okx://exchange/miniapp</div></div></a>
-                <a class="link-item" href="okx://exchange/miniapp?appid=okluapredictions&pageurl=/profile"><div class="icon">👤</div><div class="content"><div class="title">PRED profile</div><div class="url">okx://exchange/miniapp</div></div></a>
+                <a class="pred-btn" href="okxtr://exchange/miniapp?appid=okluapredictions&pageurl=/home&isSecondaryPage=1&pageanim=push">TR PRED</a>
+                <a class="pred-btn" href="okx://exchange/miniapp?appid=okluapredictions&pageurl=/home&isSecondaryPage=1&pageanim=push">PRED</a>
+                <a class="pred-btn" href="okx://exchange/miniapp?appid=okluapredictions&pageurl=/profile">PRED profile</a>
             </div>
         </div>
         
